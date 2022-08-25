@@ -7,7 +7,7 @@ gauth.LocalWebserverAuth()
 
 drive = GoogleDrive(gauth)
 
-text1 = st.text_input()
+name = st.text_input('name')
 #データをドライブに入れる。
 #f = drive.CreateFile({'title': 'TEST.TXT'})
 #f.SetContentString('Hello')
