@@ -24,8 +24,10 @@ st.text(type(im2))
 
 data = [name,im,im2]
 
-with open('pickle.data', 'wb') as f:
-    pickle.dump(data, f)
+st.text(data[0])
+
+#with open('pickle.data', 'wb') as f:
+#    pickle.dump(data, f)
 
 
 #データをドライブに入れる。
