@@ -15,11 +15,13 @@ drive = GoogleDrive(gauth)
 name = st.text_input('name')
 field = st.file_uploader('field')
 im = Image.open(field)
-st.text(type(im))
 im = np.array(im)
 st.text(type(im))
 close = st.file_uploader('close')
-st.text(type(close))
+im2 = Image.open(close)
+im2 = np.array(im2)
+st.text(type(im2))
+
 
 
 #データをドライブに入れる。
