@@ -9,7 +9,10 @@ drive = GoogleDrive(gauth)
 
 name = st.text_input('name')
 field = st.file_uploader('field')
+st.text(type(field))
 close = st.file_uploader('close')
+st.text(type(colse))
+
 
 #データをドライブに入れる。
 #f = drive.CreateFile({'title': 'TEST.TXT'})
