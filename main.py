@@ -8,8 +8,8 @@ gauth.LocalWebserverAuth()
 drive = GoogleDrive(gauth)
 
 name = st.text_input('name')
-field = st.camera_input('field')
-close = st.camera_input('close')
+field = st.file_uploader('field')
+close = st.file_uploader('close')
 
 #データをドライブに入れる。
 #f = drive.CreateFile({'title': 'TEST.TXT'})
