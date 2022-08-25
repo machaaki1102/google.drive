@@ -13,6 +13,8 @@ name = st.text_input('name')
 field = st.file_uploader('field')
 im = Image.open(field)
 st.text(type(im))
+im = np.array(im)
+st.text(type(im))
 close = st.file_uploader('close')
 st.text(type(close))
 
