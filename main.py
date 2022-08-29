@@ -20,13 +20,14 @@ if field:
     st.text(type(im))
 
 close = st.file_uploader('close')
-im2 = Image.open(close)
-im2 = np.array(im2)
-st.text(type(im2))
+if close:
+    im2 = Image.open(close)
+    im2 = np.array(im2)
+    st.text(type(im2))
 
 data = [name,im,im2]
 
-st.text(data[0])
+st.text(data(0))
 
 #with open('pickle.data', 'wb') as f:
 #    pickle.dump(data, f)
