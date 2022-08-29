@@ -7,6 +7,7 @@ import streamlit as st
 from PIL import Image, ImageFilter
 #数的処理するライブラリ
 import numpy as np
+import pickle
  
 gauth = GoogleAuth()
 gauth.LocalWebserverAuth()
