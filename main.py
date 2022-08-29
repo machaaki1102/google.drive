@@ -30,7 +30,7 @@ if close:
     #st.text(type(im2))
 
 if name and field and close:
-    data = [name,im,im2]
+    data = [name,im,im2] #ndarray でないとリストに入らない
     st.text(data[1])
     tt = Image.fromarray(data[2])
     st.image(tt)
