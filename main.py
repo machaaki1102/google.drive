@@ -39,6 +39,7 @@ if name and field and close:
     
 with open('pickle.pkl', 'wb') as f:
     pickle.dump(data, f)
+    
 
 
 #データをドライブに入れる。
