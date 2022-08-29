@@ -16,7 +16,7 @@ name = st.text_input('name')
 field = st.file_uploader('field')
 if field:
     im = Image.open(field)
-    st.text(type(im))
+    st.text(type(im)) #PIL image
     im = np.array(im)
     st.text(type(im)) #ndnarry型
 
@@ -29,7 +29,7 @@ if close:
 if name and field and close:
     data = [name,im,im2]
     pil_image_color = Image.fromarray(im2)
-    st.text(pil_image_color)
+    st.text(type(pil_image_color))
     st.text(data[0])
     
 #with open('pickle.data', 'wb') as f:
