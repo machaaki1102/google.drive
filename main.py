@@ -30,7 +30,8 @@ if name and field and close:
     data = [name,im,im2]
     tt = Image.fromarray(im2)
     st.text(type(tt))
-    Image.open(tt)
+    tt.show()
+    #Image.open(tt)
     st.text(data[0])
     
 #with open('pickle.data', 'wb') as f:
