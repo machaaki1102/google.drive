@@ -32,8 +32,8 @@ if close:
 if name and field and close:
     data = [name,im,im2] #ndarray でないとリストに入らない
     st.image(data[1])
-    tt = Image.fromarray(data[2])
-    st.image(tt)
+    #tt = Image.fromarray(data[2])
+    st.image(data[2])
     #Image.open(tt)
     st.text(data[0])
     
