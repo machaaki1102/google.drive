@@ -30,8 +30,7 @@ if close:
 if name and field and close:
     data = [name,im,im2]
     tt = Image.fromarray(im2)
-    st.text(type(tt))
-    tt.show()
+    st.image(tt)
     #Image.open(tt)
     st.text(data[0])
     
