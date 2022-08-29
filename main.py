@@ -17,17 +17,17 @@ field = st.file_uploader('field')
 
 if field:
     #st.image(field)
-    st.text(type(field))
+    #st.text(type(field)) #
     im = Image.open(field)
     st.text(type(im)) #PIL image
-    im = np.array(im)
-    st.text(type(im)) #ndnarry型
+    #im = np.array(im)
+    #st.text(type(im)) #ndnarry型
 
 close = st.file_uploader('close')
 if close:
     im2 = Image.open(close)
-    im2 = np.array(im2)
-    st.text(type(im2))
+    #im2 = np.array(im2)
+    #st.text(type(im2))
 
 if name and field and close:
     data = [name,im,im2]
