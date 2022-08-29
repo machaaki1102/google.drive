@@ -25,7 +25,8 @@ if close:
     im2 = np.array(im2)
     st.text(type(im2))
 
-data = [name,im,im2]
+if name and field and close:
+    data = [name,im,im2]
 
 st.text(data(0))
 
