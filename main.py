@@ -15,7 +15,7 @@ drive = GoogleDrive(gauth)
 name = st.text_input('name')
 field = st.file_uploader('field')
 if field:
-    st.field(type(field))
+    st.text(type(field))
     im = Image.open(field)
     st.text(type(im)) #PIL image
     im = np.array(im)
