@@ -37,10 +37,10 @@ if name and field and close:
     #Image.open(tt)
     st.text(data[0])
     
-with open('pickle.pkl', 'wb') as f:
+with open('pickled.pkl', 'wb') as f:
     pickle.dump(data, f)
 
-with open('pickle.pkl', 'rb') as f:
+with open('pickled.pkl', 'rb') as f:
     data2 = pickle.load(f)
 
 st.text(data2[0])
