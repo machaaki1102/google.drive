@@ -39,8 +39,11 @@ if name and field and close:
     
 with open('pickle.pkl', 'wb') as f:
     pickle.dump(data, f)
-    
 
+with open('pickle.pkl', 'rb') as f:
+    data2 = pickle.load(f)
+
+st.text(data2[0])
 
 #データをドライブに入れる。
 #f = drive.CreateFile({'title': 'TEST.TXT'})
