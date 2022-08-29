@@ -16,8 +16,9 @@ name = st.text_input('name')
 field = st.file_uploader('field')
 if field:
     im = Image.open(field)
-    im = np.array(im)
     st.text(type(im))
+    im = np.array(im)
+    st.text(type(im)) #ndnarry型
 
 close = st.file_uploader('close')
 if close:
@@ -27,8 +28,9 @@ if close:
 
 if name and field and close:
     data = [name,im,im2]
+    pil_image_color = Image.fromarray(im2)
     st.text(data[0])
-
+    
 #with open('pickle.data', 'wb') as f:
 #    pickle.dump(data, f)
 
