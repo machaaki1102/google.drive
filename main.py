@@ -37,8 +37,8 @@ if name and field and close:
     #Image.open(tt)
     st.text(data[0])
     
-#with open('pickle.data', 'wb') as f:
-#    pickle.dump(data, f)
+with open('pickle.data', 'wb') as f:
+    pickle.dump(data, f)
 
 
 #データをドライブに入れる。
