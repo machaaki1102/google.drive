@@ -28,8 +28,9 @@ if close:
 
 if name and field and close:
     data = [name,im,im2]
-    pil_image_color = Image.fromarray(im2)
-    st.text(type(pil_image_color))
+    tt = Image.fromarray(im2)
+    st.text(type(tt))
+    Image.open(tt)
     st.text(data[0])
     
 #with open('pickle.data', 'wb') as f:
