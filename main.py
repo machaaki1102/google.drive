@@ -44,12 +44,10 @@ if field:
     st.text(field.name)
     with open('field2.png','wb') as f:
         f.write(field.read())
-    #f = drive.CreateFile({'title':field.name,'mimeType':'image/png'})
-    #f.SetContentFile(img_path)
-    #f.Upload()
-    #with open('field.png','wb') as f:
-    #    f.write(field.read())
-
+    f = drive.CreateFile({'title':field.name,'mimeType':'image/png'})
+    f.SetContentFile('field2.png')
+    f.Upload()
+     
 import glob
 files = glob.glob("/app/google.drive/*")
 for file in files:
