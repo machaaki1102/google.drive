@@ -14,7 +14,7 @@ gauth = GoogleAuth()
 gauth.LocalWebserverAuth()
 drive = GoogleDrive(gauth)
 
-st.text('データ入力フォーム')
+st.markdown('データ入力フォーム')
 
 #ディレクトリの場所を確認。
 #import glob
@@ -24,15 +24,12 @@ st.text('データ入力フォーム')
 #    st.text(file)   
 
 name = st.text_input('name')
-#field = st.file_uploader('field',type = 'png')
-#close = st.file_uploader('close',type = 'png')
-
 field = st.file_uploader('field')
 close = st.file_uploader('close')
+#field = st.file_uploader('field',type = 'png')
+
 #ファイルを一度ドライブの手前のファイルに保存した後にアップロードし、IDでフォルダの場所を指定
-
 button2 = st.button('データをアップコード')
-
 if button2:
 #if field:
     st.markdown(f'{field.name}をアップロードしました。')
@@ -52,7 +49,7 @@ if button2:
     with open(close.name,'wb') as f:
         f.write(close.read())
     f = drive.CreateFile({'title':close.name,
-                        'mimeType':'image/png',
+                        'mimeType':'image/png,imag/jpeg',
                         'parents':[{'id':folder_id}]})
     f.SetContentFile(close.name)
     f.Upload()
