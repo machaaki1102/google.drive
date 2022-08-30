@@ -32,9 +32,7 @@ if close:
     st.image(close)
 #field = st.file_uploader('field',type = 'png')2
 
-
-if close and field and name:
-    button2 = st.button('データをアップコード')
+button2 = st.button('データをアップコード')
 
 if button2:
 #ファイルを一度ドライブの手前のファイルに保存した後にアップロードし、IDでフォルダの場所を指定
