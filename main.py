@@ -14,10 +14,11 @@ gauth = GoogleAuth()
 gauth.LocalWebserverAuth()
 drive = GoogleDrive(gauth)
 
+st.text(os.getcwd())
+
 name = st.text_input('name')
 field = st.file_uploader('field',type = 'png')
 
-st.text(os.getcwd())
 #テキストをGoogleDriveに保存
 #if field:
 #    f = drive.CreateFile({'title':'test.txt'})
