@@ -14,24 +14,15 @@ gauth = GoogleAuth()
 gauth.LocalWebserverAuth()
 drive = GoogleDrive(gauth)
 
-st.text(os.getcwd())
+st.text('データ入力フォーム')
 
 #ディレクトリの場所を確認。
 #import glob
+#st.text(os.getcwd())
 #files = glob.glob("/app/google.drive/*")
 #for file in files:
 #    st.text(file)   
 
-#任意フォルダにデータを入れる。
-button2 = st.button('シート作成')
-if button2:
-#フォルダの場所をIDに指定    
-    folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V'
-#スプレッドシート作成
-#    f =drive.CreateFile({'title':'simple',
-#                        'mimeType':'application/vnd.google-apps.spreadsheet',
-#                        'parents':[{'id':folder_id}]})
-    f.Upload()
 
 name = st.text_input('name')
 field = st.file_uploader('field',type = 'png')
@@ -47,12 +38,12 @@ field = st.file_uploader('field',type = 'png')
 #    #im = Image.open(field)
 #    #im = np.array(im)
 
-#ファイルを一度ドライブの手前のファイルに保存した後にアップロード
+#ファイルを一度ドライブの手前のファイルに保存した後にアップロードし、IDでフォルダの場所を指定
 if field:
     st.markdown(f'{field.name}をアップロードしました。')
     with open(field.name,'wb') as f:
         f.write(field.read())
-    #フォルダの場所をIDに指定
+    #フォルダの場所をIDに指定する
     folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V'    
     f = drive.CreateFile({'title':field.name,
                         'mimeType':'image/png',
@@ -67,13 +58,15 @@ if close:
     st.markdown(f'{close.name}をアップロードしました。')
     with open(close.name,'wb') as f:
         f.write(close.read())
-    f2 = drive.CreateFile({'title':field.name,'mimeType':'image/png'})
+    f2 = drive.CreateFile({'title':field.name,
+                        'mimeType':'image/png'})
     f2.SetContentFile(field.name)
     f2.Upload()
 
 button = st.button('ファルダの作成')
 if button:
-    f_folder = drive.CreateFile({'title':'NEW_Folder','mimeType':'application/vnd.google-apps.folder'})
+    f_folder = drive.CreateFile({'title':'NEW_Folder',
+                                'mimeType':'application/vnd.google-apps.folder'})
     f_folder.Upload()    
 
 #フォルダーの場所
