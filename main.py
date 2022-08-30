@@ -8,13 +8,24 @@ from PIL import Image, ImageFilter
 #数的処理するライブラリ
 import numpy as np
 import pickle
- 
+import os
+
 gauth = GoogleAuth()
 gauth.LocalWebserverAuth()
 drive = GoogleDrive(gauth)
 
 name = st.text_input('name')
 field = st.file_uploader('field')
+
+
+
+IMG_PATH = 'img'
+st.markdown('#画像を保存するデモ')
+if field:
+    st.markdown(f'{field.name}をアップロードしました。')
+    img_path = os.path.join(IMG_path,file.name)
+    with open(img_path,'wb') as f:
+        f.write(file.read())
 
 if field:
     #st.image(field)
@@ -30,6 +41,7 @@ if close:
     #im2 = np.array(im2)
     #st.text(type(im2))
 
+
 if name and field and close:
     data = [name,im,im2] #ndarray でないとリストに入らないわけでない。
     st.image(data[1])
@@ -37,14 +49,19 @@ if name and field and close:
     st.image(data[2])
     #Image.open(tt)
     st.text(data[0])
-    
-with open('pickled.pkl', 'wb') as f:
-    pickle.dump(data, f)
 
-with open('pickled.pkl', 'rb') as f:
-    data2 = pickle.load(f)
+IMG_PATH - 'img'
 
-st.text(data2[0])
+st.markdown('#画像を保存するデモ')
+
+
+#with open('pickled.pkl', 'wb') as f:
+#    pickle.dump(data, f)
+
+#with open('pickled.pkl', 'rb') as f:
+#    data2 = pickle.load(f)
+
+#st.text(data2[0])
 
 #データをドライブに入れる。
 #f = drive.CreateFile({'title': 'TEST.TXT'})
