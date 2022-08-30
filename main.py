@@ -56,11 +56,11 @@ if button2:
     f.clear()
 
 #フォルダ作成
-button = st.button('ファルダの作成')
-if button:
-    f_folder = drive.CreateFile({'title':'NEW_Folder',
-                                'mimeType':'application/vnd.google-apps.folder'})
-    f_folder.Upload()    
+#button = st.button('ファルダの作成')
+#if button:
+#    f_folder = drive.CreateFile({'title':'NEW_Folder',
+#                                'mimeType':'application/vnd.google-apps.folder'})
+#    f_folder.Upload()    
 
 #テキストをGoogleDriveに保存
 #if field:
