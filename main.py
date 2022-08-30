@@ -60,6 +60,13 @@ if button2:
     f.Upload()
     f.clear()
 
+button3 = st.button('ダウンロード')
+if  button3:
+    request = drive.files().get_media(fileID=file['id'])
+    fh = io.FileIO(file['name'],mode='wb')
+    downloader = MediaIoBaseDownload(fh,request)
+
+
 #フォルダ作成
 #button = st.button('ファルダの作成')
 #if button:
