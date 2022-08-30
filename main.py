@@ -15,8 +15,8 @@ gauth.LocalWebserverAuth()
 drive = GoogleDrive(gauth)
 
 st.text(os.getcwd())
-#drive/folders/10Ogv7m81vckhXxmRdleo5xouy6lO6O7V
 
+#ディレクトリの場所を確認。
 #import glob
 #files = glob.glob("/app/google.drive/*")
 #for file in files:
