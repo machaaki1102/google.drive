@@ -43,7 +43,7 @@ if field:
     st.text(os.getcwd())
     st.text(field.name)
     f = drive.CreateFile({'title':field.name,'mimeType':'image/png'})
-    f.SetContentFile(field.name)
+    f.SetContentFile(img_path)
     f.Upload()
     #with open('field.png','wb') as f:
     #    f.write(field.read())
