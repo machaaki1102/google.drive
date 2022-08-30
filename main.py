@@ -31,7 +31,7 @@ st.markdown('#画像を保存するデモ')
 
 import glob
 
-files = glob.glob("./app/imgs/*")
+files = glob.glob("./*")
 for file in files:
     st.text(file)
 
