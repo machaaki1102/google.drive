@@ -35,7 +35,7 @@ if field:
     #st.text(img_path)
     st.text(os.getcwd())
     st.text(field.name)
-    f = dirve.CreateFile({'title':'field.name',
+    f = dirve.CreateFile({'title': field.name,
                          'mimetype':'image/png'})
     f.SetContentFile('field.name')
     f.Upload()
