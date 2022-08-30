@@ -64,7 +64,7 @@ if name and field and close:
     #Image.open(tt)
     st.text(data[0])
 
-IMG_PATH - 'img'
+IMG_PATH = 'img'
 
 st.markdown('#画像を保存するデモ')
 
