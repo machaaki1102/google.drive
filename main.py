@@ -33,7 +33,7 @@ st.text(os.getcwd())
 
 import glob
 
-files = glob.glob("./app/google.drive/*")
+files = glob.glob("./app/*")
 for file in files:
     st.text(file)
 
