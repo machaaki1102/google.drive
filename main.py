@@ -17,37 +17,29 @@ drive = GoogleDrive(gauth)
 name = st.text_input('name')
 field = st.file_uploader('field',type = 'png')
 
-#img_path2 = 'imgs'
-st.markdown('#画像を保存するデモ')
-
 #テキストをGoogleDriveに保存
 #if field:
 #    f = drive.CreateFile({'title':'test.txt'})
-#    #im = Image.open(field)
-#    #im = np.array(im)
 #    f.SetContentString('test')
 #    f.Upload()
 #    st.text('アップロード完了')
 
-import glob
-files = glob.glob("/app/google.drive/*")
-for file in files:
-    st.text(file)
+#データの変換
+#    #im = Image.open(field)
+#    #im = np.array(im)
 
-img_path2 = os.getcwd()
-
+#ファイルを一度ドライブの手前のファイルに保存した後にアップロード
 if field:
     st.markdown(f'{field.name}をアップロードしました。')
-    #img_path = os.path.join(img_path2,field.name)
-    #st.text(img_path)
-    st.text(os.getcwd())
-    st.text(field.name)
-    with open('field2.png','wb') as f:
+    with open(field.name,'wb') as f:
         f.write(field.read())
     f = drive.CreateFile({'title':field.name,'mimeType':'image/png'})
-    f.SetContentFile('field2.png')
+    f.SetContentFile(field.name)
     f.Upload()
-     
+
+st.text(os.getcwd())
+st.text(field.name)
+
 import glob
 files = glob.glob("/app/google.drive/*")
 for file in files:
