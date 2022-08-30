@@ -29,7 +29,7 @@ st.markdown('#画像を保存するデモ')
 #    f.Upload()
 #    st.text('アップロード完了')
 
-st.text(os.getcwd(fiele))
+st.text(os.getcwd(field))
 
 import glob
 
