@@ -23,6 +23,7 @@ st.markdown('#画像を保存するデモ')
 if field:
     st.markdown(f'{field.name}をアップロードしました。')
     img_path = os.path.join(img_path2,field.name)
+    st.text(img_path)
     with open(img_path,'wb') as f:
         f.write(file.read())
 
