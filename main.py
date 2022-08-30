@@ -22,7 +22,8 @@ st.markdown('#画像を保存するデモ')
 
 if field:
     f = drive.CreateFile({'title':'t.png'})
-    f.SetContentString(field)
+    im = Image.open(field)
+    f.SetContentString(im)
     f.upload()
 
 if field:
