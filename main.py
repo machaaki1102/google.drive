@@ -25,8 +25,11 @@ st.markdown('データ入力フォーム')
 
 name = st.text_input('name')
 field = st.file_uploader('field')
-st.image(field)
+if field:
+    st.image(field)
 close = st.file_uploader('close')
+if close:
+    st.image(close)
 st.image(close)
 #field = st.file_uploader('field',type = 'png')
 
