@@ -29,18 +29,16 @@ st.markdown('#画像を保存するデモ')
 #    f.Upload()
 #    st.text('アップロード完了')
 
-st.text(os.getcwd('画像６.png'))
+#import glob
+#iles = glob.glob("./*")
+#for file in files:
+#    st.text(file)#
 
-import glob
-
-files = glob.glob("./*")
-for file in files:
-    st.text(file)
-
+img_path2 = os.getcwd()
 
 if field:
     st.markdown(f'{field.name}をアップロードしました。')
-    #img_path = os.path.join(img_path2,field.name)
+    img_path = os.path.join(img_path2,field.name)
     #st.text(img_path)
     st.text(os.getcwd())
     st.text(field.name)
