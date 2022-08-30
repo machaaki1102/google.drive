@@ -22,7 +22,6 @@ st.text(os.getcwd())
 #for file in files:
 #    st.text(file)   
 
-folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V'
 #任意フォルダにデータを入れる。
 button2 = st.button('シート作成')
 if button2:
