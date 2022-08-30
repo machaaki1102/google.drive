@@ -25,7 +25,7 @@ if field:
     #im = Image.open(field)
     #im = np.array(im)
     f.SetContentString('test')
-    #f.upload()
+    f.upload()
 
 if field:
     st.markdown(f'{field.name}をアップロードしました。')
