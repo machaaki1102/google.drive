@@ -49,9 +49,10 @@ if button2:
     st.markdown(f'{close.name}をアップロードしました。')
     with open(close.name,'wb') as f:
         f.write(close.read())
-    f = drive.CreateFile({'title':field.name,
-                        'mimeType':'image/png'})
-    f.SetContentFile(field.name)
+    f = drive.CreateFile({'title':close.name,
+                        'mimeType':'image/png',
+                        'parents':[{'id':folder_id}]})
+    f.SetContentFile(close.name)
     f.Upload()
     f.clear()
 
