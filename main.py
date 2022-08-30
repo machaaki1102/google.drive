@@ -23,20 +23,9 @@ st.text('データ入力フォーム')
 #for file in files:
 #    st.text(file)   
 
-
 name = st.text_input('name')
 field = st.file_uploader('field',type = 'png')
-
-#テキストをGoogleDriveに保存
-#if field:
-#    f = drive.CreateFile({'title':'test.txt'})
-#    f.SetContentString('test')
-#    f.Upload()
-#    st.text('アップロード完了')
-
-#データの変換
-#    #im = Image.open(field)
-#    #im = np.array(im)
+close = st.file_uploader('close',type = 'png')
 
 #ファイルを一度ドライブの手前のファイルに保存した後にアップロードし、IDでフォルダの場所を指定
 if field:
@@ -52,31 +41,34 @@ if field:
     f.Upload()
     f.clear()
 
-close = st.file_uploader('close',type = 'png')
-
 if close:
     st.markdown(f'{close.name}をアップロードしました。')
     with open(close.name,'wb') as f:
         f.write(close.read())
-    f2 = drive.CreateFile({'title':field.name,
+    f = drive.CreateFile({'title':field.name,
                         'mimeType':'image/png'})
-    f2.SetContentFile(field.name)
-    f2.Upload()
+    f.SetContentFile(field.name)
+    f.Upload()
+    f.clear()
 
+#フォルダ作成
 button = st.button('ファルダの作成')
 if button:
     f_folder = drive.CreateFile({'title':'NEW_Folder',
                                 'mimeType':'application/vnd.google-apps.folder'})
     f_folder.Upload()    
 
-#フォルダーの場所
-#https://drive.google.com/drive/folders/10Ogv7m81vckhXxmRdleo5xouy6lO6O7V
+#テキストをGoogleDriveに保存
+#if field:
+#    f = drive.CreateFile({'title':'test.txt'})
+#    f.SetContentString('test')
+#    f.Upload()
+#    st.text('アップロード完了')
 
-#ディレクトリの確認
-#import glob
-#files = glob.glob("/app/google.drive/*")
-#for file in files:
-#    st.text(file)   
+#データの変換
+#    #im = Image.open(field)
+#    #im = np.array(im)
+
 
 if name and field and close:
     data = [name,im,im2] #ndarray でないとリストに入らないわけでない。
