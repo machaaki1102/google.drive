@@ -17,13 +17,11 @@ drive = GoogleDrive(gauth)
 name = st.text_input('name')
 field = st.file_uploader('field')
 
-
-
-IMG_PATH = 'imgs'
+img_path = 'imgs'
 st.markdown('#画像を保存するデモ')
 if field:
     st.markdown(f'{field.name}をアップロードしました。')
-    img_path = os.path.join(IMG_path,file.name)
+    img_path = os.path.join(img_path,file.name)
     with open(img_path,'wb') as f:
         f.write(file.read())
 
