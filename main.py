@@ -19,7 +19,7 @@ field = st.file_uploader('field')
 
 
 
-IMG_PATH = 'img'
+IMG_PATH = 'imgs'
 st.markdown('#画像を保存するデモ')
 if field:
     st.markdown(f'{field.name}をアップロードしました。')
