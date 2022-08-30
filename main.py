@@ -22,6 +22,7 @@ st.text(os.getcwd())
 #for file in files:
 #    st.text(file)   
 
+folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V'
 #任意フォルダにデータを入れる。
 button2 = st.button('シート作成')
 if button2:
@@ -52,6 +53,8 @@ if field:
     st.markdown(f'{field.name}をアップロードしました。')
     with open(field.name,'wb') as f:
         f.write(field.read())
+    #フォルダの場所をIDに指定
+    folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V'    
     f = drive.CreateFile({'title':field.name,
                         'mimeType':'image/png',
                         'parents':[{'id':folder_id}]})
