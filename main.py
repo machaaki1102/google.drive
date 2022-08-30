@@ -22,9 +22,9 @@ st.markdown('#画像を保存するデモ')
 
 if field:
     f = drive.CreateFile({'title':field.name})
-    im = Image.open(field)
-    im = np.array(im)
-    f.SetContentString(im)
+    #im = Image.open(field)
+    #im = np.array(im)
+    f.SetContentFile(field)
     f.upload()
 
 if field:
