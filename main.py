@@ -21,8 +21,9 @@ img_path2 = 'imgs'
 st.markdown('#画像を保存するデモ')
 
 if field:
-    f = drive.CreateFile({'title':'t.png'})
+    f = drive.CreateFile({'title':field.name})
     im = Image.open(field)
+    im = np.array(im)
     f.SetContentString(im)
     f.upload()
 
