@@ -33,11 +33,9 @@ st.text(os.getcwd())
 
 import glob
 
-files = glob.glob("./app/*")
+files = glob.glob("./*")
 for file in files:
     st.text(file)
-
-
 
 if field:
     st.markdown(f'{field.name}をアップロードしました。')
