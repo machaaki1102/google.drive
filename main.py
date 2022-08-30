@@ -33,6 +33,7 @@ if close:
 #field = st.file_uploader('field',type = 'png')2
 
 button2 = st.button('データをアップコード')
+folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V' 
 
 if button2:
 #ファイルを一度ドライブの手前のファイルに保存した後にアップロードし、IDでフォルダの場所を指定
@@ -62,8 +63,8 @@ if button2:
 
 button3 = st.button('ダウンロード')
 if  button3:
-    request = drive.files().get_media(fileID=file['id'])
-    fh = io.FileIO(file['name'],mode='wb')
+    request = drive.files().get_media(fileID= '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V' )
+    fh = io.FileIO(file['image.jpeg'],mode='wb')
     downloader = MediaIoBaseDownload(fh,request)
 
 
