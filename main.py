@@ -25,10 +25,12 @@ st.text(os.getcwd())
 #任意フォルダにデータを入れる。
 button2 = st.button('シート作成')
 if button2:
+#フォルダの場所をIDに指定    
     folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V'
-    f =drive.CreateFile({'title':'simple',
-                        'mimeType':'application/vnd.google-apps.spreadsheet',
-                        'parents':[{'id':folder_id}]})
+#スプレッドシート作成
+#    f =drive.CreateFile({'title':'simple',
+#                        'mimeType':'application/vnd.google-apps.spreadsheet',
+#                        'parents':[{'id':folder_id}]})
     f.Upload()
 
 name = st.text_input('name')
@@ -50,9 +52,12 @@ if field:
     st.markdown(f'{field.name}をアップロードしました。')
     with open(field.name,'wb') as f:
         f.write(field.read())
-    f = drive.CreateFile({'title':field.name,'mimeType':'image/png'})
+    f = drive.CreateFile({'title':field.name,
+                        'mimeType':'image/png',
+                        'parents':[{'id':folder_id}]})
     f.SetContentFile(field.name)
     f.Upload()
+    f.clear()
 
 close = st.file_uploader('close',type = 'png')
 
