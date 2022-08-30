@@ -25,8 +25,8 @@ if field:
     img_path = os.path.join(img_path2,field.name)
     st.text(img_path)
     st.text(os.getcwd())
-    with open('aa.png','wb') as f:
-        f.write(file.read())
+    with open('field.png','wb') as f:
+        f.write(field.read())
 
 if field:
     #st.image(field)
