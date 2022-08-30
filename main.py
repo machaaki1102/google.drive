@@ -30,7 +30,7 @@ st.markdown('#画像を保存するデモ')
 #    st.text('アップロード完了')
 
 import glob
-files = glob.glob("/app/google.drive/*")
+files = glob.glob("/app/google.drive/imgs/*")
 for file in files:
     st.text(file)
 
