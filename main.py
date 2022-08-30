@@ -25,7 +25,9 @@ st.markdown('データ入力フォーム')
 
 name = st.text_input('name')
 field = st.file_uploader('field')
+st.image(field)
 close = st.file_uploader('close')
+st.image(close)
 #field = st.file_uploader('field',type = 'png')
 
 #ファイルを一度ドライブの手前のファイルに保存した後にアップロードし、IDでフォルダの場所を指定
