@@ -29,13 +29,14 @@ st.markdown('#画像を保存するデモ')
 #    f.Upload()
 #    st.text('アップロード完了')
 
-st.text(os.getcwd())
+st.text(os.getcwd(fiele))
 
 import glob
 
 files = glob.glob("./*")
 for file in files:
     st.text(file)
+
 
 if field:
     st.markdown(f'{field.name}をアップロードしました。')
