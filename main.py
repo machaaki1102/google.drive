@@ -36,6 +36,12 @@ if field:
     f = drive.CreateFile({'title':field.name,'mimeType':'image/png'})
     f.SetContentFile(field.name)
     f.Upload()
+    
+button = st.button('ファルダの作成')
+if button:
+    f2 = drive.CreateFile({'title':'NEW_Folder','mimeType':'application/vnd.google-apps.folder'})
+
+
 
 #ディレクトリの確認
 #import glob
