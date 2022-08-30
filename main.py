@@ -51,7 +51,7 @@ if close:
 button = st.button('ファルダの作成')
 if button:
     f_folder = drive.CreateFile({'title':'NEW_Folder','mimeType':'application/vnd.google-apps.folder'})
-    
+    f_folder.Upload()    
 
 #ディレクトリの確認
 #import glob
