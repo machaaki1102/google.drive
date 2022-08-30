@@ -37,30 +37,11 @@ if field:
     f.SetContentFile(field.name)
     f.Upload()
 
-st.text(os.getcwd())
-st.text(field.name)
-
-import glob
-files = glob.glob("/app/google.drive/*")
-for file in files:
-    st.text(file)
-    
-
-
-if field:
-    #st.image(field)
-    #st.text(type(field)) #
-    im = Image.open(field)
-    st.text(type(im)) #PIL image
-    #im = np.array(im)
-    #st.text(type(im)) #ndnarry型
-
-close = st.file_uploader('close')
-if close:
-    im2 = Image.open(close)
-    #im2 = np.array(im2)
-    #st.text(type(im2))
-
+#ディレクトリの確認
+#import glob
+#files = glob.glob("/app/google.drive/*")
+#for file in files:
+#    st.text(file)   
 
 if name and field and close:
     data = [name,im,im2] #ndarray でないとリストに入らないわけでない。
@@ -70,20 +51,5 @@ if name and field and close:
     #Image.open(tt)
     st.text(data[0])
 
-IMG_PATH = 'img'
-
-st.markdown('#画像を保存するデモ')
-
-
-#with open('pickled.pkl', 'wb') as f:
-#    pickle.dump(data, f)
-
-#with open('pickled.pkl', 'rb') as f:
-#    data2 = pickle.load(f)
 
 #st.text(data2[0])
-
-#データをドライブに入れる。
-#f = drive.CreateFile({'title': 'TEST.TXT'})
-#f.SetContentString('Hello')
-#f.Upload()
