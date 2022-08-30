@@ -15,26 +15,32 @@ gauth.LocalWebserverAuth()
 drive = GoogleDrive(gauth)
 
 name = st.text_input('name')
-field = st.file_uploader('field')
+field = st.file_uploader('field',type = 'png')
 
-img_path2 = 'imgs'
+#img_path2 = 'imgs'
 st.markdown('#画像を保存するデモ')
 
-if field:
-    f = drive.CreateFile({'title':'test.txt'})
-    #im = Image.open(field)
-    #im = np.array(im)
-    f.SetContentString('test')
-    f.Upload()
-    st.text('アップロード完了')
+#テキストをGoogleDriveに保存
+#if field:
+#    f = drive.CreateFile({'title':'test.txt'})
+#    #im = Image.open(field)
+#    #im = np.array(im)
+#    f.SetContentString('test')
+#    f.Upload()
+#    st.text('アップロード完了')
 
 if field:
     st.markdown(f'{field.name}をアップロードしました。')
-    img_path = os.path.join(img_path2,field.name)
-    st.text(img_path)
+    #img_path = os.path.join(img_path2,field.name)
+    #st.text(img_path)
     st.text(os.getcwd())
-    with open('field.png','wb') as f:
-        f.write(field.read())
+    st.text(field.name)
+    f = dirve.CreateFile({'title':'field.name',
+                         'mimetype':'image/png'})
+    f.SetContentFile('field.name')
+    f.Upload()
+    #with open('field.png','wb') as f:
+    #    f.write(field.read())
 
 if field:
     #st.image(field)
