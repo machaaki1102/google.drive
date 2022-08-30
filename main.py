@@ -54,7 +54,6 @@ import glob
 files = glob.glob("/app/google.drive/*")
 for file in files:
     st.text(file)
-for file in files:
     
 
 
