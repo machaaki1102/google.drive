@@ -29,6 +29,8 @@ st.markdown('#画像を保存するデモ')
 #    f.Upload()
 #    st.text('アップロード完了')
 
+st.text(os.getcwd())
+
 import glob
 
 files = glob.glob("./*")
