@@ -25,8 +25,8 @@ if field:
     #im = Image.open(field)
     #im = np.array(im)
     f.SetContentString('test')
-    f.upload()
-
+    f.Upload()
+    
 if field:
     st.markdown(f'{field.name}をアップロードしました。')
     img_path = os.path.join(img_path2,field.name)
