@@ -30,7 +30,6 @@ if field:
 close = st.file_uploader('close')
 if close:
     st.image(close)
-st.image(close)
 #field = st.file_uploader('field',type = 'png')
 
 #ファイルを一度ドライブの手前のファイルに保存した後にアップロードし、IDでフォルダの場所を指定
