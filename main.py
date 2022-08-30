@@ -54,6 +54,9 @@ if button:
     f_folder = drive.CreateFile({'title':'NEW_Folder','mimeType':'application/vnd.google-apps.folder'})
     f_folder.Upload()    
 
+#フォルダーの場所
+#https://drive.google.com/drive/folders/10Ogv7m81vckhXxmRdleo5xouy6lO6O7V
+
 #ディレクトリの確認
 #import glob
 #files = glob.glob("/app/google.drive/*")
