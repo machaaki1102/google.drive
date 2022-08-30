@@ -37,7 +37,7 @@ if field:
     st.text(field.name)
     f = dirve.CreateFile({'title': field.name,
                          'mimetype':'image/png'})
-    f.SetContentFile('field.name')
+    f.SetContentFile(field.name)
     f.Upload()
     #with open('field.png','wb') as f:
     #    f.write(field.read())
