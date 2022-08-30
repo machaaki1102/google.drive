@@ -15,6 +15,7 @@ gauth.LocalWebserverAuth()
 drive = GoogleDrive(gauth)
 
 name = st.text_input('name')
+
 field = st.file_uploader('field',type = 'png')
 
 #テキストをGoogleDriveに保存
@@ -36,11 +37,20 @@ if field:
     f = drive.CreateFile({'title':field.name,'mimeType':'image/png'})
     f.SetContentFile(field.name)
     f.Upload()
-    
+
+close = st.file_uploader('close',type = 'png')
+
+if close:
+    st.markdown(f'{close.name}をアップロードしました。')
+    with open(close.name,'wb') as f:
+        f.write(close.read())
+    f = drive.CreateFile({'title':field.name,'mimeType':'image/png'})
+    f.SetContentFile(field.name)
+    f.Upload()
+
 button = st.button('ファルダの作成')
 if button:
     f2 = drive.CreateFile({'title':'NEW_Folder','mimeType':'application/vnd.google-apps.folder'})
-
 
 
 #ディレクトリの確認
