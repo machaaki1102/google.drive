@@ -14,8 +14,16 @@ gauth = GoogleAuth()
 gauth.LocalWebserverAuth()
 drive = GoogleDrive(gauth)
 
-st.text(os.getcwd('./folders/*'))
+st.text(os.getcwd())
 #drive/folders/10Ogv7m81vckhXxmRdleo5xouy6lO6O7V
+
+import glob
+files = glob.glob("/app/google.drive/folders/*")
+for file in files:
+    st.text(file)   
+
+
+
 name = st.text_input('name')
 field = st.file_uploader('field',type = 'png')
 
