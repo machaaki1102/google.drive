@@ -30,9 +30,9 @@ st.markdown('#画像を保存するデモ')
 #    st.text('アップロード完了')
 
 import glob
-iles = glob.glob("os.getcwd()/*")
+files = glob.glob("/app/google.drive/*")
 for file in files:
-    st.text(file)#
+    st.text(file)
 
 img_path2 = os.getcwd()
 
