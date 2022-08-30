@@ -30,7 +30,7 @@ if field:
 close = st.file_uploader('close')
 if close:
     st.image(close)
-#field = st.file_uploader('field',type = 'png')
+#field = st.file_uploader('field',type = 'png')2
 
 
 if close and field and name:
