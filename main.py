@@ -39,7 +39,7 @@ if button2:
     #フォルダの場所をIDに指定する
     folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V'    
     f = drive.CreateFile({'title':field.name,
-                        'mimeType':'image/png',
+                        'mimeType':'image/png,image/jpeg',
                         'parents':[{'id':folder_id}]})
     f.SetContentFile(field.name)
     f.Upload()
