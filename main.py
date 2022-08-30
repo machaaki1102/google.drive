@@ -32,9 +32,12 @@ if close:
     st.image(close)
 #field = st.file_uploader('field',type = 'png')
 
-#ファイルを一度ドライブの手前のファイルに保存した後にアップロードし、IDでフォルダの場所を指定
-button2 = st.button('データをアップコード')
+
+if close and field and name:
+    button2 = st.button('データをアップコード')
+
 if button2:
+#ファイルを一度ドライブの手前のファイルに保存した後にアップロードし、IDでフォルダの場所を指定
 #if field:
     st.markdown(f'{field.name}をアップロードしました。')
     with open(field.name,'wb') as f:
