@@ -29,10 +29,10 @@ st.markdown('#画像を保存するデモ')
 #    f.Upload()
 #    st.text('アップロード完了')
 
-#import glob
-#iles = glob.glob("./*")
-#for file in files:
-#    st.text(file)#
+import glob
+iles = glob.glob("os.getcwd()/*")
+for file in files:
+    st.text(file)#
 
 img_path2 = os.getcwd()
 
