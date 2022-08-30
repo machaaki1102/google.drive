@@ -17,12 +17,19 @@ drive = GoogleDrive(gauth)
 st.text(os.getcwd())
 #drive/folders/10Ogv7m81vckhXxmRdleo5xouy6lO6O7V
 
-import glob
-files = glob.glob("/app/google.drive/*")
-for file in files:
-    st.text(file)   
+#import glob
+#files = glob.glob("/app/google.drive/*")
+#for file in files:
+#    st.text(file)   
 
-
+#任意フォルダにデータを入れる。
+button2 = st.button('シート作成')
+if button2:
+    folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V'
+    f =drive.CreateFile({'title':'simple',
+                        'mimeType':'application/vnd.google-apps.spreadsheet',
+                        'parents':[{'id':folder_id}]})
+    f.Upload()
 
 name = st.text_input('name')
 field = st.file_uploader('field',type = 'png')
