@@ -30,7 +30,7 @@ st.markdown('#画像を保存するデモ')
 #    st.text('アップロード完了')
 
 import glob
-files = glob.glob("/app/google.drive/imgs/*")
+files = glob.glob("/app/google.drive/*")
 for file in files:
     st.text(file)
 
@@ -49,6 +49,14 @@ if field:
     #f.Upload()
     #with open('field.png','wb') as f:
     #    f.write(field.read())
+
+import glob
+files = glob.glob("/app/google.drive/*")
+for file in files:
+    st.text(file)
+for file in files:
+    
+
 
 if field:
     #st.image(field)
