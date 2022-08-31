@@ -14,36 +14,25 @@ gauth = GoogleAuth()
 gauth.LocalWebserverAuth()
 drive = GoogleDrive(gauth)
 #テスト
-st.text(os.getcwd())
-import io
-from googleapiclient.http import MediaIoBaseDownload
 button3 = st.button('ダウンロード')
+st.text(os.getcwd())
 file_list = drive.ListFile().GetList()
-
 st.text(type(file_list))
 # <class 'list'>
-
 st.text(len(file_list))
 # 9
-
 st.text(type(file_list[0]))
 # <class 'pydrive.files.GoogleDriveFile'>
-
 for f in file_list:
-    st.text(f['title'])
-    st.text(f['id'])
+    st.text(f)
+#    st.text(f['id'])
 
 if  button3:
     #クエリでlist内の名前で検索、IDを取得。そのIDを使って画像取得
     file_id = drive.ListFile({'q': 'title = "image2.jpg"'}).GetList()[0]['id']
     f = drive.CreateFile({'id': file_id})
-    #with open('image.jpg','wb') as 
     f.GetContentFile('image2.jpg')
     st.image('image2.jpg')
-#  request = drive.files().get_media(fileId='1MqCvA3bM9HWueE39j4Y0MmRsrYXFXjNO')
-#    fh = io.FileIO(file['image.jpeg'],mode='wb')
-#    downloader = MediaIoBaseDownload(fh,request)
-#    st.image(downloader)
 
 st.markdown('データ入力フォーム')
 
