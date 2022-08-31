@@ -38,7 +38,7 @@ if  button3:
     f = drive.CreateFile({'id': file_id})
     #with open('image.jpg','wb') as 
     f.GetContentFile('image.jpg')
-
+    st.image('image.jpg')
 #  request = drive.files().get_media(fileId='1MqCvA3bM9HWueE39j4Y0MmRsrYXFXjNO')
 #    fh = io.FileIO(file['image.jpeg'],mode='wb')
 #    downloader = MediaIoBaseDownload(fh,request)
