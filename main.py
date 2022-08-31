@@ -14,6 +14,15 @@ gauth = GoogleAuth()
 gauth.LocalWebserverAuth()
 drive = GoogleDrive(gauth)
 
+import io
+from googleapiclient.http import MediaIoBaseDownload
+button3 = st.button('ダウンロード')
+if  button3:
+    request = drive.files().get_media(fileId='10Ogv7m81vckhXxmRdleo5xouy6lO6O7V')
+    fh = io.FileIO(file['image.jpeg'],mode='wb')
+    downloader = MediaIoBaseDownload(fh,request)
+
+
 st.markdown('データ入力フォーム')
 
 #ディレクトリの場所を確認。
@@ -60,12 +69,6 @@ if button2:
     f.SetContentFile(close.name)
     f.Upload()
     f.clear()
-
-button3 = st.button('ダウンロード')
-if  button3:
-    request = drive.files().get_media(fileID= '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V' )
-    fh = io.FileIO(file['image.jpeg'],mode='wb')
-    downloader = MediaIoBaseDownload(fh,request)
 
 
 #フォルダ作成
