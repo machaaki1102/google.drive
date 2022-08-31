@@ -33,7 +33,7 @@ if  button3:
     f = drive.CreateFile({'id': file_id})
     f.GetContentFile(f['title'])
     st.image(f['title'])
-    f.close()
+    f.clear()
 
 st.markdown('データ入力フォーム')
 
