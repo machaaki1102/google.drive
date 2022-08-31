@@ -24,8 +24,8 @@ st.text(len(file_list))
 st.text(type(file_list[0]))
 # <class 'pydrive.files.GoogleDriveFile'>
 for f in file_list:
-    st.text(f)
-#    st.text(f['id'])
+#    st.text(f)
+    st.text(f['id'])
 
 if  button3:
     #クエリでlist内の名前で検索、IDを取得。そのIDを使って画像取得
