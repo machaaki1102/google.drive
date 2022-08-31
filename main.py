@@ -34,10 +34,13 @@ for f in file_list:
     st.text(f['id'])
 
 if  button3:
-    request = drive.files().get_media(fileId='1MqCvA3bM9HWueE39j4Y0MmRsrYXFXjNO')
-    fh = io.FileIO(file['image.jpeg'],mode='wb')
-    downloader = MediaIoBaseDownload(fh,request)
-    st.image(downloader)
+    file_id = drive.ListFile({'q': 'title = "image.jpg"'}).GetList()[0]['id']
+    f = drive.CreateFile({'id': file_id})
+    f.GetContentFile('dst/download_img.jpg')
+#    request = drive.files().get_media(fileId='1MqCvA3bM9HWueE39j4Y0MmRsrYXFXjNO')
+#    fh = io.FileIO(file['image.jpeg'],mode='wb')
+#    downloader = MediaIoBaseDownload(fh,request)
+#    st.image(downloader)
 
 st.markdown('データ入力フォーム')
 
