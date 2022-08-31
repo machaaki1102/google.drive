@@ -32,7 +32,8 @@ if  button3:
     file_id = drive.ListFile({'q': 'title = "image2.jpg"'}).GetList()[0]['id']
     f = drive.CreateFile({'id': file_id})
     f.GetContentFile(f['title'])
-    st.image('image2.jpg')
+    st.image(f['title'])
+    f.close()
 
 st.markdown('データ入力フォーム')
 
