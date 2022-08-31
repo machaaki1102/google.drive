@@ -37,7 +37,7 @@ if  button3:
     request = drive.files().get_media(fileId='1MqCvA3bM9HWueE39j4Y0MmRsrYXFXjNO')
     fh = io.FileIO(file['image.jpeg'],mode='wb')
     downloader = MediaIoBaseDownload(fh,request)
-
+    st.image(downloader)
 
 st.markdown('データ入力フォーム')
 
