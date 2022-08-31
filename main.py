@@ -36,8 +36,9 @@ for f in file_list:
 if  button3:
     file_id = drive.ListFile({'q': 'title = "image.jpg"'}).GetList()[0]['id']
     f = drive.CreateFile({'id': file_id})
-    f.GetContentFile('drive/folders/10Ogv7m81vckhXxmRdleo5xouy6lO6O7V/download_img.jpg')
-#    request = drive.files().get_media(fileId='1MqCvA3bM9HWueE39j4Y0MmRsrYXFXjNO')
+    f.GetContentFile('/app/google.drive/folers/image.jpg')
+    
+#  request = drive.files().get_media(fileId='1MqCvA3bM9HWueE39j4Y0MmRsrYXFXjNO')
 #    fh = io.FileIO(file['image.jpeg'],mode='wb')
 #    downloader = MediaIoBaseDownload(fh,request)
 #    st.image(downloader)
