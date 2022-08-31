@@ -31,7 +31,7 @@ if  button3:
     #クエリでlist内の名前で検索、IDを取得。そのIDを使って画像取得
     file_id = drive.ListFile({'q': 'title = "image2.jpg"'}).GetList()[0]['id']
     f = drive.CreateFile({'id': file_id})
-    f.GetContentFile('image2.jpg')
+    f.GetContentFile(f['title'])
     st.image('image2.jpg')
 
 st.markdown('データ入力フォーム')
