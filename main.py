@@ -13,8 +13,8 @@ import os
 gauth = GoogleAuth()
 gauth.LocalWebserverAuth()
 drive = GoogleDrive(gauth)
-
 #テスト
+st.text(os.getcwd())
 import io
 from googleapiclient.http import MediaIoBaseDownload
 button3 = st.button('ダウンロード')
@@ -36,7 +36,7 @@ for f in file_list:
 if  button3:
     file_id = drive.ListFile({'q': 'title = "image.jpg"'}).GetList()[0]['id']
     f = drive.CreateFile({'id': file_id})
-    f.GetContentFile('dst/download_img.jpg')
+    f.GetContentFile('drive/folders/10Ogv7m81vckhXxmRdleo5xouy6lO6O7V/download_img.jpg')
 #    request = drive.files().get_media(fileId='1MqCvA3bM9HWueE39j4Y0MmRsrYXFXjNO')
 #    fh = io.FileIO(file['image.jpeg'],mode='wb')
 #    downloader = MediaIoBaseDownload(fh,request)
