@@ -30,7 +30,8 @@ st.text(type(file_list[0]))
 # <class 'pydrive.files.GoogleDriveFile'>
 
 for f in file_list:
-    st.text(f['title'], '   \t', f['id'])
+    st.text(f['title'])
+    st.text(f['id'])
 
 if  button3:
     request = drive.files().get_media(fileId='10Ogv7m81vckhXxmRdleo5xouy6lO6O7V')
