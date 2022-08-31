@@ -34,7 +34,7 @@ for f in file_list:
     st.text(f['id'])
 
 if  button3:
-    #クエリでlist内の名前で検索、IDを取得。その
+    #クエリでlist内の名前で検索、IDを取得。そのIDを使って画像取得
     file_id = drive.ListFile({'q': 'title = "image2.jpg"'}).GetList()[0]['id']
     f = drive.CreateFile({'id': file_id})
     #with open('image.jpg','wb') as 
