@@ -35,7 +35,8 @@ button2 = st.button('データをアップコード')
 button3 = st.button('ダウンロード')
 
 folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V' 
-
+download_name = ki + name_id
+st.text(download_name)
 #  Googledriveからデータを取る。
 if  button3:
     #クエリでlist内の名前で検索、IDを取得。そのIDを使って画像取得
