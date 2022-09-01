@@ -77,7 +77,7 @@ if button2:
     f.Upload()
     f.clear()
 
-st.text(file_id_a)
+#st.text(file_id_a)
 #フォルダ作成
 #button = st.button('ファルダの作成')
 #if button:
