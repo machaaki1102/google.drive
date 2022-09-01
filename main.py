@@ -60,8 +60,8 @@ if button2:
     f.SetContentFile(field.name)
     f.Upload()
     #test
-    file_id_a = drive.ListFile('title' == download_name_a).GetList()['id']
-    #fx = file_id_a['title' == download_name_a]['id']
+    file_id_a = drive.ListFile().GetList()
+    fx = file_id_a['title' == download_name_a]['id']
     #GoogleDriveFile({'kind': 'drive#file', 'id': '1we_T4YsIGLLuPiEqVvHLYmDK-Ox3J_1E',
     #  'etag': '"MTY2MjAzOTQ2NTA5Mg"', 
     # 'selfLink': 'https://www.googleapis.com/drive/v2/files/1we_T4YsIGLLuPiEqVvHLYmDK-Ox3J_1E',
