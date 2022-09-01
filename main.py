@@ -35,9 +35,8 @@ button2 = st.button('データをアップコード')
 button3 = st.button('ダウンロード')
 
 folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V' 
-download_name_a = ki + name_id + 'field'
-download_name_b = ki + name_id + 'close'
-st.text(download_name_a)
+download_name_a = ki + name_id + field
+download_name_b = ki + name_id + close
 #  Googledriveからデータを取る。
 if  button3:
     #クエリでlist内の名前で検索、IDを取得。そのIDを使って画像取得
@@ -60,20 +59,23 @@ if button2:
                         'parents':[{'id':folder_id}]})
     f.SetContentFile(field.name)
     f.Upload()
+    #test
+    file_id_a = drive.ListFile({'q': 'title = download_name_a'}).GetList()[0]['id']
+    
     f.clear()
 
 #if close:
     st.markdown(f'{close.name}をアップロードしました。')
     with open(close.name,'wb') as f:
         f.write(close.read())
-    f = drive.CreateFile({'title':close.name,
+    f = drive.CreateFile({'title':download_name_b,
                         'mimeType':'image/png,imag/jpeg',
                         'parents':[{'id':folder_id}]})
     f.SetContentFile(close.name)
     f.Upload()
     f.clear()
 
-
+st.text(file_id_a)
 #フォルダ作成
 #button = st.button('ファルダの作成')
 #if button:
