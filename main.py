@@ -60,7 +60,7 @@ if button2:
     f.SetContentFile(field.name)
     f.Upload()
     #test
-    file_id_a = drive.ListFile({'q': 'title = download_name_a'}).GetList()[0]['id']
+    file_id_a = drive.ListFile({'q':download_name_a}).GetList()[0]['id']
     
     f.clear()
 
