@@ -75,7 +75,7 @@ if button2:
     # 'shared': False, 'explicitlyTrashed': False, 'appDataContents': False, 'headRevisionId': '0B-avGYPoOVdQM2pnb1R0TWFSTi9qbjFnRmV6QW9LZ3dDSHdnPQ', 'imageMediaMetadata': {'width': 916, 'height': 685, 'rotation': 0}, 'spaces': ['drive']})
     #for fx in file_id_a:
         
-    st.text(file_id_a)
+    st.text(fx)
     f.clear()
 
 #if close:
