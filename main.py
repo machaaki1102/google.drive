@@ -60,7 +60,7 @@ if button2:
     f.SetContentFile(field.name)
     f.Upload()
     #test
-    file_id_a = drive.ListFile({'title':download_name_a}).GetList()[0]['id']
+    file_id_a = drive.ListFile({'q': 'title = 721'}).GetList()[0]['id']
     
     f.clear()
 
@@ -75,7 +75,7 @@ if button2:
     f.Upload()
     f.clear()
 
-#st.text(file_id_a)
+st.text(file_id_a)
 #フォルダ作成
 #button = st.button('ファルダの作成')
 #if button:
