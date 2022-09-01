@@ -14,19 +14,23 @@ gauth = GoogleAuth()
 gauth.LocalWebserverAuth()
 drive = GoogleDrive(gauth)
 
-#テスト
+#body
+st.markdown('データ入力フォーム')
+title_t = st.text_input('タイトル')
+ki = st.text_input('期')
+name_id = st.text_input('番号')
+
+field = st.file_uploader('field')
+if field:
+    st.image(field)
+close = st.file_uploader('close')
+if close:
+    st.image(close)
+
+button2 = st.button('データをアップコード')
 button3 = st.button('ダウンロード')
-st.text(os.getcwd())
-file_list = drive.ListFile().GetList()
-st.text(type(file_list))
-# <class 'list'>
-st.text(len(file_list))
-# 9
-st.text(type(file_list[0]))
-# <class 'pydrive.files.GoogleDriveFile'>
-for f in file_list:
-#    st.text(f)
-    st.text(f['id'])
+
+folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V' 
 
 #  Googledriveからデータを取る。
 if  button3:
@@ -37,30 +41,8 @@ if  button3:
     st.image(f['title'])
     f.clear()
 
-#body
-st.markdown('データ入力フォーム')
-
-#ディレクトリの場所を確認。
-#import glob
-#st.text(os.getcwd())
-#files = glob.glob("/app/google.drive/*")
-#for file in files:
-#    st.text(file)   
-
-name = st.text_input('name')
-field = st.file_uploader('field')
-if field:
-    st.image(field)
-close = st.file_uploader('close')
-if close:
-    st.image(close)
-#field = st.file_uploader('field',type = 'png')2
-
-button2 = st.button('データをアップコード')
-folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V' 
-
-if button2:
 #ファイルを一度ドライブの手前のファイルに保存した後にアップロードし、IDでフォルダの場所を指定
+if button2:
 #if field:
     st.markdown(f'{field.name}をアップロードしました。')
     with open(field.name,'wb') as f:
@@ -103,6 +85,27 @@ if button2:
 #データの変換
 #    #im = Image.open(field)
 #    #im = np.array(im)
+
+
+#ディレクトを確認。
+st.text(os.getcwd())
+file_list = drive.ListFile().GetList()
+st.text(type(file_list))
+# <class 'list'>
+st.text(len(file_list))
+# 9
+st.text(type(file_list[0]))
+# <class 'pydrive.files.GoogleDriveFile'>
+for f in file_list:
+#    st.text(f)
+    st.text(f['id'])
+
+#ディレクトリの場所を確認。
+#import glob
+#st.text(os.getcwd())
+#files = glob.glob("/app/google.drive/*")
+#for file in files:
+#    st.text(file)   
 
 
 if name and field and close:
