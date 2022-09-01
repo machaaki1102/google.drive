@@ -60,8 +60,8 @@ if button2:
     f.SetContentFile(field.name)
     f.Upload()
     #test
-    file_id_a = drive.ListFile().GetList()
-    fx = file_id_a['title' == download_name_a]['id']
+    file_id_a = drive.ListFile('title' == download_name_a).GetList()['id']
+    #fx = file_id_a['title' == download_name_a]['id']
     #GoogleDriveFile({'kind': 'drive#file', 'id': '1we_T4YsIGLLuPiEqVvHLYmDK-Ox3J_1E',
     #  'etag': '"MTY2MjAzOTQ2NTA5Mg"', 
     # 'selfLink': 'https://www.googleapis.com/drive/v2/files/1we_T4YsIGLLuPiEqVvHLYmDK-Ox3J_1E',
@@ -75,7 +75,7 @@ if button2:
     # 'shared': False, 'explicitlyTrashed': False, 'appDataContents': False, 'headRevisionId': '0B-avGYPoOVdQM2pnb1R0TWFSTi9qbjFnRmV6QW9LZ3dDSHdnPQ', 'imageMediaMetadata': {'width': 916, 'height': 685, 'rotation': 0}, 'spaces': ['drive']})
     #for fx in file_id_a:
         
-    st.text(fx)
+    st.text(file_id_a)
     f.clear()
 
 #if close:
