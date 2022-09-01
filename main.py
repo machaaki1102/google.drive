@@ -96,17 +96,17 @@ if button2:
 
 
 #ディレクトを確認。
-st.text(os.getcwd())
-file_list = drive.ListFile().GetList()
-st.text(type(file_list))
+#st.text(os.getcwd())
+#file_list = drive.ListFile().GetList()
+#st.text(type(file_list))
 # <class 'list'>
-st.text(len(file_list))
+#st.text(len(file_list))
 # 9
-st.text(type(file_list[0]))
+#st.text(type(file_list[0]))
 # <class 'pydrive.files.GoogleDriveFile'>
-for f in file_list:
+#for f in file_list:
 #    st.text(f)
-    st.text(f['id'])
+#    st.text(f['id'])
 
 #ディレクトリの場所を確認。
 #import glob
@@ -116,12 +116,12 @@ for f in file_list:
 #    st.text(file)   
 
 
-if name and field and close:
-    data = [name,im,im2] #ndarray でないとリストに入らないわけでない。
-    st.image(data[1])
-    #tt = Image.fromarray(data[2])
-    st.image(data[2])
-    #Image.open(tt)
-    st.text(data[0])
+#if name and field and close:
+#    data = [name,im,im2] #ndarray でないとリストに入らないわけでない。
+#    st.image(data[1])
+#    #tt = Image.fromarray(data[2])
+#    st.image(data[2])
+#    #Image.open(tt)
+#    st.text(data[0])
 
 
