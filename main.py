@@ -60,8 +60,8 @@ if button2:
     f.SetContentFile(field.name)
     f.Upload()
     #test
-    file_id_a = drive.ListFile({'q': 'title = 721'}).GetList()[0]['id']
-    
+    file_id_a = drive.ListFile().GetList()[0]['id']
+    st.text(file_id_a)
     f.clear()
 
 #if close:
