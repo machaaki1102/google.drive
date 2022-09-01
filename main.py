@@ -20,9 +20,9 @@ col1, col2, col3 = st.columns(3)
 with col1:
     title_t = st.text_input('タイトル')
 with col2:    
-    ki = st.number_input('期')
+    ki = st.text_input('期')
 with col3:
-    name_id = st.number_input('番号')
+    name_id = st.text_input('番号')
 
 field = st.file_uploader('field')
 if field:
