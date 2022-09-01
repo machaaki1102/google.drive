@@ -61,8 +61,21 @@ if button2:
     f.Upload()
     #test
     file_id_a = drive.ListFile().GetList()
-    for fx in file_id_a:
-        st.text(fx)
+    fx = file_id_a['title' == download_name_a]['id']
+    #GoogleDriveFile({'kind': 'drive#file', 'id': '1we_T4YsIGLLuPiEqVvHLYmDK-Ox3J_1E',
+    #  'etag': '"MTY2MjAzOTQ2NTA5Mg"', 
+    # 'selfLink': 'https://www.googleapis.com/drive/v2/files/1we_T4YsIGLLuPiEqVvHLYmDK-Ox3J_1E',
+    #  'webContentLink': 'https://drive.google.com/uc?id=1we_T4YsIGLLuPiEqVvHLYmDK-Ox3J_1E&export=download',
+    #  'alternateLink': 'https://drive.google.com/file/d/1we_T4YsIGLLuPiEqVvHLYmDK-Ox3J_1E/view?usp=drivesdk', 
+    # 'embedLink': 'https://drive.google.com/file/d/1we_T4YsIGLLuPiEqVvHLYmDK-Ox3J_1E/preview?usp=drivesdk',
+    #  'iconLink': 'https://drive-thirdparty.googleusercontent.com/16/type/image/png',
+    #  'thumbnailLink': 'https://lh6.googleusercontent.com/qIhs69VettYNyXhulhM_
+    # Yq8usWnNZRfsNWEuODQ3KqUCH83GCEMKUHflLc9FfyYSHygWt60kONau4wc=s220', 
+    # 'title': '721field', 'mimeType': 'image/png', 'labels': {'starred': False, 'hidden': False, 'trashed': False, 'restricted': False, 'viewed': True}, 'copyRequiresWriterPermission': False, 'createdDate': '2022-09-01T13:37:45.092Z', 'modifiedDate': '2022-09-01T13:37:45.092Z', 'modifiedByMeDate': '2022-09-01T13:37:45.092Z', 'lastViewedByMeDate': '2022-09-01T13:37:45.092Z', 'markedViewedByMeDate': '1970-01-01T00:00:00.000Z', 'version': '1', 'parents': [{'kind': 'drive#parentReference', 'id': '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V', 'selfLink': 'https://www.googleapis.com/drive/v2/files/1we_T4YsIGLLuPiEqVvHLYmDK-Ox3J_1E/parents/10Ogv7m81vckhXxmRdleo5xouy6lO6O7V', 'parentLink': 'https://www.googleapis.com/drive/v2/files/10Ogv7m81vckhXxmRdleo5xouy6lO6O7V', 'isRoot': False}], 'downloadUrl': 'https://www.googleapis.com/drive/v2/files/1we_T4YsIGLLuPiEqVvHLYmDK-Ox3J_1E?alt=media&source=downloadUrl', 'userPermission': {'kind': 'drive#permission', 'etag': '"9aztTW-6yqRTMueXCemw1VSzTBY"', 'id': 'me', 'selfLink': 'https://www.googleapis.com/drive/v2/files/1we_T4YsIGLLuPiEqVvHLYmDK-Ox3J_1E/permissions/me', 'role': 'owner', 'type': 'user', 'pendingOwner': False}, 'originalFilename': '721field', 'fileExtension': '', 'md5Checksum': 'c05a9fad5398cf0f186a76b6f041a722', 'fileSize': '239867', 'quotaBytesUsed': '239867', 'ownerNames': ['masaaki ono'], 'owners': [{'kind': 'drive#user', 'displayName': 'masaaki ono', 'picture': {'url': 'https://lh3.googleusercontent.com/a-/AFdZucqR4udxISlFdYv_t6iv7onyx1P1JDg5HE3AnZoT=s64'}, 'isAuthenticatedUser': True, 'permissionId': '10411678744855291083', 'emailAddress': 'machaaki1102@gmail.com'}], 'lastModifyingUserName': 'masaaki ono', 'lastModifyingUser': {'kind': 'drive#user', 'displayName': 'masaaki ono', 'picture': {'url': 'https://lh3.googleusercontent.com/a-/AFdZucqR4udxISlFdYv_t6iv7onyx1P1JDg5HE3AnZoT=s64'}, 'isAuthenticatedUser': True, 'permissionId': '10411678744855291083', 'emailAddress': 'machaaki1102@gmail.com'}, 'capabilities': {'canCopy': True, 'canEdit': True}, 'editable': True, 'copyable': True, 'writersCanShare': True, 
+    # 'shared': False, 'explicitlyTrashed': False, 'appDataContents': False, 'headRevisionId': '0B-avGYPoOVdQM2pnb1R0TWFSTi9qbjFnRmV6QW9LZ3dDSHdnPQ', 'imageMediaMetadata': {'width': 916, 'height': 685, 'rotation': 0}, 'spaces': ['drive']})
+    #for fx in file_id_a:
+        
+    st.text(fx)
     f.clear()
 
 #if close:
