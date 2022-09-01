@@ -62,7 +62,8 @@ if button2:
     #test
     file_id_a = drive.ListFile().GetList()
     #[0]['id']
-    st.text(file_id_a)
+    for fx in file_id_a:
+        st.text(fx)
     f.clear()
 
 #if close:
