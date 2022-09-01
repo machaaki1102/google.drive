@@ -13,6 +13,8 @@ import os
 gauth = GoogleAuth()
 gauth.LocalWebserverAuth()
 drive = GoogleDrive(gauth)
+
+
 #テスト
 button3 = st.button('ダウンロード')
 st.text(os.getcwd())
@@ -27,6 +29,7 @@ for f in file_list:
 #    st.text(f)
     st.text(f['id'])
 
+#  Googledriveからデータを取る。
 if  button3:
     #クエリでlist内の名前で検索、IDを取得。そのIDを使って画像取得
     file_id = drive.ListFile({'q': 'title = "image2.jpg"'}).GetList()[0]['id']
@@ -35,6 +38,7 @@ if  button3:
     st.image(f['title'])
     f.clear()
 
+#body
 st.markdown('データ入力フォーム')
 
 #ディレクトリの場所を確認。
