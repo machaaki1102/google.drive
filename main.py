@@ -77,6 +77,7 @@ if button2:
     f.Upload()
     f.clear()
 
+st.text(fx)
 #テスト
 if  button4:
     #クエリでlist内の名前で検索、IDを取得。そのIDを使って画像取得
