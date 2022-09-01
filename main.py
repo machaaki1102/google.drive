@@ -16,9 +16,13 @@ drive = GoogleDrive(gauth)
 
 #body
 st.markdown('データ入力フォーム')
-title_t = st.text_input('タイトル')
-ki = st.text_input('期')
-name_id = st.text_input('番号')
+col1, col2, col3 = st.columns(3)
+with col1:
+    title_t = st.text_input('タイトル')
+with col2:    
+    ki = st.number_input('期')
+with col3:
+    name_id = st.number_input('番号')
 
 field = st.file_uploader('field')
 if field:
