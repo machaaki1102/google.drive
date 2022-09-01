@@ -37,7 +37,7 @@ button3 = st.button('ダウンロード')
 folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V' 
 download_name_a = ki + name_id + 'field'
 download_name_b = ki + name_id + 'close'
-
+st.text(download_name_a)
 #  Googledriveからデータを取る。
 if  button3:
     #クエリでlist内の名前で検索、IDを取得。そのIDを使って画像取得
