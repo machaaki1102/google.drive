@@ -16,12 +16,14 @@ drive = GoogleDrive(gauth)
 
 #body
 st.markdown('データ入力フォーム')
-col1, col2, col3 = st.columns(3)
+col1, col2, col3,col4 = st.columns(4)
 with col1:
+    id_id = st.text_input('id')
+with col2:
     title_t = st.text_input('タイトル')
-with col2:    
+with col3:    
     ki = st.text_input('期')
-with col3:
+with col4:
     name_id = st.text_input('番号')
 
 field = st.file_uploader('field')
@@ -39,6 +41,7 @@ folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V'
 download_name_a = ki + name_id + 'field'
 download_name_b = ki + name_id + 'close'
 #  Googledriveからデータを取る。
+
 if  button3:
     #クエリでlist内の名前で検索、IDを取得。そのIDを使って画像取得
     file_id = drive.ListFile({'q': 'title = "image2.jpg"'}).GetList()[0]['id']
@@ -76,20 +79,10 @@ if button2:
     f.SetContentFile(close.name)
     f.Upload()
     file_id_b = drive.ListFile().GetList()
-    fx = file_id_b['title' == download_name_b]['id']
-    st.text(fx)
+    fb = file_id_b['title' == download_name_b]['id']
+    st.text(fb)
     f.clear()
 
-#st.text(fx)
-#テスト
-if  button4:
-    #クエリでlist内の名前で検索、IDを取得。そのIDを使って画像取得
-    #file_id = drive.ListFile({'q': 'title = "image2.jpg"'}).GetList()[0]['id']
-    f = drive.CreateFile({'id': fx})
-    f.GetContentFile(f['title'])
-    st.image(f['title'])
-    f.clear()
-#st.text(file_id_a)
 #フォルダ作成
 #button = st.button('ファルダの作成')
 #if button:
