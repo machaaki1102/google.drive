@@ -33,16 +33,15 @@ close = st.file_uploader('close')
 if close:
     st.image(close)
 
-button2 = st.button('データをアップコード')
-button3 = st.button('ダウンロード')
-button4 = st.button('ダウンロード2')
+button_upload = st.button('データをアップロード')
+button_download = st.button('ダウンロード')
 
 folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V' 
 download_name_a = ki + name_id + 'field'
 download_name_b = ki + name_id + 'close'
 #  Googledriveからデータを取る。
 
-if  button3:
+if  button_download:
     #クエリでlist内の名前で検索、IDを取得。そのIDを使って画像取得
     file_id = drive.ListFile({'q': 'title = "image2.jpg"'}).GetList()[0]['id']
     f = drive.CreateFile({'id': file_id})
@@ -51,7 +50,7 @@ if  button3:
     f.clear()
 
 #ファイルを一度ドライブの手前のファイルに保存した後にアップロードし、IDでフォルダの場所を指定
-if button2:
+if button_upload:
 #if field:
     st.markdown(f'{field.name}をアップロードしました。')
     with open(field.name,'wb') as f:
