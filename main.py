@@ -9,7 +9,7 @@ from PIL import Image, ImageFilter
 import numpy as np
 import pickle
 import os
-import pandas
+import pandas as pd
 
 gauth = GoogleAuth()
 gauth.LocalWebserverAuth()
