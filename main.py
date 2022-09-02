@@ -93,7 +93,7 @@ csv = st.button('csv')
 if csv:
     clomus = ['id','title','ki','number','long','spad','picture1','picture2']
     #data = np.array([id_id,title_t,ki,name_id,data_long,data_spat,2,1])
-    data = np.array([1,2,3,4,5,7,2,1])
+    data = [1,2,3,4,5,7,2,1]
     df1 = pd.DateFrame(data = data)
     st.DateFrame(df1)
 
