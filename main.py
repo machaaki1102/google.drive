@@ -70,7 +70,9 @@ if button_upload:
     file_id_a = drive.ListFile().GetList()
     fx = file_id_a['title' == download_name_a]['id']
     st.text(fx)
+    st.write(type(fx))
     f.clear()
+    st.text(fx)
 
 #if close:
     st.markdown(f'{close.name}をアップロードしました。')
