@@ -75,9 +75,12 @@ if button2:
                         'parents':[{'id':folder_id}]})
     f.SetContentFile(close.name)
     f.Upload()
+    file_id_b = drive.ListFile().GetList()
+    fx = file_id_b['title' == download_name_b]['id']
+    st.text(fx)
     f.clear()
 
-st.text(fx)
+#st.text(fx)
 #テスト
 if  button4:
     #クエリでlist内の名前で検索、IDを取得。そのIDを使って画像取得
