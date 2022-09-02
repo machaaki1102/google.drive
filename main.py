@@ -87,7 +87,7 @@ if button_upload:
     f.clear()
 
 #csv作成
-csv = st.buttom('csv')
+csv = st.button('csv')
 if csv:
     clomus = ['id','title','ki','number','long','spad','picture1','picture2']
     data = [id_id,title_t,ki,name_id,data_long,data_spat,fx,fb]
