@@ -9,6 +9,7 @@ from PIL import Image, ImageFilter
 import numpy as np
 import pickle
 import os
+import pandas
 
 gauth = GoogleAuth()
 gauth.LocalWebserverAuth()
@@ -33,14 +34,17 @@ close = st.file_uploader('close')
 if close:
     st.image(close)
 
+data_long = st.number_input('long')
+data_spat = st.number_input('spat')
+
 button_upload = st.button('データをアップロード')
 button_download = st.button('ダウンロード')
 
 folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V' 
 download_name_a = ki + name_id + 'field'
 download_name_b = ki + name_id + 'close'
-#  Googledriveからデータを取る。
 
+#  Googledriveからデータを取る。
 if  button_download:
     #クエリでlist内の名前で検索、IDを取得。そのIDを使って画像取得
     file_id = drive.ListFile({'q': 'title = "image2.jpg"'}).GetList()[0]['id']
@@ -81,6 +85,16 @@ if button_upload:
     fb = file_id_b['title' == download_name_b]['id']
     st.text(fb)
     f.clear()
+
+#csv作成
+csv = st.buttom('csv')
+if csv:
+    clomus = ['id','title','ki','number','long','spad','picture1','picture2']
+    data = [id_id,title_t,ki,name_id,data_long,data_spat,fx,fb]
+
+    df1 = pd.DateFrame(data = data,clomus = clomus,)
+    st.DateFrame(df1)
+
 
 #フォルダ作成
 #button = st.button('ファルダの作成')
