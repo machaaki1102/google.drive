@@ -95,7 +95,7 @@ if csv:
     #data = np.array([id_id,title_t,ki,name_id,data_long,data_spat,2,1])
     data = [1,2,3,4,5,7,2,1]
     df1 = pd.DataFrame(data = data)
-    st.DataFrame(df1)
+    st.dataframe(df1)
 
 
 #フォルダ作成
