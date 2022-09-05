@@ -97,7 +97,7 @@ if button_upload:
     #データフレームからCSVに変えて、ファイルをREAD出来るのか？検討中
     with open('df_csv','wb') as f:
         #f = csv.reader(f)
-        f.write(df1.to_csv('df_csv').read())
+        f.write(df1.to_csv('df_csv'))
     f = drive.CreateFile({'title':df_csv,
                     'mimeType':'text/csv',
                     'parents':[{'id':folder_id}]})
