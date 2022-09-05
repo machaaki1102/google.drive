@@ -94,12 +94,12 @@ if button_upload:
     data = [[id_id,title_t,ki,name_id,data_long,data_spat,fx,fb]]
     df1 = pd.DataFrame(data = data,columns=colmuns)
     
-    with open(buu,'wb') as f:
+    with open('buu','wb') as f:
         f.write(df1.read())
     f = drive.CreateFile({'title':df_csv,
                         'mimeType':'text/csv',
                         'parents':[{'id':folder_id}]})
-    f.SetContentFile(buu)
+    f.SetContentFile('buu')
     f.Upload()
     f.clear
 
