@@ -96,6 +96,12 @@ if button_upload:
     
     with open(df_csv,'wb') as f:
         f.write(df1.read())
+    f = drive.CreateFile({'title':df_csv,
+                        'mimeType':'text/csv',
+                        'parents':[{'id':folder_id}]})
+    f.SetContentFile(df_csv)
+    f.Upload()
+    f.clear
 
 #st.dataframe(df_csv)    
 
@@ -133,11 +139,11 @@ if button_upload:
 #    st.text(f['id'])
 
 #ディレクトリの場所を確認。
-import glob
-st.text(os.getcwd())
-files = glob.glob("/app/google.drive/*")
-for file in files:
-    st.text(file)   
+#import glob
+#st.text(os.getcwd())
+#files = glob.glob("/app/google.drive/*")
+#for file in files:
+#    st.text(file)   
 
 
 #if name and field and close:
