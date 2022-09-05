@@ -28,11 +28,11 @@ with col4:
     name_id = st.text_input('番号')
 
 field = st.file_uploader('field')
-if field:
-    st.image(field)
+#if field:
+#    st.image(field)
 close = st.file_uploader('close')
-if close:
-    st.image(close)
+#if close:
+#    st.image(close)
 
 data_long = st.number_input('long')
 data_spat = st.number_input('spat')
