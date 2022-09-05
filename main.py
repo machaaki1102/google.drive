@@ -44,6 +44,8 @@ folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V'
 download_name_a = ki + name_id + 'field'
 download_name_b = ki + name_id + 'close'
 
+fx = 0
+fb = 0
 #  Googledriveからデータを取る。
 if  button_download:
     #クエリでlist内の名前で検索、IDを取得。そのIDを使って画像取得
