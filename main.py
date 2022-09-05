@@ -97,7 +97,7 @@ if button_upload:
     with open(df_csv,'wb') as f:
         f.write(df1.read())
 
-st.dataframe(df_csv)    
+#st.dataframe(df_csv)    
 
 
 #フォルダ作成
