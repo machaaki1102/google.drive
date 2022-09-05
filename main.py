@@ -94,7 +94,7 @@ if csv:
     colmuns = ['id','title','ki','number','long','spad','picture1','picture2']
     data = [[id_id,title_t,ki,name_id,data_long,data_spat,2,1]]
     #data = [1,2,3,4,5,7,2,1]
-    df1 = pd.DataFrame(data = data,columns=columns)
+    df1 = pd.DataFrame(data = data,columns=colmuns)
     st.dataframe(df1)
 
 
