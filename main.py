@@ -120,17 +120,17 @@ st.dataframe(df_csv)
 
 
 #ディレクトを確認。
-#st.text(os.getcwd())
-#file_list = drive.ListFile().GetList()
+st.text(os.getcwd())
+file_list = drive.ListFile().GetList()
 #st.text(type(file_list))
 # <class 'list'>
 #st.text(len(file_list))
 # 9
 #st.text(type(file_list[0]))
 # <class 'pydrive.files.GoogleDriveFile'>
-#for f in file_list:
-#    st.text(f)
-#    st.text(f['id'])
+for f in file_list:
+    st.text(f)
+    st.text(f['id'])
 
 #ディレクトリの場所を確認。
 #import glob
