@@ -94,7 +94,8 @@ if button_upload:
     data = [[id_id,title_t,ki,name_id,data_long,data_spat,fx,fb]]
     df1 = pd.DataFrame(data = data,columns=colmuns)
     df1.to_csv('df_csv')
-
+    #データフレームからCSVに変えて、ファイルをREAD出来るのか？検討中
+    st.text('df_csv')
     with open('df_csv','wb') as f:
         f.write(df_csv.read())
     f = drive.CreateFile({'title':df_csv,
