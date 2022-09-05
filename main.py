@@ -68,7 +68,7 @@ if button_upload:
                         'parents':[{'id':folder_id}]})
     f.SetContentFile(field.name)
     f.Upload()
-    #test
+
     file_id_a = drive.ListFile().GetList()
     fx = file_id_a['title' == download_name_a]['id']
     st.text(fx)
@@ -93,17 +93,10 @@ if button_upload:
     colmuns = ['id','title','ki','number','long','spad','picture1','picture2']
     data = [[id_id,title_t,ki,name_id,data_long,data_spat,fx,fb]]
     df1 = pd.DataFrame(data = data,columns=colmuns)
-    st.dataframe(df1)
+    with open(df_1,'wb') as f:
+        f.write(df1.read())
 
-st.dataframe(df1)
-#csv作成
-csv = st.button('csv')
-if csv:
-    colmuns = ['id','title','ki','number','long','spad','picture1','picture2']
-    data = [[id_id,title_t,ki,name_id,data_long,data_spat,fx,fb]]
-    #data = [1,2,3,4,5,7,2,1]
-    df1 = pd.DataFrame(data = data,columns=colmuns)
-    st.dataframe(df1)
+st.dataframe(df_1)    
 
 
 #フォルダ作成
