@@ -100,7 +100,7 @@ if button_upload:
     
     with open('df_csv','w') as f:
         writer = csv.writer(f)
-        writer.writerow(df1.to_csv('df_csv'))
+        writer.writerow(df1)
     f = drive.CreateFile({'title':df_csv,
                     'mimeType':'text/csv',
                     'parents':[{'id':folder_id}]})
