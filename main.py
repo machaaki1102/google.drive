@@ -68,7 +68,7 @@ if  button_download:
     f.GetContentFile(f['title'])
     #st.text(type(f))
     #reader = csv.reader(f)
-    st.image(f)
+    st.image(f['title'])
     f.clear()
 
 #ファイルを一度ドライブの手前のファイルに保存した後にアップロードし、IDでフォルダの場所を指定
