@@ -111,8 +111,12 @@ if button_upload:
     
     with open('df_csv','w') as f:
         writer = csv.writer(f)
-        for num in range(1):
-            writer.writerow(df1.iloc[num,:])
+        writer.writerow(df1.iloc[0,:])
+    with open('df_csv','a') as f:
+        writer = csv.writer(f)
+        writer.writerow(df1.iloc[1,:])
+        #for num in range(1):
+        #    writer.writerow(df1.iloc[num,:])
     f = drive.CreateFile({'title':'df.csv',
                     'mimeType':'text/csv',
                     'parents':[{'id':folder_id}]})
