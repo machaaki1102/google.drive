@@ -59,16 +59,15 @@ fb = 0
 #test df.csvからデータを取って画像を表示する。
 if  button_download:
     #クエリでtitle＝ファイル名で検索して、IDを取得する。
-    file_id = drive.ListFile({'q': 'title = "721close"'}).GetList()[0]['id']
-    #file_id = drive.ListFile({'q': 'title = "df.csv"'}).GetList()[0]['id']
+    file_id = drive.ListFile({'q': 'title = "df.csv"'}).GetList()[0]['id']
     #取得したIDでファイル作る。
     st.text(file_id)
     f = drive.CreateFile({'id': file_id})
     #ファイルを読み込み 絶対パスで
     f.GetContentFile(f['title'])
     #st.text(type(f))
-    #reader = csv.reader(f)
-    st.image(f['title'])
+    reader = csv.reader(f['title'])
+    st.write(reader)#byteデータのみ
     f.clear()
 
 #ファイルを一度ドライブの手前のファイルに保存した後にアップロードし、IDでフォルダの場所を指定
