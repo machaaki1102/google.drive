@@ -105,16 +105,20 @@ if button_upload:
     #st.text(fb)
     f.clear()
     
-    colmuns = ['id','title','ki','number','long','spad','picture1','picture2']
+    #colmuns = ['id','title','ki','number','long','spad','picture1','picture2']
+    #data = [[id_id,title_t,ki,name_id,data_long,data_spat,fx,fb]]
+    #df1 = pd.DataFrame(data = data,columns=colmuns)
+    colmuns = [['id','title','ki','number','long','spad','picture1','picture2']]
     data = [[id_id,title_t,ki,name_id,data_long,data_spat,fx,fb]]
-    df1 = pd.DataFrame(data = data,columns=colmuns)
-    
     with open('df_csv','w') as f:
-        writer = csv.writer(f)
-        writer.writerow(df1.iloc[0,:])
-    with open('df_csv','a') as f:
-        writer = csv.writer(f)
-        writer.writerow(df1.iloc[1,:])
+         writer = csv.writer(f)
+         writer.writerow(colmuns)
+         writer.writerow(data)
+    #    writer = csv.writer(f)
+    #    writer.writerow(df1.iloc[0,:])
+    #with open('df_csv','a') as f:
+    #    writer = csv.writer(f)
+    #    writer.writerow(df1.iloc[1,:])
         #for num in range(1):
         #    writer.writerow(df1.iloc[num,:])
     f = drive.CreateFile({'title':'df.csv',
