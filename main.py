@@ -65,7 +65,8 @@ if  button_download:
     f = drive.CreateFile({'id': file_id})
     #ファイルを読み込み 絶対パスで
     f.GetContentFile(f['title'])
-    st.write(f)
+    reader - csv.reader(f)
+    st.write(reader)
     f.clear()
 
 #ファイルを一度ドライブの手前のファイルに保存した後にアップロードし、IDでフォルダの場所を指定
