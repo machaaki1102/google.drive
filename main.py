@@ -48,18 +48,27 @@ download_name_b = ki + name_id + 'close'
 fx = 0
 fb = 0
 #  Googledriveからデータを取る。
+#if  button_download:
+#    #クエリでlist内の名前で検索、IDを取得。そのIDを使って画像取得
+#    file_id = drive.ListFile({'q': 'title = "image2.jpg"'}).GetList()[0]['id']
+#    f = drive.CreateFile({'id': file_id})
+#    f.GetContentFile(f['title'])
+#    st.image(f['title'])
+#    f.clear()
+
+#test df.csvからデータを取って画像を表示する。
+
 if  button_download:
-    #クエリでlist内の名前で検索、IDを取得。そのIDを使って画像取得
-    file_id = drive.ListFile({'q': 'title = "image2.jpg"'}).GetList()[0]['id']
+    file_id = drive.ListFile({'q': 'title = "df.csv"'}).GetList()[0]['id']
     f = drive.CreateFile({'id': file_id})
-    f.GetContentFile(f['title'])
-    st.image(f['title'])
-    f.clear()
+    f.GetContentFile(f)
+    st.write(f)
+    f.clear()    
 
 #ファイルを一度ドライブの手前のファイルに保存した後にアップロードし、IDでフォルダの場所を指定
 if button_upload:
 #if field:
-    st.markdown(f'{field.name}をアップロードしました。')
+    #st.markdown(f'{field.name}をアップロードしました。')
     with open(field.name,'wb') as f:
         f.write(field.read())
     #フォルダの場所をIDに指定する
@@ -72,13 +81,13 @@ if button_upload:
 
     file_id_a = drive.ListFile().GetList()
     fx = file_id_a['title' == download_name_a]['id']
-    st.text(fx)
-    st.write(type(fx))
+    #st.text(fx)
+    #st.write(type(fx))
     f.clear()
     st.text(fx)
 
 #if close:
-    st.markdown(f'{close.name}をアップロードしました。')
+    #st.markdown(f'{close.name}をアップロードしました。')
     with open(close.name,'wb') as f:
         f.write(close.read())
     f = drive.CreateFile({'title':download_name_b,
@@ -88,7 +97,7 @@ if button_upload:
     f.Upload()
     file_id_b = drive.ListFile().GetList()
     fb = file_id_b['title' == download_name_b]['id']
-    st.text(fb)
+    #st.text(fb)
     f.clear()
     
     colmuns = ['id','title','ki','number','long','spad','picture1','picture2']
@@ -104,9 +113,6 @@ if button_upload:
     f.SetContentFile('df_csv')
     f.Upload()
     f.clear
-
-#st.dataframe(df_csv)    
-
 
 #フォルダ作成
 #button = st.button('ファルダの作成')
