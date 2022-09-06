@@ -65,6 +65,7 @@ if  button_download:
     f = drive.CreateFile({'id': file_id})
     #ファイルを読み込み 絶対パスで
     f.GetContentFile(f['title'])
+    st.text(type(f))
     reader = csv.reader(f)
     st.write(reader)
     f.clear()
