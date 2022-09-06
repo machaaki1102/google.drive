@@ -57,7 +57,6 @@ fb = 0
 #    f.clear()
 
 #test df.csvからデータを取って画像を表示する。
-
 if  button_download:
     #クエリでtitle＝ファイル名で検索して、IDを取得する。
     file_id = drive.ListFile({'q': 'title = "df.csv"'}).GetList()[0]['id']
@@ -67,7 +66,7 @@ if  button_download:
     #ファイルを読み込み 絶対パスで
     f.GetContentFile(f['title'])
     st.write(f)
-    f.clear()    
+    f.clear()
 
 #ファイルを一度ドライブの手前のファイルに保存した後にアップロードし、IDでフォルダの場所を指定
 if button_upload:
