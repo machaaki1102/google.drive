@@ -67,6 +67,7 @@ if  button_download:
     f.GetContentFile(f['title'])
     #st.text(type(f))
     #reader = csv.reader(f['title'])
+    #GOOGLEドライブデータをCSVに変換
     st.write(f)#byteデータのみ
     f.clear()
 
