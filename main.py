@@ -65,7 +65,8 @@ if  button_download:
     st.text(file_id)
     f = drive.CreateFile({'id': file_id})
     #ファイルを読み込み
-    #f.GetContentFile(df.csv)
+    
+    f.GetContentFile(f['title'])
     st.write(f)
     #f.clear()    
 
