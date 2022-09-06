@@ -90,17 +90,14 @@ if button_upload:
     fb = file_id_b['title' == download_name_b]['id']
     st.text(fb)
     f.clear()
-    #CSV作成
+    
     colmuns = ['id','title','ki','number','long','spad','picture1','picture2']
     data = [[id_id,title_t,ki,name_id,data_long,data_spat,fx,fb]]
     df1 = pd.DataFrame(data = data,columns=colmuns)
-    #df_1 = df1.to_csv('df_csv')
-    st.write(df1)
-    #データフレームからCSVに変えて、ファイルをREAD出来るのか？検討中
-    
+
     with open('df_csv','w') as f:
         writer = csv.writer(f)
-        writer.writerow(df1)
+        writer.writerows(df1)
     f = drive.CreateFile({'title':'df.csv',
                     'mimeType':'text/csv',
                     'parents':[{'id':folder_id}]})
