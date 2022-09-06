@@ -59,9 +59,12 @@ fb = 0
 #test df.csvからデータを取って画像を表示する。
 
 if  button_download:
+    #クエリでtitle＝ファイル名で検索して、IDを取得する。
     file_id = drive.ListFile({'q': 'title = "df.csv"'}).GetList()[0]['id']
+    #取得したIDでファイル作る。
     f = drive.CreateFile({'id': file_id})
-    f.GetContentFile(f)
+    #ファイルを読み込み
+    f.GetContentFile(df.csv)
     st.write(f)
     f.clear()    
 
