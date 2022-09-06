@@ -63,10 +63,10 @@ if  button_download:
     file_id = drive.ListFile({'q': 'title = "df.csv"'}).GetList()[0]['id']
     #取得したIDでファイル作る。
     st.text(file_id)
-    #f = drive.CreateFile({'id': file_id})
+    f = drive.CreateFile({'id': file_id})
     #ファイルを読み込み
     #f.GetContentFile(df.csv)
-    #st.write(f)
+    st.write(f)
     #f.clear()    
 
 #ファイルを一度ドライブの手前のファイルに保存した後にアップロードし、IDでフォルダの場所を指定
