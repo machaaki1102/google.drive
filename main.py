@@ -66,8 +66,8 @@ if  button_download:
     #ファイルを読み込み 絶対パスで
     f.GetContentFile(f['title'])
     #st.text(type(f))
-    reader = csv.reader(f['title'])
-    st.write(reader)#byteデータのみ
+    #reader = csv.reader(f['title'])
+    st.write(f['title'])#byteデータのみ
     f.clear()
 
 #ファイルを一度ドライブの手前のファイルに保存した後にアップロードし、IDでフォルダの場所を指定
