@@ -104,7 +104,7 @@ if button_upload:
     f = drive.CreateFile({'title':'df.csv',
                     'mimeType':'text/csv',
                     'parents':[{'id':folder_id}]})
-    f.SetContentFile(df_csv)
+    f.SetContentFile('df_csv')
     f.Upload()
     f.clear
 
