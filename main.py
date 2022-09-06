@@ -38,8 +38,8 @@ close = st.file_uploader('close')
 data_long = st.number_input('long')
 data_spat = st.number_input('spat')
 
-button_upload = st.button('データをアップロード')
-button_download = st.button('ダウンロード')
+button_upload = st.button('入力データ保存')
+button_download = st.button('保存データ呼び出し')
 
 folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V' 
 download_name_a = ki + name_id + 'field'
