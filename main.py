@@ -64,8 +64,7 @@ if  button_download:
     #取得したIDでファイル作る。
     st.text(file_id)
     f = drive.CreateFile({'id': file_id})
-    #ファイルを読み込み
-    
+    #ファイルを読み込み 絶対パスで
     f.GetContentFile(f['title'])
     st.dataframe(f)
     f.clear()    
