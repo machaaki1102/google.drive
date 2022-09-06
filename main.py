@@ -95,7 +95,7 @@ if button_upload:
     data = [[id_id,title_t,ki,name_id,data_long,data_spat,fx,fb]]
     df1 = pd.DataFrame(data = data,columns=colmuns)
     #df_1 = df1.to_csv('df_csv')
-    st.write(df1.to_csv('df_csv'))
+    st.write(df1)
     #データフレームからCSVに変えて、ファイルをREAD出来るのか？検討中
     
     with open('df_csv','w') as f:
