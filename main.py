@@ -89,7 +89,7 @@ if button_upload:
     #st.text(fx)
     #st.write(type(fx))
     f.clear()
-    st.text(fx)
+    #st.text(fx)
 
 #if close:
     #st.markdown(f'{close.name}をアップロードしました。')
@@ -108,7 +108,8 @@ if button_upload:
     colmuns = ['id','title','ki','number','long','spad','picture1','picture2']
     data = [[id_id,title_t,ki,name_id,data_long,data_spat,fx,fb]]
     df1 = pd.DataFrame(data = data,columns=colmuns)
-    st.dataframe(df1)
+    df1.to_csv('df_csv')
+    
     with open('df_csv','w') as f:
         writer = csv.writer(f)
         writer.writerows(df1)
