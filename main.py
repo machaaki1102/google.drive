@@ -68,7 +68,7 @@ if  button_download:
     
     f.GetContentFile(f['title'])
     st.write(f)
-    #f.clear()    
+    f.clear()    
 
 #ファイルを一度ドライブの手前のファイルに保存した後にアップロードし、IDでフォルダの場所を指定
 if button_upload:
