@@ -66,7 +66,7 @@ if  button_download:
     f = drive.CreateFile({'id': file_id})
     #ファイルを読み込み 絶対パスで
     f.GetContentFile(f['title'])
-    st.dataframe(f)
+    st.write(f)
     f.clear()    
 
 #ファイルを一度ドライブの手前のファイルに保存した後にアップロードし、IDでフォルダの場所を指定
