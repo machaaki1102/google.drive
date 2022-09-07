@@ -70,6 +70,7 @@ if  button_download:
     #st.text(type(f))
     #reader = csv.reader(f['title'])
     #GOOGLEドライブデータをCSVに変換
+    f = df.to_csv(f)
     st.dataframe(f)#byteデータのみ
     f.clear()
 
