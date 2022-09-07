@@ -47,6 +47,14 @@ download_name_b = ki + name_id + 'close'
 
 fx = 0
 fb = 0
+
+#ディレクトリの場所を確認。
+import glob
+st.text(os.getcwd())
+files = glob.glob("/app/google.drive/*")
+for file in files:
+    st.text(file)   
+
 #  Googledriveからデータを取る。
 if  button_download:
     #クエリでlist内の名前で検索、IDを取得。そのIDを使って画像取得
