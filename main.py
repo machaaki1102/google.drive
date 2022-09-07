@@ -66,6 +66,7 @@ if  button_download:
     #ファイルを読み込み 絶対パスで
     f.GetContentFile('app/google.drive/df.csv')
     st.text(os.path.abspath('df.csv'))
+    st.text(os.getcwd())
     #st.text(type(f))
     #reader = csv.reader(f['title'])
     #GOOGLEドライブデータをCSVに変換
