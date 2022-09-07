@@ -80,7 +80,8 @@ if  button_download:
     #reader = csv.reader(f['title'])
     #GOOGLEドライブデータをCSVに変換
     with open('df.csv','r') as f:
-        st.dataframe(f)
+        df = pd.dataframe(f)
+        st.dataframe(df)
 #    st.dataframe('df.csv')#byteデータのみ
 #    f.clear()
 
