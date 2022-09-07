@@ -82,12 +82,12 @@ if  button_download:
     with open('df.csv','r') as f:
         df = pd.DataFrame(f)
         st.dataframe(df)
-        df_i = df.iloc[0,0].split(',')
-        st.text(df_i)
-        df_a = df.iloc[1,0].split(',')
-        st.text(df_a)
+        list_A = df.iloc[0,0].split(',')
+        list_B= df.iloc[1,0].split(',')
+        #data = [list_A,list_B]
+        df = pd.DataFrame(list_B,cloumns=list_A)
         #df2 = pd.concat([df_i, df_a], axis=0)
-        #st.text(df2)
+        st.dataframe(df)
 
 #    st.dataframe('df.csv')#byteデータのみ
 #    f.clear()
