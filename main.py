@@ -70,7 +70,7 @@ if  button_download:
     #クエリでtitle＝ファイル名で検索して、IDを取得する。
     file_id = drive.ListFile({'q': 'title = "df.csv"'}).GetList()[0]['id']
     #取得したIDでファイル作る。
-    st.text(file_id)
+    #st.text(file_id)
     f = drive.CreateFile({'id': file_id})
     #ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
     f.GetContentFile('df.csv')
