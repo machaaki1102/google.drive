@@ -64,13 +64,13 @@ if  button_download:
     st.text(file_id)
     f = drive.CreateFile({'id': file_id})
     #ファイルを読み込み 絶対パスで
-    #f.GetContentFile('app/google.drive/df.csv')
+    f.GetContentFile('df.csv')
     st.text(os.path.abspath('df.csv'))
     st.text(os.getcwd())
     #st.text(type(f))
     #reader = csv.reader(f['title'])
     #GOOGLEドライブデータをCSVに変換
-    st.write(f)#byteデータのみ
+    st.dataframe(f)#byteデータのみ
     f.clear()
 
 #ファイルを一度ドライブの手前のファイルに保存した後にアップロードし、IDでフォルダの場所を指定
