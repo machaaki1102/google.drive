@@ -85,8 +85,9 @@ if  button_download:
         df_i = df.iloc[0,0].split(',')
         st.text(df_i)
         df_a = df.iloc[1,0].split(',')
-        df2 = pd.concat([df_i, df_a], axis=0)
-        st.text(df2)
+        st.text(df_a)
+        #df2 = pd.concat([df_i, df_a], axis=0)
+        #st.text(df2)
 
 #    st.dataframe('df.csv')#byteデータのみ
 #    f.clear()
