@@ -74,10 +74,11 @@ if  button_download:
     f = drive.CreateFile({'id': file_id})
     #ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
     f.GetContentFile('df.csv')
-    #GOOGLEドライブデータをCSVに変換
+    
+    #GOOGLEドライブ内のdf.csvがうまく取り込めないので、DataFrameに変換して取り込む
     with open('df.csv','r') as f:
         df = pd.DataFrame(f)
-        st.dataframe(df)
+        #t.dataframe(df)
         list_A = df.iloc[0,0].split(',')
         list_B= df.iloc[1,0].split(',')
         data = [list_B]
