@@ -64,7 +64,7 @@ if  button_download:
     st.text(file_id)
     f = drive.CreateFile({'id': file_id})
     #ファイルを読み込み 絶対パスで
-    f.GetContentFile(f['title'])
+    f.GetContentFile('app/google.drive/df.csv')
     st.text(os.path.abspath('df.csv'))
     #st.text(type(f))
     #reader = csv.reader(f['title'])
