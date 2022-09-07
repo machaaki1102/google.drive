@@ -67,6 +67,7 @@ if  button_download:
     f.GetContentFile('df.csv')
     st.text(os.path.abspath('df.csv'))
     st.text(os.getcwd())
+    st.text(type(f))
     #st.text(type(f))
     #reader = csv.reader(f['title'])
     #GOOGLEドライブデータをCSVに変換
