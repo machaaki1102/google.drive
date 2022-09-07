@@ -82,8 +82,7 @@ if  button_download:
     with open('df.csv','r') as f:
         df = pd.DataFrame(f)
         st.dataframe(df)
-        df_i = df.iloc[0,0]
-        #.split(',')
+        df_i = df.iloc[0,0].split(',')
         st.text(df_i)
 #    st.dataframe('df.csv')#byteデータのみ
 #    f.clear()
