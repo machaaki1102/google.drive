@@ -58,7 +58,7 @@ for file in files:
 #  Googledriveからデータを取る。
 if  button_download:
     #クエリでlist内の名前で検索、IDを取得。そのIDを使って画像取得
-    file_id = drive.ListFile({'q': 'title = "image2.jpg"'}).GetList()[0]['id']
+    file_id = drive.ListFile({'q': 'title = "12.jpg"'}).GetList()[0]['id']
     f = drive.CreateFile({'id': file_id})
     f.GetContentFile(f['title'])
     st.image(f['title'])
