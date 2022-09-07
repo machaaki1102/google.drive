@@ -71,8 +71,8 @@ if  button_download:
     #st.text(type(f))
     #reader = csv.reader(f['title'])
     #GOOGLEドライブデータをCSVに変換
-    f = df.to_csv(f)
-    st.dataframe(f)#byteデータのみ
+    
+    st.text(f)#byteデータのみ
     f.clear()
 
 #ファイルを一度ドライブの手前のファイルに保存した後にアップロードし、IDでフォルダの場所を指定
