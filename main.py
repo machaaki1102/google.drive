@@ -81,8 +81,9 @@ if  button_download:
     #GOOGLEドライブデータをCSVに変換
     with open('df.csv','r') as f:
         df = pd.DataFrame(f)
-        df_i = df['0'].split(',')
-        st.text(df_i)
+        st.dataframe(df)
+        #df_i = df.split(',')
+        #st.text(df_i)
 #    st.dataframe('df.csv')#byteデータのみ
 #    f.clear()
 
