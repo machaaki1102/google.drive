@@ -48,32 +48,32 @@ download_name_b = ki + name_id + 'close'
 fx = 0
 fb = 0
 #  Googledriveからデータを取る。
-#if  button_download:
-#    #クエリでlist内の名前で検索、IDを取得。そのIDを使って画像取得
-#    file_id = drive.ListFile({'q': 'title = "image2.jpg"'}).GetList()[0]['id']
-#    f = drive.CreateFile({'id': file_id})
-#    f.GetContentFile(f['title'])
-#    st.image(f['title'])
-#    f.clear()
+if  button_download:
+    #クエリでlist内の名前で検索、IDを取得。そのIDを使って画像取得
+    file_id = drive.ListFile({'q': 'title = "image2.jpg"'}).GetList()[0]['id']
+    f = drive.CreateFile({'id': file_id})
+    f.GetContentFile(f['title'])
+    st.image(f['title'])
+    f.clear()
 
 #test df.csvからデータを取って画像を表示する。
-if  button_download:
-    #クエリでtitle＝ファイル名で検索して、IDを取得する。
-    file_id = drive.ListFile({'q': 'title = "df.csv"'}).GetList()[0]['id']
+#if  button_download:
+#    #クエリでtitle＝ファイル名で検索して、IDを取得する。
+#    file_id = drive.ListFile({'q': 'title = "df.csv"'}).GetList()[0]['id']
     #取得したIDでファイル作る。
-    st.text(file_id)
-    f = drive.CreateFile({'id': file_id})
+#    st.text(file_id)
+#    f = drive.CreateFile({'id': file_id})
     #ファイルを読み込み 絶対パスで
-    f.GetContentFile('df.csv')
-    st.text(os.path.abspath('df.csv'))
-    st.text(os.getcwd())
-    st.text(type(f))
+#    f.GetContentFile('df.csv')
+#    st.text(os.path.abspath('df.csv'))
+#    st.text(os.getcwd())
+#    st.text(type(f))
     #st.text(type(f))
     #reader = csv.reader(f['title'])
     #GOOGLEドライブデータをCSVに変換
     
-    st.dataframe('df.csv')#byteデータのみ
-    f.clear()
+#    st.dataframe('df.csv')#byteデータのみ
+#    f.clear()
 
 #ファイルを一度ドライブの手前のファイルに保存した後にアップロードし、IDでフォルダの場所を指定
 if button_upload:
