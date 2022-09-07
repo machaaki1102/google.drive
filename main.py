@@ -84,8 +84,8 @@ if  button_download:
         st.dataframe(df)
         list_A = df.iloc[0,0].split(',')
         list_B= df.iloc[1,0].split(',')
-        #data = [list_A,list_B]
-        df = pd.DataFrame(list_B,cloumns=list_A)
+        data = [list_A,list_B]
+        df = pd.DataFrame(data)
         #df2 = pd.concat([df_i, df_a], axis=0)
         st.dataframe(df)
 
