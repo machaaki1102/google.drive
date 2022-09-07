@@ -82,7 +82,7 @@ if  button_download:
     with open('df.csv','r') as f:
         df = pd.DataFrame(f)
         df_i = df.iloc[0,:]
-        st.dataframe(df_i[0])
+        st.text(df_i)
 #    st.dataframe('df.csv')#byteデータのみ
 #    f.clear()
 
