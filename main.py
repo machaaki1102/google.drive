@@ -60,6 +60,7 @@ fb = 0
     #クエリでlist内の名前で検索、IDを取得。そのIDを使って画像取得
 #    file_id = drive.ListFile({'q': 'title = "12.jpg"'}).GetList()[0]['id']
 #    f = drive.CreateFile({'id': file_id})
+
 #    f.GetContentFile(f['title'])
 #    st.image(f['title'])
 #    f.clear()
@@ -71,13 +72,8 @@ if  button_download:
     #取得したIDでファイル作る。
     st.text(file_id)
     f = drive.CreateFile({'id': file_id})
-    #ファイルを読み込み 絶対パスで
+    #ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
     f.GetContentFile('df.csv')
-#    st.text(os.path.abspath('df.csv'))
-#    st.text(os.getcwd())
-#    st.text(type(f))
-    #st.text(type(f))
-    #reader = csv.reader(f['title'])
     #GOOGLEドライブデータをCSVに変換
     with open('df.csv','r') as f:
         df = pd.DataFrame(f)
@@ -85,7 +81,7 @@ if  button_download:
         list_A = df.iloc[0,0].split(',')
         list_B= df.iloc[1,0].split(',')
         data = [list_A,list_B]
-        df = pd.DataFrame(data)
+        df = pd.DataFrame(data,columns=list_A)
         #df2 = pd.concat([df_i, df_a], axis=0)
         st.dataframe(df)
 
