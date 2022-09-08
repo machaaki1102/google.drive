@@ -42,8 +42,8 @@ button_upload = st.button('入力データ保存')
 button_download = st.button('保存データ呼び出し')
 
 folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V' 
-download_name_a = ki + name_id + 'field.jpg'
-download_name_b = ki + name_id + 'close.jpg'
+download_name_a = ki + name_id + 'field.jpeg'
+download_name_b = ki + name_id + 'close.jpeg'
 
 fx = 0
 fb = 0
