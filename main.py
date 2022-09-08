@@ -11,7 +11,7 @@ import pickle
 import os
 import pandas as pd
 import csv
-#dd
+#
 gauth = GoogleAuth()
 gauth.LocalWebserverAuth()
 drive = GoogleDrive(gauth)
