@@ -42,8 +42,8 @@ button_upload = st.button('入力データ保存')
 button_download = st.button('保存データ呼び出し')
 
 folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V' 
-download_name_a = ki + name_id + 'field'
-download_name_b = ki + name_id + 'close'
+download_name_a = ki + name_id + 'field.jpg'
+download_name_b = ki + name_id + 'close.jpg'
 
 fx = 0
 fb = 0
@@ -58,14 +58,13 @@ fb = 0
 #  Googledriveからデータを取る。
 #if  button_download:
     #クエリでlist内の名前で検索、IDを取得。そのIDを使って画像取得
-#    file_id = drive.ListFile({'q': 'title = "12.jpg"'}).GetList()[0]['id']
+#    file_id = drive.ListFile({'q': 'title = "image2.jpg"'}).GetList()[0]['id']
 #    f = drive.CreateFile({'id': file_id})
-
 #    f.GetContentFile(f['title'])
 #    st.image(f['title'])
 #    f.clear()
 
-#test df.csvからデータを取って画像を表示する。
+#グーグルドライブにあるdf.csvを取得する。
 if  button_download:
     #クエリでtitle＝ファイル名で検索して、IDを取得する。
     file_id = drive.ListFile({'q': 'title = "df.csv"'}).GetList()[0]['id']
@@ -86,8 +85,7 @@ if  button_download:
         #df2 = pd.concat([df_i, df_a], axis=0)
         st.dataframe(df)
 
-#    st.dataframe('df.csv')#byteデータのみ
-#    f.clear()
+folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V'    
 
 #ファイルを一度ドライブの手前のファイルに保存した後にアップロードし、IDでフォルダの場所を指定
 if button_upload:
@@ -96,7 +94,7 @@ if button_upload:
     with open(field.name,'wb') as f:
         f.write(field.read())
     #フォルダの場所をIDに指定する
-    folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V'    
+    #folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V'    
     f = drive.CreateFile({'title':download_name_a,#field.name
                         'mimeType':'image/png,image/jpeg',
                         'parents':[{'id':folder_id}]})
@@ -124,23 +122,34 @@ if button_upload:
     #st.text(fb)
     f.clear()
     
-    #colmuns = ['id','title','ki','number','long','spad','picture1','picture2']
-    #data = [[id_id,title_t,ki,name_id,data_long,data_spat,fx,fb]]
     #df1 = pd.DataFrame(data = data,columns=colmuns)
     colmuns = ['id','title','ki','number','long','spad','picture1','picture2']
     data = [id_id,title_t,ki,name_id,data_long,data_spat,fx,fb]
     
+    #最初にデータを作る時
     with open('df_csv','w') as f:
          writer = csv.writer(f)
          writer.writerow(colmuns)
          writer.writerow(data)
-  
+    
     f = drive.CreateFile({'title':'df.csv',
                     'mimeType':'text/csv',
                     'parents':[{'id':folder_id}]})
     f.SetContentFile('df_csv')
     f.Upload()
     f.clear
+
+
+    #既存のデータに追加する時
+
+    #クエリでtitle＝ファイル名で検索して、IDを取得する。
+    file_id = drive.ListFile({'q': 'title = "df.csv"'}).GetList()[0]['id']
+    f = drive.CreateFile({'id': file_id})
+    f.GetContentFile('df.csv')
+    with open('df.csv','a') as f:
+         writer = csv.writer(f)
+         writer.writerow(data)
+  
 
 #フォルダ作成
 #button = st.button('ファルダの作成')
