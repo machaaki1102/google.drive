@@ -47,7 +47,7 @@ with open('df.csv','r') as f:
             mylist.append(csv.file)
             st.text(mylist)
     df = pd.DataFrame(mylist,clomuns=clomuns)
-    #st.dataframe(df)
+    st.dataframe(df)
 
 #新規入力画面
 if genre == '新規入力':
