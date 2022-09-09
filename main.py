@@ -39,13 +39,13 @@ with open('df.csv','r') as f:
     mylist = []
     for csv.file in csv.files:
         st.text(csv.file)
-        #if i == 0:
-        #    clomuns = csv.file
-        #    i = i + 1
-        #    st.text(clomuns)
-        #else:
-        #    data = mylist.append(csv.file)
-        #    st.text(data)
+        if i == 0:
+            clomuns = csv.file
+            i = i + 1
+            st.text(clomuns)
+        else:
+            data = mylist.append(csv.file)
+            st.text(data)
     #df = pd.DataFrame(data,clomuns=clomuns)
     #st.dataframe(df)
 
