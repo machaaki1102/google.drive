@@ -55,7 +55,7 @@ with open('df.csv','r') as f:
 
 st.dataframe(df)
 st.text(df['id'].unique())
-st.selectbox('id', df['id'].unique)
+st.selectbox('id', (df['id'].unique))
 #新規入力画面
 if genre == '新規入力':
     col1, col2 = st.columns(2)
