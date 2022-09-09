@@ -48,6 +48,39 @@ download_name_b = ki + name_id + 'close.jpeg'
 fx = 0
 fb = 0
 
+#openxlテスト
+#import os
+import openpyxl
+#from PIL import Image 
+#os.chdir('/content/drive/MyDrive')
+#ファイルを作成し、データ（数字）を入力
+excel = st.button('excel')
+if excel:
+    wb = openpyxl.Workbook()
+#ws = wb.active
+#ws['A1'] = 10
+#wb.save('aa.xlsx')
+#print(os.getcwd())
+#画像を入力
+#wc = openpyxl.load_workbook('aa.xlsx')
+    wb = wb.active
+#画像選択 png形式はRGBA　jpeg形式はRGB
+    file_id = drive.ListFile({'q': 'title = "11field"'}).GetList()[0]['id']
+    f = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
+    f.GetContentFile('11field.png')
+
+    img_dir = '11field.png' #width:916,height:685 #width,height = img.size #print(width,height)
+    img = Image.open(img_dir).convert('RGB')
+#リサイズ
+#img = Image.open(img_dir)
+    img_re = img.resize((300,200))
+    img_re.save(img_dir)
+
+    img_to = openpyxl.drawing.image.Image(img_dir)
+    wb.add_image(img_to,'B3')
+    wc.save('aa.xlsx')
+
+
 #ディレクトリの場所を確認。
 #import glob
 #st.text(os.getcwd())
