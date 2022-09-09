@@ -81,7 +81,7 @@ if excel:
     wc.add_image(img_to,'B3')
     wb.save('aa.xlsx')
 
-excel_up = st.buttom('excel_up')
+excel_up = st.button('excel_up')
 if excel_up:
     #フォルダの場所をIDに指定する
     folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V'    
