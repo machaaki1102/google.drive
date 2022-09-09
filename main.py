@@ -115,11 +115,18 @@ if button_upload:
     k1,l1,m1,n1,o1,
     fx,fb]
     
+    #ほんとの最初にデータを作る時
+    #with open('df.csv','w') as f:
+    #     writer = csv.writer(f)
+    #     writer.writerow(colmuns)
+    #     writer.writerow(data)
+    
     #最初にデータを作る時
-    with open('df.csv','w') as f:
+    with open('df.csv','a') as f:
          writer = csv.writer(f)
-         writer.writerow(colmuns)
+    #    writer.writerow(colmuns)
          writer.writerow(data)
+    
     
     f = drive.CreateFile({'title':'df.csv',
                     'mimeType':'text/csv',
@@ -127,6 +134,9 @@ if button_upload:
     f.SetContentFile('df.csv')
     f.Upload()
     f.clear
+
+
+
 
 #button_download = st.button('保存データ呼び出し')
 
