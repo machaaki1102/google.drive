@@ -17,6 +17,17 @@ gauth = GoogleAuth()
 gauth.LocalWebserverAuth()
 drive = GoogleDrive(gauth)
 
+#事前準備
+#ID次の番号取得
+folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V' 
+file_id = drive.ListFile({'q': 'title = "df.csv"'}).GetList()[0]['id']
+f = drive.CreateFile({'id': file_id})
+f.GetContentFile('df.csv')
+
+with open('df.csv','r') as f:
+    df = pd.DataFrame(f)
+    st.dataframe(df)
+     
 #body
 st.title('栽培データ入力フォーム')
 genre = st.radio(
@@ -72,7 +83,7 @@ close = st.file_uploader('近距離写真')
 if close:
     st.image(close)
 
-folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V' 
+
 download_name_a = main_id + 'field'
 download_name_b = main_id + 'close'
 
@@ -116,16 +127,16 @@ if button_upload:
     fx,fb]
     
     #ほんとの最初にデータを作る時
-    with open('df.csv','w') as f:
+    #with open('df.csv','w') as f:
+    #     writer = csv.writer(f)
+    #     writer.writerow(colmuns)
+    #     writer.writerow(data)
+    
+    #データ追加を作る時
+    with open('df.csv','a') as f:
          writer = csv.writer(f)
          writer.writerow(colmuns)
          writer.writerow(data)
-    
-    #データ追加を作る時
-    #with open('df.csv','a') as f:
-    #     writer = csv.writer(f)
-    #    writer.writerow(colmuns)
-    #     writer.writerow(data)
     
     
     f = drive.CreateFile({'title':'df.csv',
