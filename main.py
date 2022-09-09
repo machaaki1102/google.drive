@@ -41,7 +41,7 @@ with open('df.csv','r') as f:
         if i == 0:
             colmuns = csv_file
             i = 1
-            st.text(columns)
+            st.text(colmuns)
         elif i==1:
             mylist = [csv_file]
             st.text(mylist)
