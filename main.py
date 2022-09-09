@@ -248,13 +248,13 @@ if genre == '編集':
     with col5:
         o1 = st.text_input('',value=o2,key=15)
 
-    download_name_a = 'field' + df['id']
-    download_name_b = 'close' + df['id']
-    st.text(download_name_a)
+    download_name_a = 'field' + df['id'][0]
+    download_name_b = 'close' + df['id'][0]
+    #st.text(download_name_a)
 #画像データをクエリをIDかうまくとる方法模索
     file_id = drive.ListFile({'q': 'title contains "field"'}).GetList()[0]['id']
     f  = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
-    #f.GetContentFile(download_name_a)
+    f.GetContentFile(download_name_a)
     st.image(download_name_a)
     
     field = st.file_uploader('全体写真')
