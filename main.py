@@ -251,10 +251,12 @@ if genre == '編集':
     download_name_a = df['id'] + 'field'
     download_name_b = df['id'] + 'close'
 
-    
-    file_id = drive.ListFile({'q': 'title = "dd.png"'}).GetList()[0]['id']
-    f = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
-    f.GetContentFile('dd.png')
+#画像データをクエリをIDかうまくとる方法模索
+    for f in drive.ListFile({'q': 'mimeType = "application/vnd.google-apps.folder"'}).GetList():
+        st.text(f['title'], '   \t', f['id'])
+        #file_id = drive.ListFile({'q': 'title = "dd.png"'}).GetList()[0]['id']
+        #f  = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
+        #f.GetContentFile('dd.png')
         
     
     field = st.file_uploader('全体写真')
