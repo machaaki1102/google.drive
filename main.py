@@ -56,7 +56,7 @@ with open('df.csv','r') as f:
 st.dataframe(df)
 #st.text(df['id'])
 select = st.selectbox('id', df['id'])
-a = df['kusa1'].df['id' == select]
+a = df['kusa1'][df['id'] == select]
 st.text(a)
 #新規入力画面
 if genre == '新規入力':
