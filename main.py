@@ -17,7 +17,10 @@ gauth.LocalWebserverAuth()
 drive = GoogleDrive(gauth)
 
 #body
-st.markdown('データ入力フォーム')
+st.markdown('栽培データ入力フォーム')
+genre = st.radio(
+     "何を行いますか？",
+     ('新規入力', '編集', 'データEXCEL化'))
 col1, col2, col3,col4 = st.columns(4)
 with col1:
     id_id = st.text_input('id')
