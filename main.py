@@ -17,25 +17,25 @@ gauth.LocalWebserverAuth()
 drive = GoogleDrive(gauth)
 
 #body
-st.markdown('栽培データ入力フォーム')
+st.title('栽培データ入力フォーム')
 genre = st.radio(
      "何を行いますか？",
      ('新規入力', '編集', 'データEXCEL化'))
-st.title('サンプル１')
+st.markdown('サンプル１')
 st.text('茎数')
 col1, col2, col3,col4,col5 = st.columns(5)
 with col1:
-    st.number_input(label,value=float,key=1)
+    st.number_input('茎数1',value=float,key=1)
 with col2:
-    st.number_input(label,value=float,key=2)
+    st.number_input('茎数1',value=float,key=2)
 with col3:    
-    st.number_input(label,value=float,key=3)
+    st.number_input('茎数1',value=float,key=3)
 with col4:
-    st.number_input(label,value=float,key=4)
+    st.number_input('茎数1',value=float,key=4)
 with col5:
-    st.number_input(label,value=float,key=5)
+    st.number_input('茎数1',value=float,key=5)
 
-col1, col2, col3,col4,col5 = st.columns(4)
+col1, col2, col3,col4 = st.columns(4)
 with col1:
     id_id = st.text_input('id')
 with col2:
