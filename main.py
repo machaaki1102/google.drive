@@ -82,11 +82,11 @@ if excel:
 
 
 #ディレクトリの場所を確認。
-#import glob
-#st.text(os.getcwd())
-#files = glob.glob("/app/google.drive/*")
-#for file in files:
-#    st.text(file)   
+import glob
+st.text(os.getcwd())
+files = glob.glob("/app/google.drive/*")
+for file in files:
+    st.text(file)   
 
 #  Googledriveからデータを取る。
 #if  button_download:
