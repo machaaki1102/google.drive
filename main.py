@@ -53,23 +53,23 @@ with open('df.csv','r') as f:
             pass
     df = pd.DataFrame(mylist,columns= colmuns)
 
-st.dataframe(df)
-select = st.selectbox('id', df['id'])
-a2 = df['kusa1'][df['id'] == select]
-b2 = df['kusa2'][df['id'] == select]
-c2 = df['kusa3'][df['id'] == select]
-d2 = df['kusa4'][df['id'] == select]
-e2 = df['kusa5'][df['id'] == select]
-f2 = df['kuki1'][df['id'] == select]
-g2 = df['kuki2'][df['id'] == select]
-h2 = df['kuki3'][df['id'] == select]
-i2 = df['kuki4'][df['id'] == select]
-j2 = df['kuki5'][df['id'] == select]
-k2 = df['spad1'][df['id'] == select]
-l2 = df['spad2'][df['id'] == select]
-m2 = df['spad3'][df['id'] == select]
-n2 = df['spad4'][df['id'] == select]
-o2 = df['spad5'][df['id'] == select]
+#st.dataframe(df)
+#select = st.selectbox('id', df['id'])
+#a2 = df['kusa1'][df['id'] == select]
+#b2 = df['kusa2'][df['id'] == select]
+#c2 = df['kusa3'][df['id'] == select]
+#d2 = df['kusa4'][df['id'] == select]
+#e2 = df['kusa5'][df['id'] == select]
+#f2 = df['kuki1'][df['id'] == select]
+#g2 = df['kuki2'][df['id'] == select]
+#h2 = df['kuki3'][df['id'] == select]
+#i2 = df['kuki4'][df['id'] == select]
+#j2 = df['kuki5'][df['id'] == select]
+#k2 = df['spad1'][df['id'] == select]
+#l2 = df['spad2'][df['id'] == select]
+#m2 = df['spad3'][df['id'] == select]
+#n2 = df['spad4'][df['id'] == select]
+#o2 = df['spad5'][df['id'] == select]
 
 
 #新規入力画面
@@ -185,6 +185,136 @@ if genre == '新規入力':
              writer = csv.writer(f)
              writer.writerow(data)
 
+#編集画面
+st.dataframe(df)
+if genre == '編集':
+    st.dataframe(df)
+    col1, col2 = st.columns(2)
+    with col1:
+        select = st.selectbox('id', df['id'])
+        a2 = df['kusa1'][df['id'] == select]
+        b2 = df['kusa2'][df['id'] == select]
+        c2 = df['kusa3'][df['id'] == select]
+        d2 = df['kusa4'][df['id'] == select]
+        e2 = df['kusa5'][df['id'] == select]
+        f2 = df['kuki1'][df['id'] == select]
+        g2 = df['kuki2'][df['id'] == select]
+        h2 = df['kuki3'][df['id'] == select]
+        i2 = df['kuki4'][df['id'] == select]
+        j2 = df['kuki5'][df['id'] == select]
+        k2 = df['spad1'][df['id'] == select]
+        l2 = df['spad2'][df['id'] == select]
+        m2 = df['spad3'][df['id'] == select]
+        n2 = df['spad4'][df['id'] == select]
+        o2 = df['spad5'][df['id'] == select]
+        #main_id = st.text_input('id',value=shoki)
+    with col2:
+        title = st.text_input('タイトル')
+
+    st.markdown('【サンプル１】')
+    col1, col2, col3,col4,col5 = st.columns(5)
+    with col1:
+        a1 = st.text_input('草丈',key=1)#value＝2　デファルト数入れられる
+    with col2:
+        b1 = st.text_input('',key=2)
+    with col3:    
+        c1 = st.text_input('',key=3)
+    with col4:
+        d1 = st.text_input('',key=4)
+    with col5:
+        e1 = st.text_input('',key=5)
+
+    col1, col2, col3,col4,col5 = st.columns(5)
+    with col1:
+        f1 = st.text_input('茎数',key=6)#value＝2　デファルト数入れられる
+    with col2:
+        g1 = st.text_input('',key=7)
+    with col3:    
+        h1 = st.text_input('',key=8)
+    with col4:
+        i1 = st.text_input('',key=9)
+    with col5:
+        j1 = st.text_input('',key=10)
+
+    col1, col2, col3,col4,col5 = st.columns(5)
+    with col1:
+        k1 = st.text_input('SPAD',key=11)#value＝2　デファルト数入れられる
+    with col2:
+        l1 = st.text_input('',key=12)
+    with col3:    
+        m1 = st.text_input('',key=13)
+    with col4:
+        n1 = st.text_input('',key=14)
+    with col5:
+        o1 = st.text_input('',key=15)
+
+    field = st.file_uploader('全体写真')
+    if field:
+        st.image(field)
+    close = st.file_uploader('近距離写真')
+    if close:
+        st.image(close)
+
+
+    download_name_a = main_id + 'field'
+    download_name_b = main_id + 'close'
+
+    button_upload = st.button('データ保存')
+    if button_upload:
+        #st.markdown(f'{field.name}をアップロードしました。')
+        with open(field.name,'wb') as f:
+            f.write(field.read()) 
+        f = drive.CreateFile({'title':download_name_a,#field.name
+                            'mimeType':'image/png,image/jpeg',
+                            'parents':[{'id':folder_id}]})
+        f.SetContentFile(field.name)
+        f.Upload()
+
+        file_id_a = drive.ListFile().GetList()
+        fx = file_id_a['title' == download_name_a]['id']
+        f.clear()
+
+        #st.markdown(f'{close.name}をアップロードしました。')
+        with open(close.name,'wb') as f:
+            f.write(close.read())
+        f = drive.CreateFile({'title':download_name_b,
+                            'mimeType':'image/png,imag/jpeg',
+                            'parents':[{'id':folder_id}]})
+        f.SetContentFile(close.name)
+        f.Upload()
+        file_id_b = drive.ListFile().GetList()
+        fb = file_id_b['title' == download_name_b]['id']
+        f.clear()
+        
+        #df1 = pd.DataFrame(data = data,columns=colmuns)
+        colmuns = ['id','title',
+        'kusa1','kusa2','kusa3','kusa4','kusa5',
+        'kuki1','kuki2','kuki3','kuki4','kuki5',
+        'spad1','spad2','spad3','spad4','spad5',
+        'field','close']
+        data = [main_id,title,
+        a1,b1,c1,d1,e1,
+        f1,g1,h1,i1,j1,
+        k1,l1,m1,n1,o1,
+        fx,fb]
+        
+        #ほんとの最初にデータを作る時
+        #with open('df.csv','w') as f:
+        #    writer = csv.writer(f)
+        #    writer.writerow(colmuns)
+        #    writer.writerow(data)
+
+        #f = drive.CreateFile({'title':'df.csv',
+        #                    'mimeType':'text/csv',
+        #                    'parents':[{'id':folder_id}]})
+        #f.SetContentFile('df.csv')
+        #f.Upload()
+        #f.clear
+
+        #データ追加を作る時
+        with open('df.csv','a') as f:
+             writer = csv.writer(f)
+             writer.writerow(data)
 
 #
 #button_download = st.button('保存データ呼び出し')
