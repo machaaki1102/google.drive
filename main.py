@@ -191,6 +191,7 @@ if genre == '編集':
     col1, col2 = st.columns(2)
     with col1:
         select = st.selectbox('id', df['id'])
+        title_2 = df[('title'][df['id'] == select][0]
         a2 = df['kusa1'][df['id'] == select][0]
         b2 = df['kusa2'][df['id'] == select][0]
         c2 = df['kusa3'][df['id'] == select][0]
@@ -208,7 +209,7 @@ if genre == '編集':
         o2 = df['spad5'][df['id'] == select][0]
         #main_id = st.text_input('id',value=shoki)
     with col2:
-        title = st.text_input('タイトル')
+        title = st.text_input('タイトル',value=title_2)
 
     st.markdown('【サンプル１】')
     col1, col2, col3,col4,col5 = st.columns(5)
