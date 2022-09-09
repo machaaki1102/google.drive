@@ -48,15 +48,15 @@ with col5:
 
 col1, col2, col3,col4,col5 = st.columns(5)
 with col1:
-     k1 = st.text_input('SPAD',key=6)#value＝2　デファルト数入れられる
+     k1 = st.text_input('SPAD',key=11)#value＝2　デファルト数入れられる
 with col2:
-     l1 = st.text_input('',key=7)
+     l1 = st.text_input('',key=12)
 with col3:    
-     m1 = st.text_input('',key=8)
+     m1 = st.text_input('',key=13)
 with col4:
-     n1 = st.text_input('',key=9)
+     n1 = st.text_input('',key=14)
 with col5:
-     o1 = st.text_input('',key=10)
+     o1 = st.text_input('',key=15)
 
 #with col1:
 #    st.number_input('茎数1',value=float,key=1)
