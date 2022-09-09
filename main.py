@@ -34,23 +34,23 @@ genre = st.radio(
 
 #データ取得
 with open('df.csv','r') as f:
-    csv.files = csv.reader(f)
+    csv_files = csv.reader(f)
     i = 0
-    for csv.file in csv.files:
+    for csv_file in csv_files:
         st.text(csv.file)
         if i == 0:
-            clomuns = csv.file
+            colmuns = csv_file
             i = 1
-            st.text(clomuns)
+            st.text(columns)
         elif i==1:
-            mylist = [csv.file]
+            mylist = [csv_file]
             st.text(mylist)
-            st.text(csv.file)
-        elif i >1 and csv.file is not None:
-            mylist.append(csv.file)
+            st.text(csv_file)
+        elif i >1 and csv_file is not None:
+            mylist.append(csv_file)
         else :
             pass
-    df = pd.DataFrame(mylist,cloumns=clomuns)
+    df = pd.DataFrame(mylist,columns= colmuns)
     st.dataframe(df)
 
 st.dataframe(df)
