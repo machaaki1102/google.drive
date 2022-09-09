@@ -81,7 +81,6 @@ if excel:
     wc.add_image(img_to,'B3')
     wb.save('aa.xlsx')
 
-
 #ディレクトリの場所を確認。
 import glob
 st.text(os.getcwd())
