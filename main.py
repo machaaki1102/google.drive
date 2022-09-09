@@ -43,8 +43,12 @@ with open('df.csv','r') as f:
             clomuns = csv.file
             i = 1
             st.text(clomuns)
-        else:
+        elif i==1:
+            mylist = csv.file
+        elif i >1 and csv.file is not None:
             mylist.append(csv.file)
+        else :
+            pass
     df = pd.DataFrame(mylist,clomuns=clomuns)
     st.dataframe(df)
 
