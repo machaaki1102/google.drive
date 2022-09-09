@@ -125,8 +125,8 @@ if genre == '新規入力':
         st.image(close)
 
 
-    download_name_a = main_id + 'field'
-    download_name_b = main_id + 'close'
+    download_name_a = 'field' + main_id
+    download_name_b = 'close' + main_id
 
     button_upload = st.button('データ保存')
     if button_upload:
@@ -248,12 +248,12 @@ if genre == '編集':
     with col5:
         o1 = st.text_input('',value=o2,key=15)
 
-    download_name_a = df['id'] + 'field'
-    download_name_b = df['id'] + 'close'
+    download_name_a = 'field' + df['id']
+    download_name_b = 'close' + df['id']
 
 #画像データをクエリをIDかうまくとる方法模索
-    for f in drive.ListFile({'q': 'title contains "7201"'}).GetList():
-        st.text(f['title'])
+    for f in drive.ListFile({'q': 'title contains "field"'}).GetList():
+        st.text(f['title'],f['id'])
     #file_id = drive.ListFile({'q': 'title = "721field"'}).GetList()[0]['id']
     #f  = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
     #f.GetContentFile('dd.png')
