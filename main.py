@@ -25,15 +25,15 @@ st.markdown('サンプル１')
 
 col1, col2, col3,col4,col5 = st.columns(5)
 with col1:
-     a = st.text_input('茎数',value=0,key=1)
+     a = st.text_input('茎数',key=1)#value＝2　デファルト数入れられる
 with col2:
-     b = st.text_input('',value=0,key=2)
+     b = st.text_input('',key=2)
 with col3:    
-     c = st.text_input('',value=0,key=3)
+     c = st.text_input('',key=3)
 with col4:
-     d = st.text_input('',value=0,key=4)
+     d = st.text_input('',key=4)
 with col5:
-     e = st.text_input('',value=0,key=5)
+     e = st.text_input('',key=5)
 
 
 #with col1:
