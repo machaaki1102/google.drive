@@ -245,7 +245,7 @@ if genre == '編集':
     with col4:
         n1 = st.text_input('',value=n2,key=14)
     with col5:
-        o1 = st.text_input('',value=o2k,ey=15)
+        o1 = st.text_input('',value=o2,ey=15)
 
     field = st.file_uploader('全体写真')
     if field:
