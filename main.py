@@ -133,25 +133,23 @@ if button_upload:
     fx,fb]
     
     #ほんとの最初にデータを作る時
-    #with open('df.csv','w') as f:
-    #     writer = csv.writer(f)
-    #     writer.writerow(colmuns)
-    #     writer.writerow(data)
-    
-    #データ追加を作る時
-    with open('df.csv','a') as f:
+    with open('df.csv','w') as f:
          writer = csv.writer(f)
          writer.writerow(colmuns)
          writer.writerow(data)
-    
-    
+
     f = drive.CreateFile({'title':'df.csv',
-                    'mimeType':'text/csv',
-                    'parents':[{'id':folder_id}]})
+                         'mimeType':'text/csv',
+                         'parents':[{'id':folder_id}]})
     f.SetContentFile('df.csv')
     f.Upload()
     f.clear
 
+    #データ追加を作る時
+    #with open('df.csv','a') as f:
+    #     writer = csv.writer(f)
+    #     writer.writerow(colmuns)
+    #     writer.writerow(data)
 
 
 
