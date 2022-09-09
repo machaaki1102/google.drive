@@ -56,8 +56,13 @@ with open('df.csv','r') as f:
 st.dataframe(df)
 #st.text(df['id'])
 select = st.selectbox('id', df['id'])
-a = df['kusa1'][df['id'] == select]
-st.text(a)
+a2 = df['kusa1'][df['id'] == select]
+b2 = df['kusa2'][df['id'] == select]
+c2 = df['kusa3'][df['id'] == select]
+d2 = df['kusa4'][df['id'] == select]
+e2 = df['kusa5'][df['id'] == select]
+
+st.text(a2)
 #新規入力画面
 if genre == '新規入力':
     col1, col2 = st.columns(2)
