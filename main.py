@@ -253,7 +253,7 @@ if genre == '編集':
 
 #画像データをクエリをIDかうまくとる方法模索
     for f in drive.ListFile({'q': 'title contains "7201"'}).GetList():
-        st.text(f['title'], '   \t', f['id'])
+        st.text(f['title'], f['id'])
     #file_id = drive.ListFile({'q': 'title = "721field"'}).GetList()[0]['id']
     #f  = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
     #f.GetContentFile('dd.png')
