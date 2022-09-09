@@ -43,7 +43,7 @@ with open('df.csv','r') as f:
             i = 1
             st.text(clomuns)
         elif i==1:
-            mylist = csv.file
+            mylist = [csv.file]
             st.text(mylist)
             st.text(csv.file)
         elif i >1 and csv.file is not None:
