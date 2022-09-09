@@ -21,7 +21,7 @@ st.markdown('栽培データ入力フォーム')
 genre = st.radio(
      "何を行いますか？",
      ('新規入力', '編集', 'データEXCEL化'))
-st.titile('サンプル１')
+st.title('サンプル１')
 st.subtitle('茎数')
 col1, col2, col3,col4,col5 = st.columns(5)
 with col1:
