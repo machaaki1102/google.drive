@@ -191,7 +191,7 @@ if genre == '編集':
     col1, col2 = st.columns(2)
     with col1:
         select = st.selectbox('id', df['id'])
-        a2 = df['kusa1'][df['id'] == select].value
+        a2 = df['kusa1'][df['id'] == select][0]
         st.text(a2)
         b2 = df['kusa2'][df['id'] == select]
         c2 = df['kusa3'][df['id'] == select]
