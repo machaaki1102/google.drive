@@ -45,6 +45,7 @@ with open('df.csv','r') as f:
         elif i==1:
             mylist = csv.file
             st.text(mylist)
+            st.text(csv.file)
         elif i >1 and csv.file is not None:
             mylist.append(csv.file)
         else :
