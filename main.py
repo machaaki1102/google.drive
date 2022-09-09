@@ -208,7 +208,7 @@ if genre == '編集':
         n2 = df['spad4'][df['id'] == select][0]
         o2 = df['spad5'][df['id'] == select][0]
         #tolistでリストが作れる。
-        st.text(df[df['id'] == select].tolist())
+        st.text(df.loc[df['id'] == select].tolist())
         #main_id = st.text_input('id',value=shoki)
     with col2:
         title = st.text_input('タイトル',value=title_2)
