@@ -41,7 +41,7 @@ with open('df.csv','r') as f:
         st.text(csv.file)
         if i == 0:
             clomuns = csv.file
-            i = i + 1
+            i = 1
             st.text(clomuns)
         else:
             data = mylist.append(csv.file)
