@@ -256,10 +256,13 @@ if genre == '編集':
     f  = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
     f.GetContentFile(download_name_a)
     st.image(download_name_a)
-    
+    file_id = drive.ListFile({'q': 'title contains "close"'}).GetList()[0]['id']
+    f  = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
+    f.GetContentFile(download_name_b)
     field = st.file_uploader('全体写真')
     if field:
         st.image(field)
+    st.image(download_name_b)
     close = st.file_uploader('近距離写真')
     if close:
         st.image(close)
