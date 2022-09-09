@@ -26,15 +26,15 @@ st.text('茎数')
 
 col1, col2, col3,col4,col5 = st.columns(5)
 with col1:
-     a = st.number_input(value=0)
+     a = st.number_input('',value=0)
 with col2:
-     b = st.number_input(value=0)
+     b = st.number_input('',value=0)
 with col3:    
-     c = st.number_input(value=0)
+     c = st.number_input('',value=0)
 with col4:
-     d = st.number_input(value=0)
+     d = st.number_input('',value=0)
 with col5:
-     e = st.number_input(value=0)
+     e = st.number_input('',value=0)
 
 
 #with col1:
