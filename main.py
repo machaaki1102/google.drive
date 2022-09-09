@@ -65,7 +65,7 @@ if excel:
 #wc = openpyxl.load_workbook('aa.xlsx')
     wb = wb.active
 #画像選択 png形式はRGBA　jpeg形式はRGB
-    file_id = drive.ListFile({'q': 'title = "11field"'}).GetList()[0]['id']
+    file_id = drive.ListFile({'q': 'title = "11field.png"'}).GetList()[0]['id']
     f = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
     f.GetContentFile('11field.png')
 
