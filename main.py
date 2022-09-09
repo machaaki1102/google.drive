@@ -191,8 +191,8 @@ if genre == '編集':
     col1, col2 = st.columns(2)
     with col1:
         select = st.selectbox('id', df['id'])
-        a2 = df['kusa1'][df['id'] == select]
-        st.text(a2.values)
+        a2 = df['kusa1'][df['id'] == select].value
+        st.text(a2)
         b2 = df['kusa2'][df['id'] == select]
         c2 = df['kusa3'][df['id'] == select]
         d2 = df['kusa4'][df['id'] == select]
@@ -214,7 +214,7 @@ if genre == '編集':
     st.markdown('【サンプル１】')
     col1, col2, col3,col4,col5 = st.columns(5)
     with col1:
-        a1 = st.text_input('草丈',value=a2.values,key=1)#value＝2　デファルト数入れられる
+        a1 = st.text_input('草丈',value=a2,key=1)#value＝2　デファルト数入れられる
     with col2:
         b1 = st.text_input('',key=2)
     with col3:    
