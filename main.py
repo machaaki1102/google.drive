@@ -214,7 +214,7 @@ if genre == '編集':
     st.markdown('【サンプル１】')
     col1, col2, col3,col4,col5 = st.columns(5)
     with col1:
-        a1 = st.text_input('草丈',value=a2,key=1)#value＝2　デファルト数入れられる
+        a1 = st.text_input('草丈',value=a2.values,key=1)#value＝2　デファルト数入れられる
     with col2:
         b1 = st.text_input('',key=2)
     with col3:    
