@@ -33,8 +33,10 @@ genre = st.radio(
      ('新規入力', '編集', 'データEXCEL化'))
 
 #データ取得
-
-
+with open('df.csv','r') as f:
+    csv.files = csv.read(f)
+    for csv.file in csv.files:
+        st.text(csv.file)
 
 
 
