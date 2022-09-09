@@ -256,7 +256,7 @@ if genre == '編集':
         st.image(close)
 
 
-    download_name_a = main_id + 'field'
+    download_name_a = main_id + 'field' #main_id
     download_name_b = main_id + 'close'
 
     button_upload = st.button('データ保存')
