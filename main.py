@@ -36,7 +36,6 @@ genre = st.radio(
 with open('df.csv','r') as f:
     csv.files = csv.reader(f)
     i = 0
-    mylist = []
     for csv.file in csv.files:
         st.text(csv.file)
         if i == 0:
@@ -45,6 +44,7 @@ with open('df.csv','r') as f:
             st.text(clomuns)
         elif i==1:
             mylist = csv.file
+            st.text(mylist)
         elif i >1 and csv.file is not None:
             mylist.append(csv.file)
         else :
