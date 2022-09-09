@@ -32,6 +32,13 @@ genre = st.radio(
      "何を行いますか？",
      ('新規入力', '編集', 'データEXCEL化'))
 
+#データ取得
+
+
+
+
+
+#新規入力画面
 if genre == '新規入力':
     col1, col2 = st.columns(2)
     with col1:
@@ -139,14 +146,14 @@ if genre == '新規入力':
         f.Upload()
         f.clear
 
-    #データ追加を作る時
-    #with open('df.csv','a') as f:
-    #     writer = csv.writer(f)
-    #     writer.writerow(colmuns)
-    #     writer.writerow(data)
+        #データ追加を作る時
+        #with open('df.csv','a') as f:
+        #     writer = csv.writer(f)
+        #     writer.writerow(colmuns)
+        #     writer.writerow(data)
 
 
-
+#
 #button_download = st.button('保存データ呼び出し')
 
 #openxlテスト
@@ -155,40 +162,49 @@ if genre == '新規入力':
 #from PIL import Image 
 #os.chdir('/content/drive/MyDrive')
 #ファイルを作成し、データ（数字）を入力
-excel = st.button('excel')
-if excel:
-    wb = openpyxl.Workbook()
-    #wc = openpyxl.load_workbook('aa.xlsx')
-    #ws['A1'] = 10
-    wc = wb.active
 
-    
-#画像選択 png形式はRGBA　jpeg形式はRGB
-    file_id = drive.ListFile({'q': 'title = "dd.png"'}).GetList()[0]['id']
-    f = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
-    f.GetContentFile('dd.png')
-    
-    img_dir = 'dd.png' #width:916,height:685 #width,height = img.size #print(width,height)
-    img = Image.open(img_dir).convert('RGB')
-#リサイズ
-#img = Image.open(img_dir)
-    img_re = img.resize((300,200))
-    img_re.save(img_dir)
+#データ取得
 
-    img_to = openpyxl.drawing.image.Image(img_dir)
-    wc.add_image(img_to,'B3')
-    wb.save('aa.xlsx')
 
-excel_up = st.button('excel_up')
-if excel_up:
-    #フォルダの場所をIDに指定する
-    folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V'    
-    f = drive.CreateFile({'title':'aa.xlsx',#field.name
-                        'mimeType':'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                        'parents':[{'id':folder_id}]})
-    f.SetContentFile('aa.xlsx')
-    f.Upload()
-    f.clear()
+
+
+
+#エクセル化の為
+if genre == 'データEXCEL化':
+    excel = st.button('excel')
+    if excel:
+        wb = openpyxl.Workbook()
+        #wc = openpyxl.load_workbook('aa.xlsx')
+        #ws['A1'] = 10
+        wc = wb.active
+
+        
+    #画像選択 png形式はRGBA　jpeg形式はRGB
+        file_id = drive.ListFile({'q': 'title = "dd.png"'}).GetList()[0]['id']
+        f = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
+        f.GetContentFile('dd.png')
+        
+        img_dir = 'dd.png' #width:916,height:685 #width,height = img.size #print(width,height)
+        img = Image.open(img_dir).convert('RGB')
+    #リサイズ
+    #img = Image.open(img_dir)
+        img_re = img.resize((300,200))
+        img_re.save(img_dir)
+
+        img_to = openpyxl.drawing.image.Image(img_dir)
+        wc.add_image(img_to,'B3')
+        wb.save('aa.xlsx')
+
+    excel_up = st.button('excel_up')
+    if excel_up:
+        #フォルダの場所をIDに指定する
+        folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V'    
+        f = drive.CreateFile({'title':'aa.xlsx',#field.name
+                            'mimeType':'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                            'parents':[{'id':folder_id}]})
+        f.SetContentFile('aa.xlsx')
+        f.Upload()
+        f.clear()
 #ディレクトリの場所を確認。
 import glob
 st.text(os.getcwd())
