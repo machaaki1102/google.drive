@@ -36,7 +36,7 @@ genre = st.radio(
 with open('df.csv','r') as f:
     csv.files = csv.reader(f)
     i = 0
-    mylist = []
+    mylist = [[]]
     for csv.file in csv.files:
         st.text(csv.file)
         if i == 0:
@@ -44,9 +44,9 @@ with open('df.csv','r') as f:
             i = 1
             st.text(clomuns)
         else:
-            data = mylist.append(csv.file)
-            st.text(data)
-    #df = pd.DataFrame(data,clomuns=clomuns)
+            mylist.append(csv.file)
+            st.text(mylist)
+    df = pd.DataFrame(mylist,clomuns=clomuns)
     #st.dataframe(df)
 
 #新規入力画面
