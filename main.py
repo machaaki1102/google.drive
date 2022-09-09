@@ -69,7 +69,7 @@ if excel:
     f = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
     f.GetContentFile('11field.png')
     
-    wb = wb.active
+    wc = wb.active
     img_dir = '11field.png' #width:916,height:685 #width,height = img.size #print(width,height)
     img = Image.open(img_dir).convert('RGB')
 #リサイズ
@@ -78,7 +78,7 @@ if excel:
     img_re.save(img_dir)
 
     img_to = openpyxl.drawing.image.Image(img_dir)
-    wb.add_image(img_to,'B3')
+    wc.add_image(img_to,'B3')
     wb.save('aa.xlsx')
 
 
