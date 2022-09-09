@@ -37,24 +37,24 @@ with open('df.csv','r') as f:
     csv_files = csv.reader(f)
     i = 0
     for csv_file in csv_files:
-        st.text(csv.file)
+        #st.text(csv.file)
         if i == 0:
             colmuns = csv_file
             i = 1
-            st.text(colmuns)
+        #   st.text(colmuns)
         elif i==1:
             mylist = [csv_file]
-            st.text(mylist)
-            st.text(csv_file)
+        #    st.text(mylist)
+        #    st.text(csv_file)
         elif i >1 and csv_file is not None:
             mylist.append(csv_file)
         else :
             pass
     df = pd.DataFrame(mylist,columns= colmuns)
-    st.dataframe(df)
+    #st.dataframe(df)
 
 st.dataframe(df)
-
+st.text(df['id'].unique())
 #新規入力画面
 if genre == '新規入力':
     col1, col2 = st.columns(2)
