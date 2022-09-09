@@ -65,11 +65,11 @@ with col5:
      o1 = st.text_input('',key=15)
 
 field = st.file_uploader('全体写真')
-#if field:
-#    st.image(field)
+if field:
+    st.image(field)
 close = st.file_uploader('近距離写真')
-#if close:
-#    st.image(close)
+if close:
+    st.image(close)
 
 data_long = st.number_input('long')
 data_spat = st.number_input('spat')
