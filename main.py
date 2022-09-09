@@ -262,11 +262,11 @@ if genre == '編集':
     field = st.file_uploader('全体写真')
     if field:
         st.image(field)
-    st.image(download_name_b)
+    st.image(download_name_a)
     close = st.file_uploader('近距離写真')
     if close:
         st.image(close)
-
+    st.image(download_name_b)
 
     #download_name_a = main_id + 'field' #main_id
     #download_name_b = main_id + 'close'
