@@ -207,7 +207,7 @@ if genre == '編集':
         m2 = df['spad3'][df['id'] == select][0]
         n2 = df['spad4'][df['id'] == select][0]
         o2 = df['spad5'][df['id'] == select][0]
-        st.text(df.loc[df['id']].tolist())
+        st.text(df.loc[0].tolist())
         #main_id = st.text_input('id',value=shoki)
     with col2:
         title = st.text_input('タイトル',value=title_2)
