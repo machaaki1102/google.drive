@@ -23,9 +23,20 @@ genre = st.radio(
      ('新規入力', '編集', 'データEXCEL化'))
 st.markdown('サンプル１')
 st.text('茎数')
-a = st.text_input('茎数1')
-a = st.number_input('茎数12',value=2)
-#col1, col2, col3,col4,col5 = st.columns(5)
+
+col1, col2, col3,col4,col5 = st.columns(5)
+with col1:
+     a = st.number_input(value=0)
+with col2:
+     b = st.number_input(value=0)
+with col3:    
+     c = st.number_input(value=0)
+with col4:
+     d = st.number_input(value=0)
+with col5:
+     e = st.number_input(value=0)
+
+
 #with col1:
 #    st.number_input('茎数1',value=float,key=1)
 #with col2:
