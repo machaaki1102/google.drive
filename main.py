@@ -42,7 +42,7 @@ with open('df.csv','r') as f:
             clomuns = csv.file
             i = i + 1
         else:
-            data = mylist.appned(csv.file)
+            data = mylist.append(csv.file)
     df = pd.DataFrame(data,clomuns=clomuns)
     st.dataframe(df)
 
