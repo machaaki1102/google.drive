@@ -185,7 +185,7 @@ if genre == '新規入力':
              writer = csv.writer(f)
              writer.writerow(data)
 
-#編集画面d
+#編集画面
 if genre == '編集':
     st.dataframe(df)
     col1, col2 = st.columns(2)
@@ -248,6 +248,15 @@ if genre == '編集':
     with col5:
         o1 = st.text_input('',value=o2,key=15)
 
+    download_name_a = df['id'] + 'field'
+    download_name_b = df['id'] + 'close'
+
+    
+    file_id = drive.ListFile({'q': 'title = "dd.png"'}).GetList()[0]['id']
+    f = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
+    f.GetContentFile('dd.png')
+        
+    
     field = st.file_uploader('全体写真')
     if field:
         st.image(field)
@@ -256,8 +265,8 @@ if genre == '編集':
         st.image(close)
 
 
-    download_name_a = main_id + 'field' #main_id
-    download_name_b = main_id + 'close'
+    #download_name_a = main_id + 'field' #main_id
+    #download_name_b = main_id + 'close'
 
     button_upload = st.button('データ保存')
     if button_upload:
