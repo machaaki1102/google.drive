@@ -38,15 +38,16 @@ with open('df.csv','r') as f:
     i = 0
     mylist = []
     for csv.file in csv.files:
-        if i == 0:
-            clomuns = csv.file
-            i = i + 1
-            st.text(clomuns)
-        else:
-            data = mylist.append(csv.file)
-            st.text(data)
-    df = pd.DataFrame(data,clomuns=clomuns)
-    st.dataframe(df)
+        st.text(csv.file)
+        #if i == 0:
+        #    clomuns = csv.file
+        #    i = i + 1
+        #    st.text(clomuns)
+        #else:
+        #    data = mylist.append(csv.file)
+        #    st.text(data)
+    #df = pd.DataFrame(data,clomuns=clomuns)
+    #st.dataframe(df)
 
 #新規入力画面
 if genre == '新規入力':
