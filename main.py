@@ -25,7 +25,7 @@ f = drive.CreateFile({'id': file_id})
 f.GetContentFile('df.csv')
 
 #ith open('df.csv','r') as f:
-st.text(sum(1 for line in open('df.csv', 'r')))
+shoki = sum(1 for line in open('df.csv', 'r')) + 7200 
 #    df = pd.DataFrame(f)
 #    list_A = df.iloc[0,0].split(',')
 #    list_B= df.iloc[1,0].split(',')
@@ -41,7 +41,7 @@ genre = st.radio(
      ('新規入力', '編集', 'データEXCEL化'))
 col1, col2 = st.columns(2)
 with col1:
-    main_id = st.text_input('id')
+    main_id = st.text_input('id',value=shoki)
 with col2:
     title = st.text_input('タイトル')
 
