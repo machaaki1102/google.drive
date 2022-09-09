@@ -44,6 +44,7 @@ with open('df.csv','r') as f:
             st.text(clomuns)
         else:
             data = mylist.append(csv.file)
+            st.text(data)
     df = pd.DataFrame(data,clomuns=clomuns)
     st.dataframe(df)
 
