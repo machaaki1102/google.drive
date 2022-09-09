@@ -34,11 +34,9 @@ genre = st.radio(
 
 #データ取得
 with open('df.csv','r') as f:
-    csv.files = csv.read(f)
+    csv.files = csv.reader(f)
     for csv.file in csv.files:
         st.text(csv.file)
-
-
 
 #新規入力画面
 if genre == '新規入力':
