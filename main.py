@@ -76,11 +76,59 @@ folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V'
 download_name_a = main_id + 'field'
 download_name_b = main_id + 'close'
 
-#data_long = st.number_input('long')
-#data_spat = st.number_input('spat')
+button_upload = st.button('データ保存')
+if button_upload:
+    #st.markdown(f'{field.name}をアップロードしました。')
+    with open(field.name,'wb') as f:
+        f.write(field.read()) 
+    f = drive.CreateFile({'title':download_name_a,#field.name
+                        'mimeType':'image/png,image/jpeg',
+                        'parents':[{'id':folder_id}]})
+    f.SetContentFile(field.name)
+    f.Upload()
 
-button_upload = st.button('入力データ保存')
-button_download = st.button('保存データ呼び出し')
+    file_id_a = drive.ListFile().GetList()
+    fx = file_id_a['title' == download_name_a]['id']
+    f.clear()
+
+    #st.markdown(f'{close.name}をアップロードしました。')
+    with open(close.name,'wb') as f:
+        f.write(close.read())
+    f = drive.CreateFile({'title':download_name_b,
+                        'mimeType':'image/png,imag/jpeg',
+                        'parents':[{'id':folder_id}]})
+    f.SetContentFile(close.name)
+    f.Upload()
+    file_id_b = drive.ListFile().GetList()
+    fb = file_id_b['title' == download_name_b]['id']
+    f.clear()
+    
+    #df1 = pd.DataFrame(data = data,columns=colmuns)
+    colmuns = ['id','title',
+    'kusa1','kusa2','kusa3','kusa4','kusa5',
+    'kuki1','kuki2','kuki3','kuki4','kuki5',
+    'spad1','spad2','spad3','spad4','spad5',
+    'field','close']
+    data = [main_id,title,
+    a1,b1,c1,d1,e1,
+    f1,g1,h1,i1,j1,
+    k1,l1,m1,n1,o1,
+    fx,fb]
+    
+    #最初にデータを作る時
+    with open('df.csv','w') as f:
+         writer = csv.writer(f)
+         writer.writerow(colmuns)
+         writer.writerow(data)
+    
+    f = drive.CreateFile({'title':'df.csv',
+                    'mimeType':'text/csv',
+                    'parents':[{'id':folder_id}]})
+    f.SetContentFile('df.csv')
+    f.Upload()
+    f.clear
+
+#button_download = st.button('保存データ呼び出し')
 
 #openxlテスト
 #import os
