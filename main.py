@@ -22,7 +22,6 @@ genre = st.radio(
      "何を行いますか？",
      ('新規入力', '編集', 'データEXCEL化'))
 st.markdown('サンプル１')
-
 col1, col2, col3,col4,col5 = st.columns(5)
 with col1:
      a1 = st.text_input('草丈',key=1)#value＝2　デファルト数入れられる
@@ -37,15 +36,27 @@ with col5:
 
 col1, col2, col3,col4,col5 = st.columns(5)
 with col1:
-     a1 = st.text_input('茎数',key=6)#value＝2　デファルト数入れられる
+     f1 = st.text_input('茎数',key=6)#value＝2　デファルト数入れられる
 with col2:
-     b1 = st.text_input('',key=7)
+     g1 = st.text_input('',key=7)
 with col3:    
-     c1 = st.text_input('',key=8)
+     h1 = st.text_input('',key=8)
 with col4:
-     d1 = st.text_input('',key=9)
+     i1 = st.text_input('',key=9)
 with col5:
-     e1 = st.text_input('',key=10)
+     j1 = st.text_input('',key=10)
+
+col1, col2, col3,col4,col5 = st.columns(5)
+with col1:
+     k1 = st.text_input('SPAD',key=6)#value＝2　デファルト数入れられる
+with col2:
+     l1 = st.text_input('',key=7)
+with col3:    
+     m1 = st.text_input('',key=8)
+with col4:
+     n1 = st.text_input('',key=9)
+with col5:
+     o1 = st.text_input('',key=10)
 
 #with col1:
 #    st.number_input('茎数1',value=float,key=1)
