@@ -23,9 +23,9 @@ genre = st.radio(
      ('新規入力', '編集', 'データEXCEL化'))
 col1, col2 = st.columns(2)
 with col1:
-    id_id = st.text_input('id')
+    main_id = st.text_input('id')
 with col2:
-    title_t = st.text_input('タイトル')
+    title = st.text_input('タイトル')
 
 st.markdown('サンプル１')
 col1, col2, col3,col4,col5 = st.columns(5)
@@ -71,8 +71,12 @@ close = st.file_uploader('近距離写真')
 if close:
     st.image(close)
 
-data_long = st.number_input('long')
-data_spat = st.number_input('spat')
+folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V' 
+download_name_a = main_id + 'field'
+download_name_b = main_id + 'close'
+
+#data_long = st.number_input('long')
+#data_spat = st.number_input('spat')
 
 button_upload = st.button('入力データ保存')
 button_download = st.button('保存データ呼び出し')
