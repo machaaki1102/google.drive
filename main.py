@@ -37,15 +37,15 @@ with col5:
 
 col1, col2, col3,col4,col5 = st.columns(5)
 with col1:
-     a1 = st.text_input('茎数',key=1)#value＝2　デファルト数入れられる
+     a1 = st.text_input('茎数',key=6)#value＝2　デファルト数入れられる
 with col2:
-     b1 = st.text_input('',key=2)
+     b1 = st.text_input('',key=7)
 with col3:    
-     c1 = st.text_input('',key=3)
+     c1 = st.text_input('',key=8)
 with col4:
-     d1 = st.text_input('',key=4)
+     d1 = st.text_input('',key=9)
 with col5:
-     e1 = st.text_input('',key=5)
+     e1 = st.text_input('',key=10)
 
 #with col1:
 #    st.number_input('茎数1',value=float,key=1)
