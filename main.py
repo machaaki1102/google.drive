@@ -252,7 +252,7 @@ if genre == '編集':
     download_name_b = df['id'] + 'close'
 
 #画像データをクエリをIDかうまくとる方法模索
-    for f in drive.ListFile({'q': 'mimeType = "application/vnd.google-apps.folder"'}).GetList():
+    for f in drive.ListFile({'q': 'mimeType = ”image/png,imag/jpeg”'}).GetList():
         st.text(f['title'], '   \t', f['id'])
         #file_id = drive.ListFile({'q': 'title = "dd.png"'}).GetList()[0]['id']
         #f  = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
