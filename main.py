@@ -26,8 +26,13 @@ f.GetContentFile('df.csv')
 
 with open('df.csv','r') as f:
     df = pd.DataFrame(f)
+    list_A = df.iloc[0,0].split(',')
+    list_B= df.iloc[1,0].split(',')
+    data = [list_B]
+    df = pd.DataFrame(data,columns=list_A)
+    #df2 = pd.concat([df_i, df_a], axis=0)
     st.dataframe(df)
-     
+
 #body
 st.title('栽培データ入力フォーム')
 genre = st.radio(
