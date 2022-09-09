@@ -21,6 +21,12 @@ st.title('栽培データ入力フォーム')
 genre = st.radio(
      "何を行いますか？",
      ('新規入力', '編集', 'データEXCEL化'))
+col1, col2 = st.columns(2)
+with col1:
+    id_id = st.text_input('id')
+with col2:
+    title_t = st.text_input('タイトル')
+
 st.markdown('サンプル１')
 col1, col2, col3,col4,col5 = st.columns(5)
 with col1:
@@ -58,31 +64,10 @@ with col4:
 with col5:
      o1 = st.text_input('',key=15)
 
-#with col1:
-#    st.number_input('茎数1',value=float,key=1)
-#with col2:
-#    st.number_input('茎数1',value=float,key=2)
-#with col3:    
-#    st.number_input('茎数1',value=float,key=3)
-#with col4:
-#    st.number_input('茎数1',value=float,key=4)
-#with col5:
-#    st.number_input('茎数1',value=float,key=5)
-
-col1, col2, col3,col4 = st.columns(4)
-with col1:
-    id_id = st.text_input('id')
-with col2:
-    title_t = st.text_input('タイトル')
-with col3:    
-    ki = st.text_input('期')
-with col4:
-    name_id = st.text_input('番号')
-
-field = st.file_uploader('field')
+field = st.file_uploader('全体写真')
 #if field:
 #    st.image(field)
-close = st.file_uploader('close')
+close = st.file_uploader('近距離写真')
 #if close:
 #    st.image(close)
 
