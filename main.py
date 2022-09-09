@@ -51,7 +51,7 @@ with open('df.csv','r') as f:
             mylist.append(csv_file)
         else :
             pass
-    #df = pd.DataFrame(mylist,columns= colmuns)
+    df = pd.DataFrame(mylist,columns= colmuns)
 
 #st.dataframe(df)
 #select = st.selectbox('id', df['id'])
@@ -185,8 +185,7 @@ if genre == '新規入力':
              writer = csv.writer(f)
              writer.writerow(data)
 
-#編集画面
-st.dataframe(df)
+#編集画面d
 if genre == '編集':
     st.dataframe(df)
     col1, col2 = st.columns(2)
