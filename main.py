@@ -24,6 +24,7 @@ file_id = drive.ListFile({'q': 'title = "df.csv"'}).GetList()[0]['id']
 f = drive.CreateFile({'id': file_id})
 f.GetContentFile('df.csv')
 
+#新規時かぶらないように
 shoki = sum(1 for line in open('df.csv', 'r')) + 7200 
 
 #body
@@ -51,18 +52,26 @@ with open('df.csv','r') as f:
         else :
             pass
     df = pd.DataFrame(mylist,columns= colmuns)
-    #st.dataframe(df)
 
 st.dataframe(df)
-#st.text(df['id'])
 select = st.selectbox('id', df['id'])
 a2 = df['kusa1'][df['id'] == select]
 b2 = df['kusa2'][df['id'] == select]
 c2 = df['kusa3'][df['id'] == select]
 d2 = df['kusa4'][df['id'] == select]
 e2 = df['kusa5'][df['id'] == select]
+f2 = df['kuki1'][df['id'] == select]
+g2 = df['kuki2'][df['id'] == select]
+h2 = df['kuki3'][df['id'] == select]
+i2 = df['kuki4'][df['id'] == select]
+j2 = df['kuki5'][df['id'] == select]
+k2 = df['spad1'][df['id'] == select]
+l2 = df['spad2'][df['id'] == select]
+m2 = df['spad3'][df['id'] == select]
+n2 = df['spad4'][df['id'] == select]
+o2 = df['spad5'][df['id'] == select]
 
-st.text(b2)
+
 #新規入力画面
 if genre == '新規入力':
     col1, col2 = st.columns(2)
@@ -159,23 +168,22 @@ if genre == '新規入力':
         fx,fb]
         
         #ほんとの最初にデータを作る時
-        with open('df.csv','w') as f:
-            writer = csv.writer(f)
-            writer.writerow(colmuns)
-            writer.writerow(data)
+        #with open('df.csv','w') as f:
+        #    writer = csv.writer(f)
+        #    writer.writerow(colmuns)
+        #    writer.writerow(data)
 
-        f = drive.CreateFile({'title':'df.csv',
-                            'mimeType':'text/csv',
-                            'parents':[{'id':folder_id}]})
-        f.SetContentFile('df.csv')
-        f.Upload()
-        f.clear
+        #f = drive.CreateFile({'title':'df.csv',
+        #                    'mimeType':'text/csv',
+        #                    'parents':[{'id':folder_id}]})
+        #f.SetContentFile('df.csv')
+        #f.Upload()
+        #f.clear
 
         #データ追加を作る時
-        #with open('df.csv','a') as f:
-        #     writer = csv.writer(f)
-        #     writer.writerow(colmuns)
-        #     writer.writerow(data)
+        with open('df.csv','a') as f:
+             writer = csv.writer(f)
+             writer.writerow(data)
 
 
 #
