@@ -50,7 +50,7 @@ with open('df.csv','r') as f:
             mylist.append(csv.file)
         else :
             pass
-    df = pd.DataFrame(mylist,clomuns=clomuns)
+    df = pd.DataFrame(mylist,cloumns=clomuns)
     st.dataframe(df)
 
 st.dataframe(df)
