@@ -65,12 +65,12 @@ if excel:
 #wc = openpyxl.load_workbook('aa.xlsx')
     
 #画像選択 png形式はRGBA　jpeg形式はRGB
-    file_id = drive.ListFile({'q': 'title = "11field.png"'}).GetList()[0]['id']
+    file_id = drive.ListFile({'q': 'title = "dd.png"'}).GetList()[0]['id']
     f = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
-    f.GetContentFile('11field.png')
+    f.GetContentFile('dd.png')
     
     wc = wb.active
-    img_dir = '11field.png' #width:916,height:685 #width,height = img.size #print(width,height)
+    img_dir = 'dd.png' #width:916,height:685 #width,height = img.size #print(width,height)
     img = Image.open(img_dir).convert('RGB')
 #リサイズ
 #img = Image.open(img_dir)
@@ -81,6 +81,16 @@ if excel:
     wc.add_image(img_to,'B3')
     wb.save('aa.xlsx')
 
+excel_up = st.buttom('excel_up')
+if excel_up:
+    #フォルダの場所をIDに指定する
+    folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V'    
+    f = drive.CreateFile({'title':'aa.xlsx',#field.name
+                        'mimeType':'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                        'parents':[{'id':folder_id}]})
+    f.SetContentFile('aa.xlsx')
+    f.Upload()
+    f.clear()
 #ディレクトリの場所を確認。
 import glob
 st.text(os.getcwd())
