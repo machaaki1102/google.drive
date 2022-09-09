@@ -78,7 +78,7 @@ if excel:
 
     img_to = openpyxl.drawing.image.Image(img_dir)
     wb.add_image(img_to,'B3')
-    wc.save('aa.xlsx')
+    wb.save('aa.xlsx')
 
 
 #ディレクトリの場所を確認。
