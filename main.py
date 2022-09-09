@@ -192,21 +192,20 @@ if genre == '編集':
     with col1:
         select = st.selectbox('id', df['id'])
         a2 = df['kusa1'][df['id'] == select][0]
-        st.text(a2)
-        b2 = df['kusa2'][df['id'] == select]
-        c2 = df['kusa3'][df['id'] == select]
-        d2 = df['kusa4'][df['id'] == select]
-        e2 = df['kusa5'][df['id'] == select]
-        f2 = df['kuki1'][df['id'] == select]
-        g2 = df['kuki2'][df['id'] == select]
-        h2 = df['kuki3'][df['id'] == select]
-        i2 = df['kuki4'][df['id'] == select]
-        j2 = df['kuki5'][df['id'] == select]
-        k2 = df['spad1'][df['id'] == select]
-        l2 = df['spad2'][df['id'] == select]
-        m2 = df['spad3'][df['id'] == select]
-        n2 = df['spad4'][df['id'] == select]
-        o2 = df['spad5'][df['id'] == select]
+        b2 = df['kusa2'][df['id'] == select][0]
+        c2 = df['kusa3'][df['id'] == select][0]
+        d2 = df['kusa4'][df['id'] == select][0]
+        e2 = df['kusa5'][df['id'] == select][0]
+        f2 = df['kuki1'][df['id'] == select][0]
+        g2 = df['kuki2'][df['id'] == select][0]
+        h2 = df['kuki3'][df['id'] == select][0]
+        i2 = df['kuki4'][df['id'] == select][0]
+        j2 = df['kuki5'][df['id'] == select][0]
+        k2 = df['spad1'][df['id'] == select][0]
+        l2 = df['spad2'][df['id'] == select][0]
+        m2 = df['spad3'][df['id'] == select][0]
+        n2 = df['spad4'][df['id'] == select][0]
+        o2 = df['spad5'][df['id'] == select][0]
         #main_id = st.text_input('id',value=shoki)
     with col2:
         title = st.text_input('タイトル')
@@ -216,37 +215,37 @@ if genre == '編集':
     with col1:
         a1 = st.text_input('草丈',value=a2,key=1)#value＝2　デファルト数入れられる
     with col2:
-        b1 = st.text_input('',key=2)
+        b1 = st.text_input('',value=b2,key=2)
     with col3:    
-        c1 = st.text_input('',key=3)
+        c1 = st.text_input('',value=c2,key=3)
     with col4:
-        d1 = st.text_input('',key=4)
+        d1 = st.text_input('',value=d2,key=4)
     with col5:
-        e1 = st.text_input('',key=5)
+        e1 = st.text_input('',value=e2,key=5)
 
     col1, col2, col3,col4,col5 = st.columns(5)
     with col1:
-        f1 = st.text_input('茎数',key=6)#value＝2　デファルト数入れられる
+        f1 = st.text_input('茎数',value=f2,key=6)#value＝2　デファルト数入れられる
     with col2:
-        g1 = st.text_input('',key=7)
+        g1 = st.text_input('',value=g2,key=7)
     with col3:    
-        h1 = st.text_input('',key=8)
+        h1 = st.text_input('',value=h2,key=8)
     with col4:
-        i1 = st.text_input('',key=9)
+        i1 = st.text_input('',value=i2,key=9)
     with col5:
-        j1 = st.text_input('',key=10)
+        j1 = st.text_input('',value=j2,key=10)
 
     col1, col2, col3,col4,col5 = st.columns(5)
     with col1:
-        k1 = st.text_input('SPAD',key=11)#value＝2　デファルト数入れられる
+        k1 = st.text_input('SPAD',value=k2,key=11)#value＝2　デファルト数入れられる
     with col2:
-        l1 = st.text_input('',key=12)
+        l1 = st.text_input('',value=l2,key=12)
     with col3:    
-        m1 = st.text_input('',key=13)
+        m1 = st.text_input('',value=m2,key=13)
     with col4:
-        n1 = st.text_input('',key=14)
+        n1 = st.text_input('',value=n2,key=14)
     with col5:
-        o1 = st.text_input('',key=15)
+        o1 = st.text_input('',value=o2k,ey=15)
 
     field = st.file_uploader('全体写真')
     if field:
