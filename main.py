@@ -28,7 +28,7 @@ with col1:
 with col2:
     title = st.text_input('タイトル')
 
-st.markdown('サンプル１')
+st.markdown('【サンプル１】')
 col1, col2, col3,col4,col5 = st.columns(5)
 with col1:
      a1 = st.text_input('草丈',key=1)#value＝2　デファルト数入れられる
@@ -84,7 +84,7 @@ button_download = st.button('保存データ呼び出し')
 
 #openxlテスト
 #import os
-import openpyxl
+#import openpyxl
 #from PIL import Image 
 #os.chdir('/content/drive/MyDrive')
 #ファイルを作成し、データ（数字）を入力
