@@ -51,7 +51,7 @@ with open('df.csv','r') as f:
             mylist.append(csv_file)
         else :
             pass
-    df = pd.DataFrame(mylist,columns= colmuns)
+    #df = pd.DataFrame(mylist,columns= colmuns)
 
 #st.dataframe(df)
 #select = st.selectbox('id', df['id'])
