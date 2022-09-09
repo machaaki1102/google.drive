@@ -252,12 +252,12 @@ if genre == '編集':
     download_name_b = df['id'] + 'close'
 
 #画像データをクエリをIDかうまくとる方法模索
-    for f in drive.ListFile({'q': 'mimeType = ”image/png,imag/jpeg”'}).GetList():
-        st.text(f['title'], '   \t', f['id'])
-        #file_id = drive.ListFile({'q': 'title = "dd.png"'}).GetList()[0]['id']
-        #f  = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
-        #f.GetContentFile('dd.png')
-        
+    #for f in drive.ListFile({'q': 'mimeType = ”image/png,imag/jpeg”'}).GetList():
+        #st.text(f['title'], '   \t', f['id'])
+    file_id = drive.ListFile({'q': 'title = "7201close"'}).GetList()[0]['id']
+    f  = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
+    f.GetContentFile('dd.png')
+    st.image('dd.png')
     
     field = st.file_uploader('全体写真')
     if field:
