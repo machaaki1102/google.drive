@@ -57,19 +57,16 @@ import openpyxl
 excel = st.button('excel')
 if excel:
     wb = openpyxl.Workbook()
-#ws = wb.active
-#ws['A1'] = 10
-#wb.save('aa.xlsx')
-#print(os.getcwd())
-#画像を入力
-#wc = openpyxl.load_workbook('aa.xlsx')
+    #wc = openpyxl.load_workbook('aa.xlsx')
+    #ws['A1'] = 10
+    wc = wb.active
+
     
 #画像選択 png形式はRGBA　jpeg形式はRGB
     file_id = drive.ListFile({'q': 'title = "dd.png"'}).GetList()[0]['id']
     f = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
     f.GetContentFile('dd.png')
     
-    wc = wb.active
     img_dir = 'dd.png' #width:916,height:685 #width,height = img.size #print(width,height)
     img = Image.open(img_dir).convert('RGB')
 #リサイズ
