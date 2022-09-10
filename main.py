@@ -191,6 +191,8 @@ if genre == '編集':
     col1, col2 = st.columns(2)
     with col1:
         select = st.selectbox('id', df['id'])
+        st.text(df['id' == select].index.to_numpy())
+        df.index.get_loc('Alice')
         title_2 = df['title'][df['id'] == select][0]
         a2 = df['kusa1'][df['id'] == select][0]
         b2 = df['kusa2'][df['id'] == select][0]
@@ -216,39 +218,39 @@ if genre == '編集':
     st.markdown('【サンプル１】')
     col1, col2, col3,col4,col5 = st.columns(5)
     with col1:
-        a1 = st.text_input('草丈',value=a2,key=1)#value＝2　デファルト数入れられる
+        a3 = st.text_input('草丈',value=a2,key=1)#value＝2　デファルト数入れられる
     with col2:
-        b1 = st.text_input('',value=b2,key=2)
+        b3 = st.text_input('',value=b2,key=2)
     with col3:    
-        c1 = st.text_input('',value=c2,key=3)
+        c3 = st.text_input('',value=c2,key=3)
     with col4:
-        d1 = st.text_input('',value=d2,key=4)
+        d3 = st.text_input('',value=d2,key=4)
     with col5:
-        e1 = st.text_input('',value=e2,key=5)
+        e3 = st.text_input('',value=e2,key=5)
 
     col1, col2, col3,col4,col5 = st.columns(5)
     with col1:
-        f1 = st.text_input('茎数',value=f2,key=6)#value＝2　デファルト数入れられる
+        f3 = st.text_input('茎数',value=f2,key=6)#value＝2　デファルト数入れられる
     with col2:
-        g1 = st.text_input('',value=g2,key=7)
+        g3 = st.text_input('',value=g2,key=7)
     with col3:    
-        h1 = st.text_input('',value=h2,key=8)
+        h3 = st.text_input('',value=h2,key=8)
     with col4:
-        i1 = st.text_input('',value=i2,key=9)
+        i3 = st.text_input('',value=i2,key=9)
     with col5:
-        j1 = st.text_input('',value=j2,key=10)
+        j3 = st.text_input('',value=j2,key=10)
 
     col1, col2, col3,col4,col5 = st.columns(5)
     with col1:
-        k1 = st.text_input('SPAD',value=k2,key=11)#value＝2　デファルト数入れられる
+        k3 = st.text_input('SPAD',value=k2,key=11)#value＝2　デファルト数入れられる
     with col2:
-        l1 = st.text_input('',value=l2,key=12)
+        l3 = st.text_input('',value=l2,key=12)
     with col3:    
-        m1 = st.text_input('',value=m2,key=13)
+        m3 = st.text_input('',value=m2,key=13)
     with col4:
-        n1 = st.text_input('',value=n2,key=14)
+        n3 = st.text_input('',value=n2,key=14)
     with col5:
-        o1 = st.text_input('',value=o2,key=15)
+        o3 = st.text_input('',value=o2,key=15)
 
     download_name_a = 'field' + df['id'][0]
     download_name_b = 'close' + df['id'][0]
@@ -261,6 +263,7 @@ if genre == '編集':
     file_id = drive.ListFile({'q': 'title contains "close"'}).GetList()[0]['id']
     f  = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
     f.GetContentFile(download_name_b)
+    
     field = st.file_uploader('全体写真')
     if field:
         st.image(field)
@@ -273,8 +276,8 @@ if genre == '編集':
     #download_name_a = main_id + 'field' #main_id
     #download_name_b = main_id + 'close'
 
-    #button_upload = st.button('データ保存')
-    #if button_upload:
+    button_upload = st.button('データ保存')
+    if button_upload:
         #st.markdown(f'{field.name}をアップロードしました。')
     #    with open(field.name,'wb') as f:
     #        f.write(field.read()) 
@@ -299,7 +302,21 @@ if genre == '編集':
     #    file_id_b = drive.ListFile().GetList()
     #    fb = file_id_b['title' == download_name_b]['id']
     #    f.clear()
+        colmuns = ['id','title',
+                'kusa1','kusa2','kusa3','kusa4','kusa5',
+                'kuki1','kuki2','kuki3','kuki4','kuki5',
+                'spad1','spad2','spad3','spad4','spad5',
+                'field','close']
         
+        data = [main_id,title,
+                a3,b3,c3,d3,e3,
+                f3,g3,h3,i3,j3,
+                k3,l3,m3,n3,o3,
+                fx3,fb3]
+        
+        
+
+
         #df1 = pd.DataFrame(data = data,columns=colmuns)
     #    colmuns = ['id','title',
     #    'kusa1','kusa2','kusa3','kusa4','kusa5',
