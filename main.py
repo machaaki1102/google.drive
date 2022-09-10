@@ -316,13 +316,14 @@ if genre == '編集':
 
 #テスト
         df[df[df['id'] == select].index.to_numpy()[0]] = data
+        st.dataframe(df)
         #streamlit 内にあるdf.csvを変更するデータフレームで変更した点をCSVに変換して上書きする
         #df.to_csv()
     #    with open(df.csv,'r') as f
 
         
         #行番号でデータを変更
-        df[df[df['id'] == select].index.to_numpy()[0]] = data
+        #df[df[df['id'] == select].index.to_numpy()[0]] = data
 
 
         #df1 = pd.DataFrame(data = data,columns=colmuns)
