@@ -191,8 +191,8 @@ if genre == '編集':
     col1, col2 = st.columns(2)
     with col1:
         select = st.selectbox('id', df['id'])
+        #選択したIDから行のINDEXを取得
         st.text(df[df['id'] == select].index.to_numpy()[0])
-        df.index.get_loc('Alice')
         title_2 = df['title'][df['id'] == select][0]
         a2 = df['kusa1'][df['id'] == select][0]
         b2 = df['kusa2'][df['id'] == select][0]
@@ -209,11 +209,13 @@ if genre == '編集':
         m2 = df['spad3'][df['id'] == select][0]
         n2 = df['spad4'][df['id'] == select][0]
         o2 = df['spad5'][df['id'] == select][0]
+        fx3 = df['filed'][df['id'] == select][0]
+        fb3 = df['close'][df['id'] == select][0]
         #tolistでリストが作れる。
         st.text(df.iloc[0].tolist())
         #main_id = st.text_input('id',value=shoki)
     with col2:
-        title = st.text_input('タイトル',value=title_2)
+        title3 = st.text_input('タイトル',value=title_2)
 
     st.markdown('【サンプル１】')
     col1, col2, col3,col4,col5 = st.columns(5)
@@ -265,16 +267,18 @@ if genre == '編集':
     f.GetContentFile(download_name_b)
     
     field = st.file_uploader('全体写真')
-    if field:
+    
+    
+    if not field:
+        st.image(download_name_a)
+    else:
         st.image(field)
-    st.image(download_name_a)
+    
     close = st.file_uploader('近距離写真')
     if close:
         st.image(close)
     st.image(download_name_b)
 
-    #download_name_a = main_id + 'field' #main_id
-    #download_name_b = main_id + 'close'
 
     button_upload = st.button('データ保存')
     if button_upload:
@@ -302,19 +306,17 @@ if genre == '編集':
     #    file_id_b = drive.ListFile().GetList()
     #    fb = file_id_b['title' == download_name_b]['id']
     #    f.clear()
-        colmuns = ['id','title',
-                'kusa1','kusa2','kusa3','kusa4','kusa5',
-                'kuki1','kuki2','kuki3','kuki4','kuki5',
-                'spad1','spad2','spad3','spad4','spad5',
-                'field','close']
         
-        data = [main_id,title,
+        
+        #変更するデータのリスト
+        data = [main_id,title3,
                 a3,b3,c3,d3,e3,
                 f3,g3,h3,i3,j3,
                 k3,l3,m3,n3,o3,
                 fx3,fb3]
-        
-        
+
+        #行番号でデータを変更
+        df[df[df['id'] == select].index.to_numpy()[0]] = data
 
 
         #df1 = pd.DataFrame(data = data,columns=colmuns)
