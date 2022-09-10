@@ -282,7 +282,7 @@ if genre == '編集':
     henkou = st.button('変更')
     if henkou:    
     #変更するデータのリスト
-        data5 = [select,title3,
+        data_henkou = [select,title3,
         a3,b3,c3,d3,e3,
         f3,g3,h3,i3,j3,
         k3,l3,m3,n3,o3,
@@ -290,7 +290,7 @@ if genre == '編集':
         
 
         #df[df[df['id'] == select].index.to_numpy()[0]] = data
-        st.dataframe(data5)
+        st.dataframe(data_henkou)
         #streamlit 内にあるdf.csvを変更するデータフレームで変更した点をCSVに変換して上書きする
         #df.to_csv()
     #    with open(df.csv,'r') as f
