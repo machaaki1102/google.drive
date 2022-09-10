@@ -209,7 +209,7 @@ if genre == '編集':
         m2 = df['spad3'][df['id'] == select][0]
         n2 = df['spad4'][df['id'] == select][0]
         o2 = df['spad5'][df['id'] == select][0]
-        fx3 = df['filed'][df['id'] == select][0]
+        fx3 = df['field'][df['id'] == select][0]
         fb3 = df['close'][df['id'] == select][0]
         #tolistでリストが作れる。
         st.text(df.iloc[0].tolist())
@@ -267,8 +267,6 @@ if genre == '編集':
     f.GetContentFile(download_name_b)
     
     field = st.file_uploader('全体写真')
-    
-    
     if not field:
         st.image(download_name_a)
     else:
