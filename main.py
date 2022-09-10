@@ -277,36 +277,9 @@ if genre == '編集':
         st.image(download_name_b)
     else:
         st.image(close)
-
-#button_upload = st.button('データ保存')
-#    if button_upload:
-        #st.markdown(f'{field.name}をアップロードしました。')
-    #    with open(field.name,'wb') as f:
-    #        f.write(field.read()) 
-    #    f = drive.CreateFile({'title':download_name_a,#field.name
-    #                        'mimeType':'image/png,image/jpeg',
-    #                        'parents':[{'id':folder_id}]})
-    #    f.SetContentFile(field.name)
-    #    f.Upload()
-
-    #    file_id_a = drive.ListFile().GetList()
-    #    fx = file_id_a['title' == download_name_a]['id']
-    #    f.clear()
-
-        #st.markdown(f'{close.name}をアップロードしました。')
-    #    with open(close.name,'wb') as f:
-    #        f.write(close.read())
-    #    f = drive.CreateFile({'title':download_name_b,
-    #                        'mimeType':'image/png,imag/jpeg',
-    #                        'parents':[{'id':folder_id}]})
-    #    f.SetContentFile(close.name)
-    #    f.Upload()
-    #    file_id_b = drive.ListFile().GetList()
-    #    fb = file_id_b['title' == download_name_b]['id']
-    #    f.clear()
-        
-    st.button('変更')
-    if button:    
+#変更
+    henkou = st.button('変更')
+    if henkou:    
     #変更するデータのリスト
         data = [main_id,title3,
                 a3,b3,c3,d3,e3,
@@ -314,7 +287,6 @@ if genre == '編集':
                 k3,l3,m3,n3,o3,
                 fx3,fb3]
 
-#テスト
         df[df[df['id'] == select].index.to_numpy()[0]] = data
         st.dataframe(df)
         #streamlit 内にあるdf.csvを変更するデータフレームで変更した点をCSVに変換して上書きする
