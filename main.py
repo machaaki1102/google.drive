@@ -282,10 +282,10 @@ if genre == '編集':
     if henkou:    
     #変更するデータのリスト
         data = [main_id,title3,
-                a3,b3,c3,d3,e3,
-                f3,g3,h3,i3,j3,
-                k3,l3,m3,n3,o3,
-                fx3,fb3]
+        a3,b3,c3,d3,e3,
+        f3,g3,h3,i3,j3,
+        k3,l3,m3,n3,o3,
+        fx3,fb3]
 
         df[df[df['id'] == select].index.to_numpy()[0]] = data
         st.dataframe(df)
