@@ -256,8 +256,8 @@ if genre == '編集':
 
     download_name_a = 'field' + df['id'][0]
     download_name_b = 'close' + df['id'][0]
-    #st.text(download_name_a)
-#画像データをクエリをIDかうまくとる方法模索
+
+    #画像データをクエリをIDかうまくとる方法模索
     file_id = drive.ListFile({'q': 'title contains "field"'}).GetList()[0]['id']
     f  = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
     f.GetContentFile(download_name_a)
@@ -273,13 +273,13 @@ if genre == '編集':
         st.image(field)
     
     close = st.file_uploader('近距離写真')
-    if close:
+    if not close:
+        st.image(download_name_b)
+    else:
         st.image(close)
-    st.image(download_name_b)
 
-
-    button_upload = st.button('データ保存')
-    if button_upload:
+#button_upload = st.button('データ保存')
+#    if button_upload:
         #st.markdown(f'{field.name}をアップロードしました。')
     #    with open(field.name,'wb') as f:
     #        f.write(field.read()) 
@@ -305,14 +305,21 @@ if genre == '編集':
     #    fb = file_id_b['title' == download_name_b]['id']
     #    f.clear()
         
-        
-        #変更するデータのリスト
+    st.button('変更')
+    if button:    
+    #変更するデータのリスト
         data = [main_id,title3,
                 a3,b3,c3,d3,e3,
                 f3,g3,h3,i3,j3,
                 k3,l3,m3,n3,o3,
                 fx3,fb3]
 
+        df[df[df['id'] == select].index.to_numpy()[0]] = data
+        #streamlit 内にあるdf.csvを変更するデータフレームで変更した点をCSVに変換して上書きする
+        #df.to_csv()
+        with open(df.csv,'r') as f
+
+        
         #行番号でデータを変更
         df[df[df['id'] == select].index.to_numpy()[0]] = data
 
