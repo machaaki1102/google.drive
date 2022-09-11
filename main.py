@@ -53,25 +53,6 @@ with open('df.csv','r') as f:
             pass
     df = pd.DataFrame(mylist,columns= colmuns)
 
-#st.dataframe(df)
-#select = st.selectbox('id', df['id'])
-#a2 = df['kusa1'][df['id'] == select]
-#b2 = df['kusa2'][df['id'] == select]
-#c2 = df['kusa3'][df['id'] == select]
-#d2 = df['kusa4'][df['id'] == select]
-#e2 = df['kusa5'][df['id'] == select]
-#f2 = df['kuki1'][df['id'] == select]
-#g2 = df['kuki2'][df['id'] == select]
-#h2 = df['kuki3'][df['id'] == select]
-#i2 = df['kuki4'][df['id'] == select]
-#j2 = df['kuki5'][df['id'] == select]
-#k2 = df['spad1'][df['id'] == select]
-#l2 = df['spad2'][df['id'] == select]
-#m2 = df['spad3'][df['id'] == select]
-#n2 = df['spad4'][df['id'] == select]
-#o2 = df['spad5'][df['id'] == select]
-
-
 #新規入力画面
 if genre == '新規入力':
     col1, col2 = st.columns(2)
@@ -296,7 +277,7 @@ if genre == '編集':
         with open('df.csv','w') as f:
             file_id = drive.ListFile({'q': 'title contains "df.csv"'}).GetList()[0]['id']
             f  = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
-            f.SetContentFile(df.csv)
+            f.SetContentFile('df.csv')
             f.Upload()
             f.close
         #with open('df.csv','r')as f:
