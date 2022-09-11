@@ -293,6 +293,8 @@ if genre == '編集':
         st.dataframe(df)
         #streamlit 内にあるdf.csvを変更するデータフレームで変更した点をCSVに変換して上書きする
         df.to_csv('df.csv')
+        with open('df.csv','r')as f:
+            st.dataframe(f)
     #   with open(df.csv,'r') as f
 
         
