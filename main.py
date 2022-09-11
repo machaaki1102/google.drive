@@ -275,7 +275,7 @@ if genre == '編集':
         df.to_csv('df.csv',index=False)
         #with open('df.csv','r') as f:
         #    st.dataframe(f)
-        with open('df.csv','r') as a:
+        with open(df.csv,'w') as a:
             file_id = drive.ListFile({'q': 'title contains "df.csv"'}).GetList()[0]['id']
             f  = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
             f.SetContentFile(a)
