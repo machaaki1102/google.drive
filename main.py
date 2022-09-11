@@ -276,51 +276,13 @@ if genre == '編集':
         with open('df.csv','r') as f:
             file_id = drive.ListFile({'q': 'title contains "df.csv"'}).GetList()[0]['id']
             f  = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
+            st.text(df.csv)
             f.SetContentFile('df.csv')
             st.text(f)
             #f.Upload()
             #f.close
         #with open('df.csv','r')as f:
         #    st.dataframe(f)
-    #   with open(df.csv,'r') as f
-
-        
-        #行番号でデータを変更
-        #df[df[df['id'] == select].index.to_numpy()[0]] = data
-
-
-        #df1 = pd.DataFrame(data = data,columns=colmuns)
-    #    colmuns = ['id','title',
-    #    'kusa1','kusa2','kusa3','kusa4','kusa5',
-    #    'kuki1','kuki2','kuki3','kuki4','kuki5',
-    #    'spad1','spad2','spad3','spad4','spad5',
-    #    'field','close']
-    #    data = [main_id,title,
-    #    a1,b1,c1,d1,e1,
-    #    f1,g1,h1,i1,j1,
-    #    k1,l1,m1,n1,o1,
-    #    fx,fb]
-        
-        #ほんとの最初にデータを作る時
-        #with open('df.csv','w') as f:
-        #    writer = csv.writer(f)
-        #    writer.writerow(colmuns)
-        #    writer.writerow(data)
-
-        #f = drive.CreateFile({'title':'df.csv',
-        #                    'mimeType':'text/csv',
-        #                    'parents':[{'id':folder_id}]})
-        #f.SetContentFile('df.csv')
-        #f.Upload()
-        #f.clear
-
-        #データ追加を作る時
-        #with open('df.csv','a') as f:
-        #     writer = csv.writer(f)
-        #     writer.writerow(data)
-
-#
-#button_download = st.button('保存データ呼び出し')
 
 #openxlテスト
 #import os
