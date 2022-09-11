@@ -20,12 +20,12 @@ drive = GoogleDrive(gauth)
 #事前準備
 #ID次の番号取得
 folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V' 
-#file_id = drive.ListFile({'q': 'title = "df.csv"'}).GetList()[0]['id']
-#f = drive.CreateFile({'id': file_id})
-#f.GetContentFile('df.csv')
+file_id = drive.ListFile({'q': 'title = "df.csv"'}).GetList()[0]['id']
+f = drive.CreateFile({'id': file_id})
+f.GetContentFile('df.csv')
 
 #新規時かぶらないように
-#shoki = sum(1 for line in open('df.csv', 'r')) + 7200 
+shoki = sum(1 for line in open('df.csv', 'r')) + 7200 
 
 #body
 st.title('栽培データ入力フォーム')
@@ -34,31 +34,30 @@ genre = st.radio(
      ('新規入力', '編集', 'データEXCEL化'))
 
 #データ取得
-#with open('df.csv','r') as f:
-#    csv_files = csv.reader(f)
-#    i = 0
-#    for csv_file in csv_files:
-#        #st.text(csv.file)
-#        if i == 0:
-#            colmuns = csv_file
-#            i = 1
-#        #   st.text(colmuns)
-#        elif i==1:
-#            mylist = [csv_file]
-#        #    st.text(mylist)
-#        #    st.text(csv_file)
-#        elif i >1 and csv_file is not None:
-#            mylist.append(csv_file)
-#        else :
-#            pass
-#    df = pd.DataFrame(mylist,columns= colmuns)
+with open('df.csv','r') as f:
+    csv_files = csv.reader(f)
+    i = 0
+    for csv_file in csv_files:
+        #st.text(csv.file)
+        if i == 0:
+            colmuns = csv_file
+            i = 1
+        #   st.text(colmuns)
+        elif i==1:
+            mylist = [csv_file]
+        #    st.text(mylist)
+        #    st.text(csv_file)
+        elif i >1 and csv_file is not None:
+            mylist.append(csv_file)
+        else :
+            pass
+    df = pd.DataFrame(mylist,columns= colmuns)
 
 #新規入力画面
 if genre == '新規入力':
     col1, col2 = st.columns(2)
     with col1:
-        main_id = st.text_input('id')
-        #value=shoki)
+        main_id = st.text_input('id',value=shoki)
     with col2:
         title = st.text_input('タイトル')
 
@@ -150,22 +149,22 @@ if genre == '新規入力':
         fx,fb]
         
         #ほんとの最初にデータを作る時
-        with open('df.csv','w') as f:
-            writer = csv.writer(f)
-            writer.writerow(colmuns)
-            writer.writerow(data)
-
-        f = drive.CreateFile({'title':'df.csv',
-                            'mimeType':'text/csv',
-                            'parents':[{'id':folder_id}]})
-        f.SetContentFile('df.csv')
-        f.Upload()
-        f.clear
+#        with open('df.csv','w') as f:
+#            writer = csv.writer(f)
+#            writer.writerow(colmuns)
+#            writer.writerow(data)
+#
+#        f = drive.CreateFile({'title':'df.csv',
+#                            'mimeType':'text/csv',
+#                            'parents':[{'id':folder_id}]})
+#        f.SetContentFile('df.csv')
+#        f.Upload()
+#        f.clear
 
         #データ追加を作る時
-        #with open('df.csv','a') as f:
-        #     writer = csv.writer(f)
-        #     writer.writerow(data)
+        with open('df.csv','a') as f:
+             writer = csv.writer(f)
+             writer.writerow(data)
 
 #編集画面
 if genre == '編集':
