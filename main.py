@@ -279,8 +279,8 @@ if genre == '編集':
         a.GetContentFile('df.csv')
         a.SetContentFile('df.2csv')
         a['title'] = 'df.csv'
-        #a.Upload()
-        #f.close
+        a.Upload()
+        a.close
         #with open('df.csv','r')as f:
         #    st.dataframe(f)
 
