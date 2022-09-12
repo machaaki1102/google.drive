@@ -278,11 +278,9 @@ if genre == '編集':
                             'mimeType':'text/csv'})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
         a.GetContentFile('df.csv')
         a.SetContentFile('df.2csv')
-        st.text(a)
-        a['title'] = 'df22csv'
-        st.text(a['title'])
+        a['title'] = 'df.csv'
         #a.Upload()
-            #f.close
+        #f.close
         #with open('df.csv','r')as f:
         #    st.dataframe(f)
 
