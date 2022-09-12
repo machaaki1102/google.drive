@@ -173,7 +173,7 @@ if genre == '編集':
     with col1:
         select = st.selectbox('id', df['id'])
         #選択したIDから行のINDEXを取得
-        st.text(df[df['id'] == select].index.to_numpy()[0])
+        #st.text(df[df['id'] == select].index.to_numpy()[0])
         #main_id2 = df['main_id'][df['id'] == select][0]
         title_2 = df['title'][df['id'] == select][0]
         a2 = df['kusa1'][df['id'] == select][0]
@@ -194,7 +194,7 @@ if genre == '編集':
         fx3 = df['field'][df['id'] == select][0]
         fb3 = df['close'][df['id'] == select][0]
         #tolistでリストが作れる。
-        st.text(df.iloc[0].tolist())
+        #st.text(df.iloc[0].tolist())
         #main_id = st.text_input('id',value=shoki)
     with col2:
         title3 = st.text_input('タイトル',value=title_2)
@@ -280,7 +280,7 @@ if genre == '編集':
         a.SetContentFile('df.2csv')
         a['title'] = 'df.csv'
         a.Upload()
-        a.close
+        #a.close
         #with open('df.csv','r')as f:
         #    st.dataframe(f)
 
@@ -332,11 +332,11 @@ if genre == 'データEXCEL化':
         f.clear()
 
 #ディレクトリの場所を確認。
-import glob
-st.text(os.getcwd())
-files = glob.glob("/app/google.drive/*")
-for file in files:
-    st.text(file)   
+#import glob
+#st.text(os.getcwd())
+#files = glob.glob("/app/google.drive/*")
+#for file in files:
+#    st.text(file)   
 
 #  Googledriveからデータを取る。
 #if  button_download:
