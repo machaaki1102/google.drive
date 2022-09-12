@@ -277,6 +277,7 @@ if genre == '編集':
         a  = drive.CreateFile({'id': file_id,
                             'mimeType':'text/csv'})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
         a.GetContentFile('df.csv')
+        a.SetContentFile('app/google.dirve/df.2csv')
         st.text(a)
         #f.Upload()
             #f.close
