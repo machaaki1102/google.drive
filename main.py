@@ -273,13 +273,11 @@ if genre == '編集':
         st.dataframe(df)
     #streamlit 内にあるdf.csvを変更するデータフレームで変更した点をCSVに変換して上書きする
         df.to_csv('df.1csv',index=False)
-        with open('df.1csv','r') as f:
-            st.dataframe(f)
-        #with open('df.csv','w') as f:
-        #    file_id = drive.ListFile({'q': 'title contains "df.csv"'}).GetList()[0]['id']
-        #    a  = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
-        #    a.SetContentFile(f)
-        #    st.text(a)
+        with open('df.1csv','w') as f:
+            file_id = drive.ListFile({'q': 'title contains "df.csv"'}).GetList()[0]['id']
+            f  = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
+            f.SetContentFile('df.1csv')
+            st.text(f)
             #f.Upload()
             #f.close
         #with open('df.csv','r')as f:
