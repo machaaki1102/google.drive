@@ -48,7 +48,7 @@ with open('df.csv','r') as f:
         #    st.text(mylist)
         #    st.text(csv_file)
         elif i >1 and csv_file is not None:
-            mylist.append(csv_file)
+            mylist.append([csv_file])
         else :
             pass
     df = pd.DataFrame(mylist,columns= colmuns)
