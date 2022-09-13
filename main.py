@@ -259,6 +259,7 @@ if genre == '編集':
     for file_ids in drive.ListFile({'q': 'title contains "field"'}).GetList():
     #[0]['id']
         st.text(file_ids['title'])
+        st.markdown(file_ids['id'])
         #file_ids['id'])
     #st.text(file_id)
     f  = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
