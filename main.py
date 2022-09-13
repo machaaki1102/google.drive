@@ -189,11 +189,11 @@ if genre == '編集':
     with col1:
         select = st.selectbox('id', df['id'])
         st.text(select)#選択したIDから行のINDEXを取得
-        st.text(df['title'][df['id'] == select])
+        st.text(str(df['title'][df['id'] == select][0]))
         #
         #st.text(df[df['id'] == select].index.to_numpy()[0])
         #main_id2 = df['main_id'][df['id'] == select][0]
-        title_2 = df['title'][df['id'] == select][0]
+        title_2 = str(df['title'][df['id'] == select][0])
         a2 = df['kusa1'][df['id'] == select][0]
         b2 = df['kusa2'][df['id'] == select][0]
         c2 = df['kusa3'][df['id'] == select][0]
