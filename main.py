@@ -256,9 +256,10 @@ if genre == '編集':
     download_name_b = 'close' + str(df['id'][0])
     st.text(download_name_a)
     #画像データをクエリをIDかうまくとる方法模索
-    file_id = drive.ListFile({'q': 'title contains "field"'}).GetList()
+    for file_ids in drive.ListFile({'q': 'title contains "field"'}).GetList():
     #[0]['id']
-    st.text(file_id)
+        st.text(file_ids['title'],' \t',file_ids['id'])
+    #st.text(file_id)
     f  = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
     f.GetContentFile(download_name_a)
     #st.image(download_name_a)
