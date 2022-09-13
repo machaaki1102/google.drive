@@ -197,7 +197,8 @@ if genre == '編集':
         #st.text(df['title'][df['id'] == select][2])
         #st.text(df[df['id'] == select].index.to_numpy()[0])
         #main_id2 = df['main_id'][df['id'] == select][0]
-        title_2 = df['title'][df['id'] == select][0]
+        title_2 = df['title'][df['id'] == select].values
+        #title_2 = df['title'][df['id'] == select][0]
         a2 = df['kusa1'][df['id'] == select][0]
         b2 = df['kusa2'][df['id'] == select][0]
         c2 = df['kusa3'][df['id'] == select][0]
