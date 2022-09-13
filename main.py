@@ -185,10 +185,7 @@ if genre == '新規入力':
 #編集画面
 if genre == '編集':
     st.dataframe(df)
-    #select = st.selectbox('id', df['id'])
     #st.text(select)#選択したIDから行のINDEXを取得
-    #st.text(df['title'][df['id'] == select])
-    #st.text(df['title'][df['id'] == select].values[0])
     col1, col2 = st.columns(2)
     with col1:
         select = st.selectbox('id', df['id'])
@@ -198,24 +195,6 @@ if genre == '編集':
         #st.text(df[df['id'] == select].index.to_numpy()[0])
         #main_id2 = df['main_id'][df['id'] == select][0]
         title_2 = df['title'][df['id'] == select].values[0]
-        #title_2 = df['title'][df['id'] == select][0]
-#        a2 = df['kusa1'][df['id'] == select][0]
-#        b2 = df['kusa2'][df['id'] == select][0]
-#        c2 = df['kusa3'][df['id'] == select][0]
-#        d2 = df['kusa4'][df['id'] == select][0]
-#        e2 = df['kusa5'][df['id'] == select][0]
-#        f2 = df['kuki1'][df['id'] == select][0]
-#        g2 = df['kuki2'][df['id'] == select][0]
-#        h2 = df['kuki3'][df['id'] == select][0]
-#        i2 = df['kuki4'][df['id'] == select][0]
-#        j2 = df['kuki5'][df['id'] == select][0]
-#        k2 = df['spad1'][df['id'] == select][0]
-#        l2 = df['spad2'][df['id'] == select][0]
-#        m2 = df['spad3'][df['id'] == select][0]
-#        n2 = df['spad4'][df['id'] == select][0]
-#        o2 = df['spad5'][df['id'] == select][0]
-#        fx3 = df['field'][df['id'] == select][0]
-#        fb3 = df['close'][df['id'] == select][0]
         a2 = df['kusa1'][df['id'] == select].values[0]
         b2 = df['kusa2'][df['id'] == select].values[0]
         c2 = df['kusa3'][df['id'] == select].values[0]
