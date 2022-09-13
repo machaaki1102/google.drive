@@ -264,7 +264,7 @@ if genre == '編集':
         st.text(file_ids['title'])
         st.markdown(file_ids['id'])
         if file_ids['title'].values[0] == download_name_a:
-            file_id = file_ids['id']
+            file_id = file_ids['id'].values[0]
         else:
             pass
         #file_ids['id'])
