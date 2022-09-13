@@ -163,10 +163,20 @@ if genre == '新規入力':
 #        f.clear
 
         #データ追加を作る時
+        file_id = drive.ListFile({'q': 'title contains "df.csv"'}).GetList()[0]['id']
+        a  = drive.CreateFile({'id': file_id,
+                            'mimeType':'text/csv'})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
+        a.GetContentFile('df.csv')
         with open('df.csv','a') as f:
-             writer = csv.writer(f)
-             writer.writerow(data)
+            writer = csv.writer(f)
+            writer.writerow(data)
+            st.dataframe(writer)
         
+        #a.SetContentFile('df.2csv')
+        #a['title'] = 'df.csv'
+        #a.Upload()
+        
+       
 
 
 #編集画面
