@@ -148,7 +148,7 @@ if genre == '新規入力':
         f1,g1,h1,i1,j1,
         k1,l1,m1,n1,o1,
         fx,fb]
-        
+        st.text(data)
         #ほんとの最初にデータを作る時
 #        with open('df.csv','w') as f:
 #            writer = csv.writer(f)
@@ -163,18 +163,18 @@ if genre == '新規入力':
 #        f.clear
 
         #データ追加を作る時
-        with open('df.csv','a') as f:
-            writer = csv.writer(f)
-            writer.writerow(data)
+        #with open('df.csv','a') as f:
+        #    writer = csv.writer(f)
+        #    writer.writerow(data)
         #    st.dataframe(writer)
         
-        file_id = drive.ListFile({'q': 'title contains "df.csv"'}).GetList()[0]['id']
-        a  = drive.CreateFile({'id': file_id,
-                            'mimeType':'text/csv'})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
-        a.GetContentFile('df.csv')
-        a.SetContentFile('df.csv')
+       # file_id = drive.ListFile({'q': 'title contains "df.csv"'}).GetList()[0]['id']
+       # a  = drive.CreateFile({'id': file_id,
+        #                    'mimeType':'text/csv'})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
+        #a.GetContentFile('df.csv')
+        #a.SetContentFile('df.csv')
         #a['title'] = 'df.csv'
-        a.Upload()
+        #a.Upload()
         
        
 
