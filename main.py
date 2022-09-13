@@ -148,7 +148,7 @@ if genre == '新規入力':
         f1,g1,h1,i1,j1,
         k1,l1,m1,n1,o1,
         fx,fb]
-        st.text(data)
+        #st.text(data)
         #ほんとの最初にデータを作る時
 #        with open('df.csv','w') as f:
 #            writer = csv.writer(f)
@@ -176,7 +176,6 @@ if genre == '新規入力':
             writer = csv.writer(f)
             writer.writerow(data)
         a.SetContentFile('df.csv')
-        #a['title'] = 'df.csv'
         a.Upload()
         
        
