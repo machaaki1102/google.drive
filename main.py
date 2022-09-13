@@ -187,8 +187,8 @@ if genre == '編集':
     st.dataframe(df)
     select = st.selectbox('id', df['id'])
     st.text(select)#選択したIDから行のINDEXを取得
-    st.text(df['title'][df['id'] == select][1])
-    st.text(df['title'][df['id'] == select][2])
+    st.text(df['title'][df['id'] == select])
+    st.text(df['title'][df['id'] == select][0])
     col1, col2 = st.columns(2)
     with col1:
         select = st.selectbox('id', df['id'])
