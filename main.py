@@ -255,7 +255,8 @@ if genre == '編集':
     with col5:
         o3 = st.text_input('',value=o2,key=15)
 
-    download_name_a = 'field' + str(df['id'].values[0])
+    download_name_a = 'field' + select
+    #download_name_a = 'field' + str(df['id'].values[0])
     download_name_b = 'close' + str(df['id'].values[0])
     st.text(download_name_a)
     #画像データをクエリをIDかうまくとる方法模索
