@@ -142,6 +142,7 @@ if genre == '新規入力':
         'kuki1','kuki2','kuki3','kuki4','kuki5',
         'spad1','spad2','spad3','spad4','spad5',
         'field','close']
+
         data = [main_id,title,
         a1,b1,c1,d1,e1,
         f1,g1,h1,i1,j1,
@@ -165,6 +166,8 @@ if genre == '新規入力':
         with open('df.csv','a') as f:
              writer = csv.writer(f)
              writer.writerow(data)
+        
+
 
 #編集画面
 if genre == '編集':
@@ -259,9 +262,36 @@ if genre == '編集':
         st.image(download_name_b)
     else:
         st.image(close)
+
+#テスト既存の写真を消して、今とったものと変える。
+#button6 = button('写真変更')
+#if button6:
+#    with open(field.name,'wb') as f:
+#            f.write(field.read()) 
+#    f = drive.CreateFile({'title':download_name_a,#field.name
+#                        'mimeType':'image/png,image/jpeg',
+#                        'parents':[{'id':folder_id}]})
+#    f.SetContentFile(field.name)
+#    fx3 = f['id']
+#    f.Upload()
+    
+    #file_id_a = drive.ListFile().GetList()
+    #fx = file_id_a['title' == download_name_a]['id']
+    #f.clear()
+    
+#    with open(close.name,'wb') as f:
+#        f.write(close.read())
+#    f = drive.CreateFile({'title':download_name_b,
+#                        'mimeType':'image/png,imag/jpeg',
+#                        'parents':[{'id':folder_id}]})
+#    f.SetContentFile(close.name)
+#    fx3 = f['id']
+#   f.upload
+
+
 #変更
     henkou = st.button('変更')
-    if henkou:    
+    if henkou:        
     #変更するデータのリスト
         data_henkou = [select,title3,
         a3,b3,c3,d3,e3,
@@ -332,11 +362,11 @@ if genre == 'データEXCEL化':
         f.clear()
 
 #ディレクトリの場所を確認。
-#import glob
-#st.text(os.getcwd())
-#files = glob.glob("/app/google.drive/*")
-#for file in files:
-#    st.text(file)   
+import glob
+st.text(os.getcwd())
+files = glob.glob("/app/google.drive/*")
+for file in files:
+    st.text(file)   
 
 #  Googledriveからデータを取る。
 #if  button_download:
