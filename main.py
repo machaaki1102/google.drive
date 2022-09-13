@@ -257,7 +257,7 @@ if genre == '編集':
 
     download_name_a = 'field' + str(select)
     #download_name_a = 'field' + str(df['id'].values[0])
-    download_name_b = 'close' + str(df['id'].values[0])
+    download_name_b = 'close' + str(select)
     st.text(download_name_a)
     #画像データをクエリをIDかうまくとる方法模索
     for file_ids in drive.ListFile({'q': 'title contains "field"'}).GetList():
