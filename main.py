@@ -335,7 +335,8 @@ if genre == '編集':
         fx3,fb3]
         st.text(data_henkou)
         st.dataframe(df)
-        st.dataframe(df.iloc[df[df['id'] == select].index.to_numpy()[0]])
+        st.text(df[df['id'] == select]])
+        .index.to_numpy()[0]])
         #= data_henkou
         #df.iloc[df[df['id'] == select].index.to_numpy()[0]] = data_henkou
         st.dataframe(df)
