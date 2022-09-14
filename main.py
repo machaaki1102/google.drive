@@ -333,7 +333,7 @@ if genre == '編集':
         f3,g3,h3,i3,j3,
         k3,l3,m3,n3,o3,
         fx3,fb3]
-        st.text(henkou)
+        st.text(data_henkou)
         st.dataframe(df)
         df.iloc[df[df['id'] == select].index.to_numpy()[0]] = data_henkou
         st.dataframe(df)
