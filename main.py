@@ -338,7 +338,7 @@ if genre == '編集':
         st.text(df[df['id'] == select].index.to_numpy()[0])
         #.index.to_numpy()[0]])
         #= data_henkou
-        #df.iloc[df[df['id'] == select].index.to_numpy()[0]] = data_henkou
+        st.text(df.iloc[1])
         st.dataframe(df_d)
     #streamlit 内にあるdf.csvを変更するデータフレームで変更した点をCSVに変換して上書きする
         df.to_csv('df.2csv',index=False)
