@@ -339,7 +339,7 @@ if genre == '編集':
         #.index.to_numpy()[0]])
         #= data_henkou
         #df.iloc[df[df['id'] == select].index.to_numpy()[0]] = data_henkou
-        st.dataframe(df)
+        st.dataframe(df_d)
     #streamlit 内にあるdf.csvを変更するデータフレームで変更した点をCSVに変換して上書きする
         df.to_csv('df.2csv',index=False)
         file_id = drive.ListFile({'q': 'title contains "df.csv"'}).GetList()[0]['id']
