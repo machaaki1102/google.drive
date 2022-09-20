@@ -17,7 +17,7 @@ gauth = GoogleAuth()
 gauth.LocalWebserverAuth()
 drive = GoogleDrive(gauth)
 
-#事前準備
+#事前準備ss
 #ID次の番号取得
 folder_id = '10Ogv7m81vckhXxmRdleo5xouy6lO6O7V' 
 file_id = drive.ListFile({'q': 'title = "df.csv"'}).GetList()[0]['id']
