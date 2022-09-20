@@ -285,7 +285,7 @@ if genre == '編集':
             pass
     f  = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
     f.GetContentFile(download_name_b)
-    
+    #
     field = st.file_uploader('全体写真')
     if not field:
         st.image(download_name_a)
