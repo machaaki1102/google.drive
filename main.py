@@ -342,7 +342,7 @@ if genre == '編集':
         k = df[df['id'] == select].index.to_numpy()[0]
         #.index.to_numpy()[0]])
         st.text(k)
-        st.text(df.iloc(k))
+        st.text(df.iloc[k,:])
         df.iloc[k] = data_henkou
         st.dataframe(df)
         #st.dataframe(df_d)
