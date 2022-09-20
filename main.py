@@ -36,7 +36,7 @@ genre = st.radio(
 #データ取得
 with open('df.csv','r') as f:
     df = pd.read_csv(f, header=0)
-#    csv_files = csv.reader(f)
+    csv_files = csv.reader(f)
     i = 0
     for csv_file in csv_files:
         #st.text(csv.file)
