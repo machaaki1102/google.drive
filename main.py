@@ -310,7 +310,10 @@ if genre == '編集':
                     'mimeType':'image/png,image/jpeg',
                      'parents':[{'id':folder_id}]})
     f.SetContentFile(field.name)
-    fx3 = f['id']
+    f.Upload()
+
+    file_id_a = drive.ListFile().GetList()
+    fx3 = file_id_a['title' == download_name_a]['id']
     st.text(fx3)
     #f.Upload()
     
