@@ -51,7 +51,7 @@ with open('df.csv','r') as f:
             #st.text(csv_file)
         elif i >1 and csv_file is not None:
             st.text(mylist)
-            mylist.append([csv_file])
+            mylist.append(csv_file)
         else :
             pass
 
