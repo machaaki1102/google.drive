@@ -336,13 +336,13 @@ if genre == '編集':
         f3,g3,h3,i3,j3,
         k3,l3,m3,n3,o3,
         fx3,fb3]
-        st.text(data_henkou)
-        st.dataframe(df)
+        st.text(data_henkou)#変更したデータ
+        st.dataframe(df)#変更前のDf
         st.text(df[df['id'] == select].index.to_numpy()[0])
         k = df[df['id'] == select].index.to_numpy()[0]
         #.index.to_numpy()[0]])
         st.text(k)
-        st.text(df.iloc[k])
+        st.text(df.iloc(k))
         df.iloc[k] = data_henkou
         st.dataframe(df)
         #st.dataframe(df_d)
