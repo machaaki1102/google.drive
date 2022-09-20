@@ -11,7 +11,7 @@ import pickle
 import os
 import pandas as pd
 import csv
-#import openpyxl
+import openpyxl
 
 gauth = GoogleAuth()
 gauth.LocalWebserverAuth()
@@ -35,7 +35,7 @@ genre = st.radio(
 
 #データ取得
 with open('df.csv','r') as f:
-    df = pd.read_csv(f, header=0)
+    #df = pd.read_csv(f, header=0)
     csv_files = csv.reader(f)
     i = 0
     for csv_file in csv_files:
@@ -52,6 +52,7 @@ with open('df.csv','r') as f:
             mylist.append([csv_file])
         else :
             pass
+
     df = pd.DataFrame(mylist,columns= colmuns)
 
 #新規入力画面
