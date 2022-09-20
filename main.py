@@ -47,6 +47,7 @@ with open('df.csv','r') as f:
         elif i==1:
             mylist = [csv_file]
             st.text(mylist)
+            i += 1
             #st.text(csv_file)
         elif i >1 and csv_file is not None:
             st.text(mylist)
