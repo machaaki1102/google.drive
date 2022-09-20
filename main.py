@@ -187,7 +187,7 @@ if genre == '新規入力':
 
 #編集画面
 if genre == '編集':
-    st.dataframe(df)
+    st.dataframe(df) 
     #st.text(select)#選択したIDから行のINDEXを取得
     col1, col2 = st.columns(2)
     with col1:
