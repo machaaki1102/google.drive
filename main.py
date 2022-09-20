@@ -43,14 +43,14 @@ with open('df.csv','r') as f:
         if i == 0:
             colmuns = csv_file
             i = 1
-            st.text(colmuns)
+            #st.text(colmuns)
         elif i==1:
             mylist = [csv_file]
             st.text(mylist)
-            st.text(csv_file)
+            #st.text(csv_file)
         elif i >1 and csv_file is not None:
-            mylist.append([csv_file])
             st.text(mylist)
+            mylist.append([csv_file])
         else :
             pass
 
