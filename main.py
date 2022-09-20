@@ -302,16 +302,17 @@ if genre == '編集':
         st.image(close)
 
 #テスト既存の写真を消して、今とったものと変える。
-#button6 = button('写真変更')
-#if button6:
-#    with open(field.name,'wb') as f:
-#            f.write(field.read()) 
-#    f = drive.CreateFile({'title':download_name_a,#field.name
-#                        'mimeType':'image/png,image/jpeg',
-#                        'parents':[{'id':folder_id}]})
-#    f.SetContentFile(field.name)
-#    fx3 = f['id']
-#    f.Upload()
+    button6 = button('field写真変更')
+    if button6:
+       with open(field.name,'wb') as f:
+            f.write(field.read()) 
+    f = drive.CreateFile({'title':download_name_a,#field.name
+                        'mimeType':'image/png,image/jpeg',
+                        'parents':[{'id':folder_id}]})
+    f.SetContentFile(field.name)
+    fx3 = f['id']
+    st.text(fx3)
+    #f.Upload()
     
     #file_id_a = drive.ListFile().GetList()
     #fx = file_id_a['title' == download_name_a]['id']
