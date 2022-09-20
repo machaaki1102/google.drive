@@ -307,8 +307,8 @@ if genre == '編集':
        with open(field.name,'wb') as f:
             f.write(field.read()) 
     f = drive.CreateFile({'title':download_name_a,#field.name
-                        'mimeType':'image/png,image/jpeg',
-                        'parents':[{'id':folder_id}]})
+                    'mimeType':'image/png,image/jpeg',
+                     'parents':[{'id':folder_id}]})
     f.SetContentFile(field.name)
     fx3 = f['id']
     st.text(fx3)
