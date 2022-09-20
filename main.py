@@ -302,7 +302,7 @@ if genre == '編集':
         st.image(close)
 
 #テスト既存の写真を消して、今とったものと変える。
-    button6 = button('field写真変更')
+    button6 = st.button('field写真変更')
     if button6:
        with open(field.name,'wb') as f:
             f.write(field.read()) 
