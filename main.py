@@ -350,8 +350,8 @@ if genre == '編集':
                 f.SetContentFile(field.name)
                 f.Upload()
                 #古いデータを消す
-                f = drive.CreateFile({'id': fx3})
-                f.Trash()
+                #f = drive.CreateFile({'id': fx3})
+                #f.Trash()
                 #IDを取得する。
             file_id_a = drive.ListFile().GetList()
             fx3 = file_id_a['title' == download_name_a]['id']
@@ -366,8 +366,8 @@ if genre == '編集':
                 f.Upload()
 
                 #古いデータを消す
-                f = drive.CreateFile({'id': fb3})
-                f.Trash()
+                #f = drive.CreateFile({'id': fb3})
+                #f.Trash()
 
             file_id_a = drive.ListFile().GetList()
             fb3 = file_id_a['title' == download_name_b]['id']
