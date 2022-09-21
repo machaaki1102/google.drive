@@ -362,8 +362,11 @@ if genre == '編集':
         #    st.dataframe(f)
 button10 = st.button('消去') 
 if button10:
+    f = drive.CreateFile({'id': '1MRrwVgmmfbRYyKgQwmVmD64_Lf1UHcKB'})
+    #print(f['labels']['trashed'])
+    f.Trash()
     #st.text(fx3)
-    file = drive_service.files().delete(fileId='1MRrwVgmmfbRYyKgQwmVmD64_Lf1UHcKB').execute()   
+    #file = drive_service.files().delete(fileId='1MRrwVgmmfbRYyKgQwmVmD64_Lf1UHcKB').execute()   
 #openxlテスト
 #import os
 #import openpyxl
