@@ -304,25 +304,26 @@ if genre == '編集':
 #テスト既存の写真を消して、今とったものと変える。
     button6 = st.button('field写真変更')
     if button6:
-       with open(field.name,'wb') as f:
-            f.write(field.read()) 
-            f = drive.CreateFile({'title':download_name_a,#field.name
-                        'mimeType':'image/png,image/jpeg',
-                         'parents':[{'id':folder_id}]})
-            f.SetContentFile(field.name)
-            f.Upload()
+       if field: 
+            with open(field.name,'wb') as f:
+                f.write(field.read()) 
+                f = drive.CreateFile({'title':download_name_a,#field.name
+                            'mimeType':'image/png,image/jpeg',
+                            'parents':[{'id':folder_id}]})
+                f.SetContentFile(field.name)
+                f.Upload()
 
-            file_id_a = drive.ListFile().GetList()
-            fx3 = file_id_a['title' == download_name_a]['id']
-            st.text(fx3)
-
-#       with open(close.name,'wb') as f:
-#            f.write(close.read()) 
-#            f = drive.CreateFile({'title':download_name_a,#field.name
-#                        'mimeType':'image/png,image/jpeg',
-#                         'parents':[{'id':folder_id}]})
-#            f.SetContentFile(close.name)
-#            f.Upload()
+                file_id_a = drive.ListFile().GetList()
+                fx3 = file_id_a['title' == download_name_a]['id']
+                st.text(fx3)
+       if close:
+            with open(close.name,'wb') as f:
+                f.write(close.read()) 
+                f = drive.CreateFile({'title':download_name_a,#field.name
+                            'mimeType':'image/png,image/jpeg',
+                                'parents':[{'id':folder_id}]})
+                f.SetContentFile(close.name)
+                f.Upload()
 
 #            file_id_a = drive.ListFile().GetList()
 #            fx3 = file_id_a['title' == download_name_b]['id']
@@ -363,7 +364,6 @@ if genre == '編集':
 button10 = st.button('消去') 
 if button10:
     f = drive.CreateFile({'id': '1MRrwVgmmfbRYyKgQwmVmD64_Lf1UHcKB'})
-    #print(f['labels']['trashed'])
     f.Trash()
     #st.text(fx3)
     #file = drive_service.files().delete(fileId='1MRrwVgmmfbRYyKgQwmVmD64_Lf1UHcKB').execute()   
