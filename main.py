@@ -316,17 +316,17 @@ if genre == '編集':
             fx3 = file_id_a['title' == download_name_a]['id']
             st.text(fx3)
 
-       with open(close.name,'wb') as f:
-            f.write(close.read()) 
-            f = drive.CreateFile({'title':download_name_a,#field.name
-                        'mimeType':'image/png,image/jpeg',
-                         'parents':[{'id':folder_id}]})
-            f.SetContentFile(close.name)
-            f.Upload()
+#       with open(close.name,'wb') as f:
+#            f.write(close.read()) 
+#            f = drive.CreateFile({'title':download_name_a,#field.name
+#                        'mimeType':'image/png,image/jpeg',
+#                         'parents':[{'id':folder_id}]})
+#            f.SetContentFile(close.name)
+#            f.Upload()
 
-            file_id_a = drive.ListFile().GetList()
-            fx3 = file_id_a['title' == download_name_b]['id']
-            st.text(fb3)
+#            file_id_a = drive.ListFile().GetList()
+#            fx3 = file_id_a['title' == download_name_b]['id']
+#            st.text(fb3)
 
 
 #変更
