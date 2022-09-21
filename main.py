@@ -365,7 +365,7 @@ if genre == '編集':
         #    st.dataframe(f)
 button10 = st.button('消去') 
 if button10:
-    file = drive_service.files().delete(fileId=item['id']).execute()   
+    file = drive_service.files().delete(fileId=fx3).execute()   
 #openxlテスト
 #import os
 #import openpyxl
