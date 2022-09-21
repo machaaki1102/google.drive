@@ -340,6 +340,40 @@ if genre == '編集':
 #変更
     henkou = st.button('変更')
     if henkou:
+        if field: 
+            with open(field.name,'wb') as f:
+                #アップロード
+                f.write(field.read()) 
+                f = drive.CreateFile({'title':download_name_a,#field.name
+                            'mimeType':'image/png,image/jpeg',
+                            'parents':[{'id':folder_id}]})
+                f.SetContentFile(field.name)
+                f.Upload()
+                #古いデータを消す
+                f = drive.CreateFile({'id': fx3})
+                f.Trash()
+                #IDを取得する。
+                file_id_a = drive.ListFile().GetList()
+                fx3 = file_id_a['title' == download_name_a]['id']
+                st.text(fx3)
+        if close:
+            with open(close.name,'wb') as f:
+                f.write(close.read()) 
+                f = drive.CreateFile({'title':download_name_a,#field.name
+                            'mimeType':'image/png,image/jpeg',
+                                'parents':[{'id':folder_id}]})
+                f.SetContentFile(close.name)
+                f.Upload()
+
+                #古いデータを消す
+                f = drive.CreateFile({'id': fb3})
+                f.Trash()
+
+                file_id_a = drive.ListFile().GetList()
+                fb3 = file_id_a['title' == download_name_b]['id']
+
+
+
     #変更するデータのリスト
         data_henkou = [select,title3,
         a3,b3,c3,d3,e3,
@@ -368,10 +402,10 @@ if genre == '編集':
         #a.close
         #with open('df.csv','r')as f:
         #    st.dataframe(f)
-button10 = st.button('消去') 
-if button10:
-    f = drive.CreateFile({'id': '1MRrwVgmmfbRYyKgQwmVmD64_Lf1UHcKB'})
-    f.Trash()
+#button10 = st.button('消去') 
+#if button10:
+#    f = drive.CreateFile({'id': '1MRrwVgmmfbRYyKgQwmVmD64_Lf1UHcKB'})
+#    f.Trash()
     #st.text(fx3)
     #file = drive_service.files().delete(fileId='1MRrwVgmmfbRYyKgQwmVmD64_Lf1UHcKB').execute()   
 #openxlテスト
