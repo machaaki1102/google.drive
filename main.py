@@ -302,39 +302,39 @@ if genre == '編集':
         st.image(close)
 
 #テスト既存の写真を消して、今とったものと変える。
-    button6 = st.button('field写真変更')
-    if button6:
-       if field: 
-            with open(field.name,'wb') as f:
-                #アップロード
-                f.write(field.read()) 
-                f = drive.CreateFile({'title':download_name_a,#field.name
-                            'mimeType':'image/png,image/jpeg',
-                            'parents':[{'id':folder_id}]})
-                f.SetContentFile(field.name)
-                f.Upload()
-                #古いデータを消す
-                f = drive.CreateFile({'id': fx3})
-                f.Trash()
-                #IDを取得する。
-                file_id_a = drive.ListFile().GetList()
-                fx3 = file_id_a['title' == download_name_a]['id']
+#    button6 = st.button('field写真変更')
+#    if button6:
+#       if field: 
+#            with open(field.name,'wb') as f:
+#                #アップロード
+#                f.write(field.read()) 
+#                f = drive.CreateFile({'title':download_name_a,#field.name
+#                            'mimeType':'image/png,image/jpeg',
+#                            'parents':[{'id':folder_id}]})
+#                f.SetContentFile(field.name)
+#                 f.Upload()
+#                    #古いデータを消す
+#                    f = drive.CreateFile({'id': fx3})
+#                    f.Trash()
+#                #IDを取得する。
+#                file_id_a = drive.ListFile().GetList()
+#                fx3 = file_id_a['title' == download_name_a]['id']
                 #st.text(fx3)
-       if close:
-            with open(close.name,'wb') as f:
-                f.write(close.read()) 
-                f = drive.CreateFile({'title':download_name_a,#field.name
-                            'mimeType':'image/png,image/jpeg',
-                                'parents':[{'id':folder_id}]})
-                f.SetContentFile(close.name)
-                f.Upload()
+#       if close:
+#            with open(close.name,'wb') as f:
+#                f.write(close.read()) 
+#                f = drive.CreateFile({'title':download_name_a,#field.name
+#                            'mimeType':'image/png,image/jpeg',
+#                                'parents':[{'id':folder_id}]})
+#                f.SetContentFile(close.name)
+#                f.Upload()
 
                 #古いデータを消す
-                f = drive.CreateFile({'id': fb3})
-                f.Trash()
+#                f = drive.CreateFile({'id': fb3})
+#                f.Trash()
 
-                file_id_a = drive.ListFile().GetList()
-                fb3 = file_id_a['title' == download_name_b]['id']
+#                file_id_a = drive.ListFile().GetList()
+#                fb3 = file_id_a['title' == download_name_b]['id']
 
 
 #変更
@@ -350,8 +350,8 @@ if genre == '編集':
                 f.SetContentFile(field.name)
                 f.Upload()
                 #古いデータを消す
-                #f = drive.CreateFile({'id': fx3})
-                #f.Trash()
+                f = drive.CreateFile({'id': fx3})
+                f.Trash()
                 #IDを取得する。
             file_id_a = drive.ListFile().GetList()
             fx3 = file_id_a['title' == download_name_a]['id']
@@ -366,8 +366,8 @@ if genre == '編集':
                 f.Upload()
 
                 #古いデータを消す
-                #f = drive.CreateFile({'id': fb3})
-                #f.Trash()
+                f = drive.CreateFile({'id': fb3})
+                f.Trash()
 
             file_id_a = drive.ListFile().GetList()
             fb3 = file_id_a['title' == download_name_b]['id']
