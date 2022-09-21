@@ -375,6 +375,8 @@ if genre == '編集':
 
 
     #変更するデータのリスト
+        st.text(fx3)
+        st.text(fb3)
         data_henkou = [select,title3,
         a3,b3,c3,d3,e3,
         f3,g3,h3,i3,j3,
