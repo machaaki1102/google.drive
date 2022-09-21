@@ -332,9 +332,6 @@ if genre == '編集':
 #変更
     henkou = st.button('変更')
     if henkou:
-
-
-
     #変更するデータのリスト
         data_henkou = [select,title3,
         a3,b3,c3,d3,e3,
