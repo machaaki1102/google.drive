@@ -315,25 +315,26 @@ if genre == '編集':
             file_id_a = drive.ListFile().GetList()
             fx3 = file_id_a['title' == download_name_a]['id']
             st.text(fx3)
-    #f.Upload()
-    
-    #file_id_a = drive.ListFile().GetList()
-    #fx = file_id_a['title' == download_name_a]['id']
-    #f.clear()
-    
-#    with open(close.name,'wb') as f:
-#        f.write(close.read())
-#    f = drive.CreateFile({'title':download_name_b,
-#                        'mimeType':'image/png,imag/jpeg',
-#                        'parents':[{'id':folder_id}]})
-#    f.SetContentFile(close.name)
-#    fx3 = f['id']
-#   f.upload
+
+       with open(close.name,'wb') as f:
+            f.write(close.read()) 
+            f = drive.CreateFile({'title':download_name_a,#field.name
+                        'mimeType':'image/png,image/jpeg',
+                         'parents':[{'id':folder_id}]})
+            f.SetContentFile(close.name)
+            f.Upload()
+
+            file_id_a = drive.ListFile().GetList()
+            fx3 = file_id_a['title' == download_name_b]['id']
+            st.text(fb3)
 
 
 #変更
     henkou = st.button('変更')
-    if henkou:        
+    if henkou:
+
+
+
     #変更するデータのリスト
         data_henkou = [select,title3,
         a3,b3,c3,d3,e3,
@@ -362,7 +363,9 @@ if genre == '編集':
         #a.close
         #with open('df.csv','r')as f:
         #    st.dataframe(f)
-
+button10 = st.button('消去') 
+if button10:
+    file = drive_service.files().delete(fileId=item['id']).execute()   
 #openxlテスト
 #import os
 #import openpyxl
