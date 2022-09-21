@@ -280,8 +280,8 @@ if genre == '編集':
     #file_id = drive.ListFile({'q': 'title contains "close"'}).GetList()[0]['id']
     for file_ids in drive.ListFile({'q': 'title contains "close"'}).GetList():
     #[0]['id']
-        st.text(file_ids['title'])
-        st.markdown(file_ids['id'])
+        #st.text(file_ids['title'])
+        #st.markdown(file_ids['id'])
         if file_ids['title'] == download_name_a:
             file_id = file_ids['id']
         else:
