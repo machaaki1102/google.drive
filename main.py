@@ -355,7 +355,7 @@ if genre == '編集':
                 #IDを取得する。
             file_id_a = drive.ListFile().GetList()
             fx3 = file_id_a['title' == download_name_a]['id']
-            st.text(fx3)
+            #st.text(fx3)
         if close:
             with open(close.name,'wb') as f:
                 f.write(close.read()) 
@@ -371,13 +371,13 @@ if genre == '編集':
 
             file_id_a = drive.ListFile().GetList()
             fb3 = file_id_a['title' == download_name_b]['id']
-            st.text(fb3)
+            #st.text(fb3)
 
 
 
     #変更するデータのリスト
-        st.text(fx3)
-        st.text(fb3)
+        #st.text(fx3)
+        #st.text(fb3)
         data_henkou = [select,title3,
         a3,b3,c3,d3,e3,
         f3,g3,h3,i3,j3,
