@@ -265,15 +265,15 @@ if genre == '編集':
     #画像データをクエリをIDかうまくとる方法模索
     for file_ids in drive.ListFile({'q': 'title contains "field"'}).GetList():
     #[0]['id']
-        st.text(file_ids['title'])
-        st.markdown(file_ids['id'])
+        #st.text(file_ids['title'])
+        #st.markdown(file_ids['id'])
         if file_ids['title'] == download_name_a:
             file_id = file_ids['id']
         else:
             pass
         #file_ids['id'])
     #st.text(file_id)
-    st.text(file_id)
+    #st.text(file_id)
     f  = drive.CreateFile({'id': file_id})#ファイルを読み込みして、見えないカレントディレクトリ内に見えないが保存されている。絶対パスで
     f.GetContentFile(download_name_a)
     #st.image(download_name_a)
