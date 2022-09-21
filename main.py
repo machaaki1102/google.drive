@@ -402,7 +402,7 @@ if genre == '編集':
         a.SetContentFile('df.2csv')
         a['title'] = 'df.csv'
         a.Upload()
-        reset_session()
+        reset()
         #a.close
         #with open('df.csv','r')as f:
         #    st.dataframe(f)
